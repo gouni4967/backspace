@@ -1,0 +1,22 @@
+{
+  "update": {
+    "laterHint": "설정의 데스크톱 메뉴에서 나중에 설치할 수 있어요.",
+    "dismiss": "이 업데이트 알림 닫기",
+    "failed": {
+      "title": "업데이트를 설치하지 못했어요.",
+      "body": "Backspace {{version}} 다운로드는 완료됐지만 설치에 실패했어요. 직접 설치할 수 있어요."
+    },
+    "ready": {
+      "title": "업데이트 준비 완료",
+      "body": "Backspace {{version}} 다운로드가 끝났어요. 이제 설치할 수 있어요."
+    },
+    "available": {
+      "title": "Backspace {{version}} 업데이트가 있어요.",
+      "body": "이 버전은 자동으로 업데이트할 수 없어요. 새 버전을 다운로드해 설치하세요.",
+      "bodyWithCurrent": "현재 버전은 {{currentVersion}}이에요. 자동으로 업데이트할 수 없으니 새 버전을 다운로드해 설치하세요."
+    },
+    "restartNow": "지금 다시 시작",
+    "download": "다운로드",
+    "later": "나중에"
+  }
+}

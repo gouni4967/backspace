@@ -1,0 +1,18 @@
+{
+  "transfers": {
+    "title": "전송",
+    "count_other": "{{count}} 이전",
+    "clearCompleted": "명확하게 완료",
+    "empty": "적극적인 전송이 없습니다.",
+    "status": {
+      "done": "완료",
+      "failed": "실패: {{reason}}",
+      "aborted": "중단됨",
+      "progress": "{{loaded}} / {{total}}"
+    }
+  },
+  "crop": {
+    "title": "농작물 이미지",
+    "applying": "적용하는 것..."
+  }
+}

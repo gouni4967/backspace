@@ -1,5 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { isOptInLanguage } from './languages';
 import { LazyCatalogBackend, listCatalogPaths } from './loader';
 
 describe('LazyCatalogBackend', () => {
@@ -31,10 +30,9 @@ describe('listCatalogPaths', () => {
     expect([...languages].sort()).toEqual(['de', 'ko', 'pt', 'ru', 'zh']);
   });
 
-  it('sees the same namespaces for languages with complete catalogs', () => {
+  it('sees the same namespaces for every language', () => {
     const byLanguage = new Map<string, string[]>();
     for (const { language, namespace } of listCatalogPaths()) {
-      if (isOptInLanguage(language)) continue;
       byLanguage.set(language, [...(byLanguage.get(language) ?? []), namespace].sort());
     }
     const [first, ...rest] = [...byLanguage.values()];

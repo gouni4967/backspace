@@ -394,6 +394,22 @@
         errorNotBackspace: '该地址不是 Backspace 实例。',
         errorOther: '无法连接：{message}',
       },
+      ko: {
+        welcomeTitle: 'Backspace에 오신 걸 환영해요.',
+        welcomeSubtitle: 'Backspace 서버에 연결하세요.',
+        switchTitle: '서버 바꾸기',
+        switchSubtitle: '다른 Backspace 서버에 연결하세요. 현재 서버를 계속 쓰려면 취소를 누르세요.',
+        urlLabel: '서버 URL',
+        connect: '연결',
+        cancel: '취소',
+        connecting: '연결 중…',
+        errorEmpty: '서버 URL을 입력하세요.',
+        errorTimeout: '연결 시간이 초과됐어요. URL을 확인하고 다시 시도하세요.',
+        errorUnreachable: '연결하지 못했어요. URL을 확인하고 다시 시도하세요.',
+        errorStatus: '연결하지 못했어요. 서버 응답 코드: {status}',
+        errorNotBackspace: '해당 주소에서 Backspace 서버를 찾지 못했어요.',
+        errorOther: '연결하지 못했어요: {message}',
+      },
     };
     const LANG = new URLSearchParams(window.location.search).get('lang');
     const T = STRINGS[LANG] || STRINGS.en;

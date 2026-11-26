@@ -16,9 +16,9 @@ import { app } from 'electron';
 import fs from 'fs';
 import path from 'path';
 
-export type DesktopLanguage = 'en' | 'ru' | 'de' | 'pt' | 'zh';
+export type DesktopLanguage = 'en' | 'ru' | 'de' | 'pt' | 'zh' | 'ko';
 
-const DESKTOP_LANGUAGES: readonly DesktopLanguage[] = ['en', 'ru', 'de', 'pt', 'zh'];
+const DESKTOP_LANGUAGES: readonly DesktopLanguage[] = ['en', 'ru', 'de', 'pt', 'zh', 'ko'];
 
 const en = {
   'tray.show': 'Show Backspace',
@@ -119,7 +119,26 @@ const pt: Catalog = {
   'update.download': 'Baixar atualização…',
 };
 
-export const DESKTOP_CATALOGS: Record<DesktopLanguage, Catalog> = { en, ru, de, pt, zh };
+const ko: Catalog = {
+  'tray.show': 'Backspace 열기',
+  'tray.hide': '숨기기',
+  'tray.changeInstance': '서버 바꾸기',
+  'tray.sourceCode': '소스 코드 (AGPL)',
+  'tray.quit': '종료',
+  'menu.edit': '편집',
+  'menu.window': '창',
+  'update.check': '업데이트 확인…',
+  'update.checkAfterFailure': '업데이트 다시 확인…',
+  'update.checking': '업데이트 확인 중…',
+  'update.downloading': '업데이트 다운로드 중…',
+  'update.ready': '업데이트 준비 완료',
+  'update.available': '새 업데이트 있음',
+  'update.restartToInstall': '다시 시작하여 업데이트 설치',
+  'update.downloadVersion': 'Backspace {version} 다운로드…',
+  'update.download': '업데이트 다운로드…',
+};
+
+export const DESKTOP_CATALOGS: Record<DesktopLanguage, Catalog> = { en, ru, de, pt, zh, ko };
 
 export function isDesktopLanguage(value: unknown): value is DesktopLanguage {
   return typeof value === 'string' && (DESKTOP_LANGUAGES as readonly string[]).includes(value);

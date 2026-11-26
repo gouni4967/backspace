@@ -58,12 +58,11 @@ describe('setLanguage', () => {
     expect(i18n.t('common:actions.cancel')).toBe('Отмена');
   });
 
-  it('loads Korean on request and falls back for untranslated namespaces', async () => {
+  it('loads Korean across the common and administration catalogs', async () => {
     await setLanguage('ko');
     expect(document.documentElement.lang).toBe('ko');
     expect(i18n.t('common:actions.cancel')).toBe('취소');
-    expect(i18n.getResourceBundle('ko', 'admin')).toEqual({});
-    expect(i18n.t('admin:general.title')).toBe('General');
+    expect(i18n.t('admin:general.title')).toBe('일반');
   });
 
   it('falls back to English for a key the language has not translated', async () => {

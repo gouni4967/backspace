@@ -1,0 +1,32 @@
+{
+  "input": {
+    "placeholder": "검색 메시지..."
+  },
+  "filters": {
+    "toggle": "필터",
+    "from": {
+      "label": "보낸 사람",
+      "placeholder": "사용자 이름"
+    },
+    "has": {
+      "label": "포함 항목",
+      "any": "모두",
+      "file": "파일",
+      "image": "이미지",
+      "link": "Link"
+    },
+    "before": {
+      "label": "이전"
+    },
+    "after": {
+      "label": "이후"
+    }
+  },
+  "results": {
+    "empty": "결과는 발견되지 않았다",
+    "hint": "이 채널에서 검색 메시지를 입력",
+    "count_other": "{{count}} 결과",
+    "loadMore": "더 많은 부하 ({{remaining}} 남아있다)",
+    "attachments_other": "{{count}} 부착"
+  }
+}

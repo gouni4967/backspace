@@ -1,0 +1,83 @@
+{
+  "tabs": {
+    "all": "전체",
+    "pending": "대기 중",
+    "add": "친구 를 추가",
+    "activity": "활동"
+  },
+  "sections": {
+    "online": "Online — {{n}}",
+    "all": "친구 전체 · {{n}}",
+    "pending": "대기 중 · {{n}}",
+    "active": "활동 중 · {{n}}",
+    "offline": "Offline — {{n}}"
+  },
+  "empty": {
+    "online": "아무도 지금 온라인 안 있어",
+    "all": "아직 친구가 없어요. 친구를 추가해 보세요!",
+    "pending": "대기 중인 요청이 없어요. 노리는 낮잠 중이에요.",
+    "activity": "지금은 조용해요 친구들이 활동을 시작하면 여기 보여드리죠!"
+  },
+  "friend": {
+    "viaInstance": "via {{host}}",
+    "message": "메시지",
+    "remove": "친구 삭제"
+  },
+  "sendMessage": {
+    "failed": "대화를 열 수 없었습니다. {{reason}}"
+  },
+  "request": {
+    "incoming": "친구 의 요청",
+    "outgoing": "외로 나가는 친구 의 요청",
+    "ignore": "무시",
+    "cancel": "취소 요청",
+    "send": "친구 요청 을 보내십시오",
+    "pending": "요청은 대기중",
+    "sending": "보내는 중…",
+    "cancelling": "취소...",
+    "sent": "친구 요청이 보내졌어!"
+  },
+  "removeFriend": {
+    "title": "친구 삭제",
+    "description": "{{name}}을 친구로 삭제하고 싶으신가요?",
+    "fallbackName": "이 사용자"
+  },
+  "add": {
+    "title": "사람 을 찾아",
+    "hint": "사용자 이름으로 검색하거나 <handle> user@instance </handle>을 사용하여 직접 누군가를 추가하십시오.",
+    "placeholder": "사용자 이름으로 검색하거나 추가...",
+    "direct": "친구 요청을 <handle>{{handle}} </handle>로 보내십시오",
+    "sendRequest": "요청 을 보내십시오",
+    "discover": "사람 들 을 발견 하라",
+    "noSearchResults": "사용자의 검색은 일치하지 않습니다.",
+    "noDiscoverable": "검색 가능한 사용자가 없어요. 친구를 초대해 보세요!"
+  },
+  "mutuals": {
+    "friends_other": "{{count}} 상호 친구",
+    "spaces_other": "{{count}} 상호 공간",
+    "noFriends": "서로 다른 친구도 없습니다.",
+    "noSpaces": "상호 공간은 없습니다"
+  },
+  "profile": {
+    "tabs": {
+      "about": "소개",
+      "mutualFriends": "상호 친구",
+      "mutualSpaces": "상호 공간"
+    },
+    "aboutMe": "나 에 관한 것",
+    "roles": "역할",
+    "memberSince": "회원",
+    "sendMessage": "메시지 보내",
+    "editRoles": "역할 을 편집",
+    "viewFull": "전체 프로파일을 보기",
+    "addFriend": "친구 를 추가"
+  },
+  "activity": {
+    "title": "현재 활동",
+    "quietTitle": "지금은 조용해...",
+    "quietDescription": "친구가 게임을 하거나 음성으로 놀아주는 것 같은 활동을 시작할 때, 우리는 여기서 그것을 보여줄 것입니다!",
+    "online": "Online — {{n}}",
+    "offline": "Offline — {{n}}"
+  },
+  "instanceNotConnected": "{{host}}에 연결되지 않았어 다시 연결하고 다시 시도해봐"
+}

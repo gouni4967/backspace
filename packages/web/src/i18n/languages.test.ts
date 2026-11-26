@@ -57,8 +57,8 @@ describe('availableLanguages', () => {
     expect(pickLanguage(null, ['de-DE'])).toBe('de');
   });
 
-  it('remembers a Korean preference without automatically selecting the preview', () => {
-    expect(pickLanguage(null, ['ko-KR', 'en-US'])).toBe('en');
+  it('detects Korean browser preferences and remembers a stored choice', () => {
+    expect(pickLanguage(null, ['ko-KR', 'en-US'])).toBe('ko');
     expect(pickLanguage('ko', ['en-US'])).toBe('ko');
   });
 

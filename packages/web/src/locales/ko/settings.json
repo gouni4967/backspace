@@ -5,22 +5,117 @@
     "reset": "100%로 초기화"
   },
   "voice": {
-    "title": "음성 및 영상",
     "input": {
       "title": "입력 장치",
+      "checkingAccess": "마이크 접속을 확인하고...",
+      "accessDenied": {
+        "title": "마이크 접근 권한이 없어요.",
+        "description": "마이크를 입력 장치를 선택할 수 있는 권한을 부여하십시오.",
+        "retry": "다시 시도"
+      },
+      "permissionPrompt": {
+        "description": "입력 장치를 나열하고 선택하려면 마이크 권한이 필요합니다.",
+        "enable": "마이크 접속을 가능하게 한다"
+      },
+      "device": {
+        "systemDefault": "시스템 기본값",
+        "currentlyUsing": "현재 사용 중: {{label}}",
+        "none": "마이크는 발견되지 않았습니다."
+      },
       "volume": {
         "label": "마이크 음량"
+      },
+      "meter": {
+        "hint": "음성 채널에 접속하면 레벨미터가 활성화됩니다."
       }
     },
     "output": {
       "title": "출력 장치",
+      "checkingAccess": "오디오 접속을 확인하고...",
+      "device": {
+        "systemDefault": "시스템 기본값",
+        "unsupported": "이 브라우저는 출력 장치를 선택하는 것을 지원하지 않습니다. 오디오는 시스템 기본으로 재생됩니다."
+      },
+      "permissionPrompt": {
+        "description": "출력 장치를 나열하기 위해 마이크 권한을 부여하십시오 (마이크로폰 액세스 뒤에 브라우저 게이트 출력 이름).",
+        "enable": "오디오 접속을 활성화"
+      },
       "volume": {
         "label": "출력 음량"
       },
       "testSound": "테스트 소리 재생"
     },
     "video": {
-      "title": "영상"
+      "title": "영상",
+      "checkingAccess": "카메라 접속을 확인하고...",
+      "accessDenied": {
+        "title": "카메라 접근 권한이 없어요.",
+        "description": "카메라를 선택할 수 있는 허락을 부여하세요.",
+        "retry": "다시 시도"
+      },
+      "blocked": {
+        "browser": "브라우저 수준에서 카메라가 차단되었습니다. 브라우저 주소줄의 카메라 아이콘을 클릭하고 권한을 재설정하고 다시 시도를 클릭합니다.",
+        "mac": "시스템 설정 → 개인 정보 보호 및 보안 → 카메라에서 카메라 접근 권한을 부여하고 앱을 다시 시작하십시오.",
+        "windows": "설정 → 개인 정보 보호 및 보안 → 카메라에 카메라 접근 권한을 부여하고 앱을 다시 시작하십시오.",
+        "other": "카메라 권한이 거부되었습니다. 브라우저/크로미엄 프롬프트에 다시 설정하고 다시 시도하십시오."
+      },
+      "permissionPrompt": {
+        "description": "카메라를 선택하고 미리보기 위해 카메라 허가가 필요했습니다.",
+        "enable": "카메라 미리보기를 활성화"
+      },
+      "camera": {
+        "label": "카메라",
+        "auto": "자동 (시스템 기본)",
+        "fallbackName": "카메라 {{number}}",
+        "detectedFallback": "검출된 카메라",
+        "currentlyUsing": "현재 사용 중: {{label}}",
+        "none": "카메라가 발견되지 않았습니다."
+      },
+      "preview": {
+        "testAria": "카메라 테스트",
+        "testHint": "카메라 테스트를 클릭하세요",
+        "stop": "미리보기 중지",
+        "retry": "다시 시도"
+      },
+      "previewError": {
+        "inUse": "카메라는 다른 응용 프로그램에서 사용되고 있습니다.",
+        "unavailable": "선택된 카메라가 사용할 수 없습니다.",
+        "notFound": "카메라가 발견되지 않았습니다.",
+        "generic": "카메라 미리보기를 시작하지 못했습니다."
+      }
+    },
+    "title": "음성 및 영상",
+    "volume": {
+      "sectionTitle": "Volume",
+      "soundEffects": {
+        "label": "효과음 크기"
+      },
+      "messageSound": {
+        "label": "메시지마다 알림음 재생",
+        "description": "오프 (장전): 당신을 언급하는 DM와 메시지만, 모든 채널에서"
+      }
+    },
+    "pip": {
+      "sectionTitle": "떠 있는 창",
+      "showOnSwitch": {
+        "label": "통화 중 플로팅 창 표시",
+        "description": "음성 채널 또는 전화에서 다른 것을 보고 있는 동안 작은 창으로 전화가 눈에 띄게 됩니다."
+      }
+    },
+    "processing": {
+      "sectionTitle": "음성 처리",
+      "noiseSuppression": {
+        "label": "AI 소음 제거",
+        "description": "ML 기반의 노이즈 제거 (RNNoise): 키보드, 팬 및 배경 노이즈를 필터링합니다."
+      },
+      "echoCancellation": {
+        "label": "에코 제거",
+        "description": "스피커의 에코를 취소하고 마이크로 다시 입력합니다."
+      },
+      "autoGain": {
+        "label": "마이크 음량 자동 조절",
+        "description": "자율적으로 마이크 음량을 조절하면 스트림 중 음성 구동이 발생할 수 있습니다."
+      }
     }
   },
   "nav": {
@@ -44,6 +139,294 @@
     "title": "화면 표시"
   },
   "account": {
-    "title": "내 계정"
+    "title": "내 계정",
+    "detached": {
+      "notice": "이 기록은 본부에서 분리되어 있습니다.",
+      "explanation": "{{homeInstance}}은 다시 설정되었거나 더 이상 사용할 수 없으므로 이 계정은 현재 이 경우 로컬로 작동합니다. 귀하의 프로필과 비밀번호는 여기에서 관리됩니다.",
+      "reattachHint": "{{username}}로 {{homeInstance}}으로 이 계정을 다시 연결할 수 있습니다. 프로필과 존재가 다시 동기화됩니다.",
+      "reattachButton": "{{homeInstance}}에 재착",
+      "reattachConfirm": "{{username}}으로 재착착 확인",
+      "reattaching": "다시 붙여...",
+      "reattachFailed": "재결합 실패",
+      "reattached": "{{username}}에 다시 연결된 계정"
+    },
+    "profile": {
+      "sectionTitle": "프로파일 사용자 정의",
+      "avatar": {
+        "label": "프로필 이미지",
+        "alt": "당신의 아바타르",
+        "change": "아바타를 변경",
+        "uploadFailed": "아바타를 업로드하지 못했습니다",
+        "cropTitle": "프로필 이미지 자르기"
+      },
+      "banner": {
+        "label": "배너",
+        "change": "배너 변경",
+        "uploadFailed": "배너 업로드 실패",
+        "cropTitle": "작물 표지판"
+      },
+      "avatarColor": {
+        "label": "프로필 이미지 색상"
+      },
+      "bannerColor": {
+        "label": "배너 색상",
+        "hexPlaceholder": "#hex"
+      },
+      "bio": {
+        "label": "자기소개",
+        "placeholder": "세상에 자신에 대해 말해...",
+        "counter": "{{used}}/{{max}}"
+      }
+    },
+    "details": {
+      "sectionTitle": "계정",
+      "status": {
+        "label": "상태",
+        "homeUnavailable": "{{host}}에 연락하고 {{host}}에 연락해 주시기 바랍니다"
+      },
+      "customStatus": {
+        "label": "상태 메시지",
+        "placeholder": "뭐하는 거야?"
+      }
+    },
+    "password": {
+      "current": {
+        "label": "현재 비밀번호",
+        "placeholder": "현재 비밀번호를 입력"
+      },
+      "new": {
+        "label": "새 비밀번호",
+        "placeholder": "최소 {{min}} 문자"
+      },
+      "confirm": {
+        "label": "새 비밀번호 확인",
+        "placeholder": "새 비밀번호 확인"
+      },
+      "show": "비밀번호 표시",
+      "hide": "비밀번호를 숨기기",
+      "tooShort": "새로운 비밀번호는 최소 {{min}} 문자여야 합니다.",
+      "mismatch": "비밀번호가 일치하지 않아요.",
+      "changed": "비밀번호 변경",
+      "changeFailed": "비밀번호 변경 실패",
+      "submit": "비밀번호 변경",
+      "submitting": "변화..."
+    },
+    "danger": {
+      "description": "일단 계정을 삭제하면 되돌릴 수 없어요. 귀하의 메시지는 남아 있지만 \" 삭제된 사용자\"로 지정됩니다.",
+      "deleteButton": "계정 삭제"
+    },
+    "save": {
+      "updated": "프로파일 업데이트",
+      "failed": "프로파일을 업데이트하지 못했습니다"
+    },
+    "deletion": {
+      "title": "계정 삭제",
+      "warning": {
+        "headline": "이것은 당신의 계정을 영구적으로 삭제합니다.",
+        "spaces": "모든 우주 멤버십은 삭제됩니다",
+        "friends": "모든 친구 연결이 삭제됩니다",
+        "dms": "모든 DM 회원 가입은 삭제됩니다",
+        "messages": "귀하의 메시지는 남아 있지만 \" 삭제된 사용자\"로 지정됩니다."
+      },
+      "ownedSpaces": {
+        "prompt_other": "소유한 공간이 {{count}}개 있어요. 계속하려면 각 공간을 먼저 처리하세요.",
+        "transfer": "이전",
+        "delete": "공간 삭제",
+        "selectOwner": "새 소유자를 선택해..."
+      },
+      "processing": "처리...",
+      "confirm": {
+        "permanent": "이 행동은 영구적이며, 되돌릴 수 없어요.",
+        "usernamePrompt": "확인하기 위해 사용자 이름 <username>{{username}} </username>을 입력하세요",
+        "passwordPlaceholder": "비밀번호를 입력하세요",
+        "submit": "내 계정을 삭제",
+        "deleting": "삭제..."
+      },
+      "federation": {
+        "removing": "연결된 서버에서 계정을 삭제하는 것...",
+        "deleteAnyway": "계정 삭제"
+      },
+      "complete": {
+        "title": "계정을 삭제했어요.",
+        "redirecting": "로그인으로 이동..."
+      },
+      "errors": {
+        "usernameMismatch": "사용자 이름은 일치하지 않습니다",
+        "spacesFailed": "공간 처리 실패",
+        "deleteFailed": "계정 삭제 실패"
+      }
+    }
+  },
+  "privacy": {
+    "title": "개인정보 보호",
+    "discovery": {
+      "sectionTitle": "검색",
+      "label": "다른 사람들이 내 프로필을 찾을 수 있도록",
+      "description": "활성화 된 경우, 귀하의 프로필은 사람을 발견하는 데 표시됩니다. 다른 사람들은 항상 정확한 사용자 이름으로 추가할 수 있습니다."
+    },
+    "activity": {
+      "sectionTitle": "활동 상태",
+      "label": "공유 활동 상태",
+      "description": "다른 사람들이 당신이 무엇을 하고 있는지 보도록 허용하십시오. 예를 들어, 당신이 연주하는 게임이나 당신이 듣는 음악과 같은 것들이죠."
+    }
+  },
+  "connections": {
+    "title": "연결"
+  },
+  "instance": {
+    "tabs": {
+      "general": "일반",
+      "registration": "가입",
+      "federation": "서버 연동",
+      "streaming": "Streaming",
+      "storage": "저장공간",
+      "users": "사용자",
+      "updates": "Updates",
+      "telemetry": "인사하기"
+    }
+  },
+  "keybinds": {
+    "portal": {
+      "description": "웨일랜드에서는 데스크톱에서 모든 Backspace 단축키를 관리합니다. Backspace 부문에서 시스템 키보드 단축키 설정에서 키를 할당하거나 변경하거나 제거합니다. 이 부분에서는 로컬 브라우저/X11 결합이 사용되지 않습니다.",
+      "idle": "가능한 모든 활동의 첫 번째 등록을 준비합니다.",
+      "pending": "데스크톱 포털에 연결합니다. 시스템 대화가 나타나면 사용하려는 동작에 대한 단축키를 선택하십시오.",
+      "ready": "Backspace가 등록되어 있습니다. 시스템 키보드 단축키 설정을 열고 임무를 변경하거나 삭제합니다. 아래 목록은 읽기 전용이며 백스페이지로 돌아와 업데이트됩니다.",
+      "unavailable": "포털은 사용 가능하지 않거나 권한이 거부되거나 세션이 종료되었습니다. 글로벌 단축 포털 백엔드가 필요합니다. 웨일랜드에서 로컬 결합이 비활성화되었습니다.",
+      "retry": "단축키를 등록하거나 다시 연결",
+      "assigned": "시스템 단축: {{shortcut}}",
+      "notAssigned": "활성 시스템 할당이 없습니다"
+    },
+    "title": "단축키",
+    "note": {
+      "webOnly": "이 탭이 집중되는 동안 단축키가 작동합니다. 다른 앱에서 작동하는 글로벌 단축키를 위해서는 데스크톱 앱을 사용하십시오."
+    },
+    "section": {
+      "voice": "음성 단축키"
+    },
+    "action": {
+      "toggleMute": "툴글 무더기",
+      "toggleDeafen": "청각장애인을 돌리",
+      "pushToTalk": "이야기 하기 를 강요",
+      "toggleCamera": "카메라를 돌리",
+      "toggleScreenShare": "스크린 공유를 변경",
+      "disconnect": "통화 나가기"
+    },
+    "row": {
+      "recordingPrompt": "키 컴보를 누르면...",
+      "notBound": "설정되지 않음",
+      "record": "기록",
+      "escToCancel": "ESC 취소"
+    },
+    "key": {
+      "shift": "Shift",
+      "ctrl": "Ctrl",
+      "alt": "Alt",
+      "option": "Option",
+      "cmd": "Cmd",
+      "win": "Win",
+      "space": "스페이스바",
+      "middleClick": "중간 클릭",
+      "mouse4": "Mouse 4",
+      "mouse5": "Mouse 5",
+      "mouseGeneric": "Mouse {{button}}"
+    },
+    "accessibility": {
+      "title": "접근성 허가 요구",
+      "description": "Backspace는 글로벌 단축키가 앱 외부에서 작동하려면 접근성 권한이 필요합니다.",
+      "grant": "지원 허가"
+    },
+    "hookError": {
+      "title": "세계적 인 단축키 가 없습니다",
+      "description": "입력 청취기를 시작하지 못했습니다. 리눅스에서 사용자는 <code> 입력 </code> 그룹에 포함될 수 있습니다."
+    },
+    "conflict": {
+      "message": "<strong>{{combo}} </strong>은 이미 <strong>{{action}} </strong>에 묶여 있습니다.",
+      "overwrite": "덮어쓰기"
+    }
+  },
+  "desktop": {
+    "title": "데스크톱",
+    "autoLaunch": {
+      "openAtLogin": {
+        "label": "부팅에서 시작",
+        "description": "로그인할 때 자동으로 Backspace를 시작"
+      },
+      "startMinimized": {
+        "label": "최소화 시작",
+        "description": "창을 표시하는 대신 시스템 트레이에 숨겨진 시작"
+      }
+    },
+    "updates": {
+      "appName": "Backspace Desktop",
+      "versionLabel": "Version {{version}}",
+      "checking": "업데이트를 확인하고...",
+      "checkingShort": "확인 중…",
+      "checkNow": "업데이트 확인",
+      "downloading": "다운로드 {{version}}, {{percent}}%",
+      "downloadingWithRate": "{{version}}, {{percent}}% {{rate}}에서 다운로드",
+      "rateMegabytes": "{{value}} MB/s",
+      "rateKilobytes": "{{value}} KB/s",
+      "upToDate": "당신은 최신 버전에 있습니다.",
+      "available": "{{version}} 버전이 사용 가능합니다",
+      "readyToInstall": "{{version}} 버전은 설치 준비되어 있습니다",
+      "installFailed": "{{version}} 버전이 설치되지 않았습니다",
+      "checkFailed": "마지막 업데이트 확인 실패",
+      "idle": "데스크톱 앱의 새로운 버전을 확인",
+      "external": "업데이트는 Flatpak 소프트웨어 관리자를 통해 설치됩니다.",
+      "download": "다운로드",
+      "restart": "재시작",
+      "manualNote": "이 빌드는 업데이트를 직접 설치할 수 없으므로 GitHub에서 새로운 버전이 다운로드되어 응용 프로그램을 수동으로 교체합니다. 플랫폼의 단계에 대한 출시 메모를 참조하십시오.",
+      "externalNote": "플래트팩은 앱 외부에서 자동으로 업데이트를 적용합니다. Backspace를 업데이트하려면 소프트웨어 관리자 또는 <code> 플래트팍 업데이트 </code> 명령어를 사용합니다."
+    },
+    "instance": {
+      "current": "현재 연결된 서버",
+      "change": "서버 바꾸기"
+    }
+  },
+  "desktopDownload": {
+    "title": "데스크톱",
+    "intro": "글로벌 키바인드, 부트에서 시작하고 시스템 트레이 아이콘",
+    "unsupported": "데스크톱 앱은 Windows, Linux 및 macOS에서 실행됩니다.",
+    "name": {
+      "windows": "창",
+      "mac": "macOS",
+      "linux": "Linux"
+    },
+    "tag": {
+      "windows": "이 PC",
+      "mac": "이 맥",
+      "linux": "이 기계"
+    },
+    "covers": {
+      "windows": "x64 또는 arm64",
+      "mac": "애플 실리콘 및 인텔 맥에서 실행된다",
+      "linux": "AppImage 또는 deb 패키지, x64 또는 arm64"
+    },
+    "download": {
+      "windows": "윈도용 다운로드",
+      "mac": "macOS에 다운로드",
+      "linux": "리눅스 다운로드"
+    },
+    "picker": {
+      "architecture": "아키텍처",
+      "format": "패키지 형식"
+    },
+    "arch": {
+      "appleSilicon": "Apple Silicon",
+      "intel": "Intel",
+      "x64": "x64",
+      "arm64": "arm64"
+    },
+    "kind": {
+      "appimage": "AppImage",
+      "deb": "deb"
+    },
+    "archGuessed": {
+      "windows": "브라우저에서 PC의 프로세서가 표시되지 않았기 때문에 x64는 미리 선택되었습니다.",
+      "mac": "브라우저는 이 맥이 어떤 칩을 가지고 있는지 말하지 않았기 때문에 애플 실리콘은 미리 선택되었습니다.",
+      "linux": "브라우저는 이 기계가 어떤 프로세서를 가지고 있는지 말하지 않았기 때문에 x64는 미리 선택되었습니다."
+    },
+    "version": "Version {{version}}",
+    "allReleases": "GitHub에 있는 모든 버전"
   }
 }

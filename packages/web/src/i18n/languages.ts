@@ -18,8 +18,8 @@ export const supportedLanguages = [
   // included: a zh-TW reader gets a script they can read rather than English,
   // and the picker names the variant so they know what they got.
   { code: 'zh', nativeName: '简体中文', dir: 'ltr', released: true },
-  { code: 'ko', nativeName: '한국어 (시험판)', dir: 'ltr', released: true, optIn: true },
-] as const satisfies readonly { code: string; nativeName: string; dir: 'ltr' | 'rtl'; released: boolean; optIn?: boolean }[];
+  { code: 'ko', nativeName: '한국어', dir: 'ltr', released: true },
+] as const satisfies readonly { code: string; nativeName: string; dir: 'ltr' | 'rtl'; released: boolean }[];
 
 export type SupportedLanguage = (typeof supportedLanguages)[number]['code'];
 
@@ -30,14 +30,10 @@ export const LANGUAGE_STORAGE_KEY = 'backspace-language';
 
 export const supportedLanguageCodes: readonly SupportedLanguage[] = supportedLanguages.map((l) => l.code);
 
-/** The languages users can pick in settings. */
+/** The languages users can pick and detection may choose. */
 export const availableLanguages = supportedLanguages.filter((l) => l.released);
 
 const releasedLanguageCodes: ReadonlySet<string> = new Set(availableLanguages.map((l) => l.code));
-
-export function isOptInLanguage(code: string): boolean {
-  return supportedLanguages.some((language) => language.code === code && 'optIn' in language && language.optIn);
-}
 
 export function isSupportedLanguage(value: unknown): value is SupportedLanguage {
   return typeof value === 'string' && (supportedLanguageCodes as readonly string[]).includes(value);
@@ -56,7 +52,7 @@ export function resolveSupportedLanguage(tag: string): SupportedLanguage | null 
 /**
  * Detection order: the stored choice, then the browser's languages in the
  * order the user ranked them, then English. Only released languages are
- * eligible. Opt-in languages require a stored choice rather than browser detection.
+ * eligible; `released` exists so tests can exercise the others.
  */
 export function pickLanguage(
   stored: string | null,
@@ -66,7 +62,7 @@ export function pickLanguage(
   if (isSupportedLanguage(stored) && released.has(stored)) return stored;
   for (const tag of browserLanguages) {
     const match = resolveSupportedLanguage(tag);
-    if (match && released.has(match) && !isOptInLanguage(match)) return match;
+    if (match && released.has(match)) return match;
   }
   return DEFAULT_LANGUAGE;
 }
