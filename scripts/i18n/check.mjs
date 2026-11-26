@@ -20,6 +20,10 @@ export const ERRORS_TS = 'packages/shared/src/errors.ts';
 export const ALLOWLIST_FILE = 'scripts/i18n-allowlist.json';
 export const PENDING_FILE = 'scripts/i18n-pending.txt';
 
+// This fork offers Korean as an opt-in preview. Missing entries use English;
+// translated entries still go through all consistency checks.
+const PARTIAL_LANGUAGES = new Set(['ko']);
+
 const PLURAL_SUFFIXES = ['zero', 'one', 'two', 'few', 'many', 'other'];
 const PLURAL_SUFFIX_RE = /_(zero|one|two|few|many|other)$/;
 
@@ -188,13 +192,14 @@ export function checkParity(root) {
 
     for (const ns of loaded.namespaces) {
       if (!target[ns]) {
+        if (PARTIAL_LANGUAGES.has(lng)) continue;
         findings.push({ rule: 'parity', file: fileFor(loaded, lng, ns), message: `namespace "${ns}" is missing for ${lng}` });
         continue;
       }
       const sourceFamilies = families(source[ns]);
       const targetFamilies = families(target[ns]);
       for (const base of sourceFamilies.keys()) {
-        if (!targetFamilies.has(base)) {
+        if (!targetFamilies.has(base) && !PARTIAL_LANGUAGES.has(lng)) {
           findings.push({ rule: 'parity', file: fileFor(loaded, lng, ns), message: `key "${base}" exists in ${SOURCE_LANGUAGE} but not in ${lng}` });
         }
       }

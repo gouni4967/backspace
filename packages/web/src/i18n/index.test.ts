@@ -58,6 +58,14 @@ describe('setLanguage', () => {
     expect(i18n.t('common:actions.cancel')).toBe('Отмена');
   });
 
+  it('loads Korean on request and falls back for untranslated namespaces', async () => {
+    await setLanguage('ko');
+    expect(document.documentElement.lang).toBe('ko');
+    expect(i18n.t('common:actions.cancel')).toBe('취소');
+    expect(i18n.getResourceBundle('ko', 'admin')).toEqual({});
+    expect(i18n.t('admin:general.title')).toBe('General');
+  });
+
   it('falls back to English for a key the language has not translated', async () => {
     await initI18n({ browserLanguages: ['en'] });
     await setLanguage('de');

@@ -41,7 +41,7 @@ describe('pickLanguage', () => {
 
 describe('availableLanguages', () => {
   it('offers every released language to users', () => {
-    expect(availableLanguages.map((l) => l.code)).toEqual(['en', 'ru', 'de', 'pt', 'zh']);
+    expect(availableLanguages.map((l) => l.code)).toEqual(['en', 'ru', 'de', 'pt', 'zh', 'ko']);
   });
 
   it('never lets detection pick a language that is not released', () => {
@@ -57,6 +57,11 @@ describe('availableLanguages', () => {
     expect(pickLanguage(null, ['de-DE'])).toBe('de');
   });
 
+  it('remembers a Korean preference without automatically selecting the preview', () => {
+    expect(pickLanguage(null, ['ko-KR', 'en-US'])).toBe('en');
+    expect(pickLanguage('ko', ['en-US'])).toBe('ko');
+  });
+
   it('still lets code select any supported language explicitly', () => {
     expect(isSupportedLanguage('ru')).toBe(true);
     expect(resolveSupportedLanguage('de-CH')).toBe('de');
@@ -65,7 +70,7 @@ describe('availableLanguages', () => {
 
 describe('supportedLanguages', () => {
   it('lists every language by its own name and text direction', () => {
-    expect(supportedLanguages.map((l) => l.code)).toEqual(['en', 'ru', 'de', 'pt', 'zh']);
+    expect(supportedLanguages.map((l) => l.code)).toEqual(['en', 'ru', 'de', 'pt', 'zh', 'ko']);
     for (const language of supportedLanguages) {
       expect(language.nativeName.length).toBeGreaterThan(0);
       expect(['ltr', 'rtl']).toContain(language.dir);

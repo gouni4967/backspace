@@ -1,0 +1,50 @@
+{
+  "invite": {
+    "title": "친구 초대",
+    "intro": "친구에게 초대를 보내거나 링크를 공유하세요.",
+    "introRequest": "친구에게 초대를 보내거나 링크를 공유하세요. 링크를 열면 참가를 신청할 수 있고, 관리자가 신청을 승인해요.",
+    "searchPlaceholder": "친구 검색…",
+    "noMatches": "검색 결과가 없어요.",
+    "noFriends": "아직 친구가 없어요.",
+    "alreadyMember": "이미 참가한 멤버",
+    "removeSelected": "{{name}} 선택 해제",
+    "selectFriends": "친구 선택",
+    "send_other": "초대 {{count}}건 보내기",
+    "sending": "보내는 중…",
+    "retryFailed": "실패한 초대 다시 보내기",
+    "status": {
+      "sent": "✓ 보냄"
+    },
+    "shareLink": "또는 링크 공유",
+    "generating": "링크 생성 중…",
+    "generateFailed": "초대 링크를 만들지 못했어요.",
+    "failure": {
+      "inviteInvalid": "초대 링크가 더 이상 유효하지 않아요.",
+      "notAFriend": "친구가 아니에요.",
+      "userNotFound": "사용자를 찾을 수 없어요.",
+      "alreadyMember": "이미 참가한 멤버예요.",
+      "upstream": "초대를 확인하지 못했어요. 다시 시도하세요.",
+      "cannotInviteSelf": "자기 자신을 초대할 수 없어요.",
+      "invalidBody": "잘못된 요청이에요.",
+      "invalidTarget": "유효하지 않은 초대 대상이에요.",
+      "unreachable": "내 서버에 연결하지 못했어요.",
+      "serverError": "서버 오류로 초대를 보내지 못했어요."
+    }
+  },
+  "join": {
+    "inviteDivider": "초대 코드가 있나요?",
+    "invitePlaceholder": "예: abc123 또는 https://instance.com/join/abc123"
+  },
+  "permissions": {
+    "names": {
+      "createInvite": "초대 만들기"
+    }
+  },
+  "sidebar": {
+    "space": {
+      "inviteCopied": "초대 링크를 복사했어요.",
+      "inviteCopiedRequest": "초대 링크를 복사했어요. 링크를 열면 참가를 신청할 수 있어요.",
+      "inviteFailed": "초대를 만들지 못했어요."
+    }
+  }
+}

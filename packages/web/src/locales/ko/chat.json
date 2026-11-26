@@ -1,0 +1,78 @@
+{
+  "message": {
+    "edit": {
+      "hint": "<cancel>취소</cancel>하려면 Esc, <save>저장</save>하려면 Enter"
+    },
+    "edited": "(수정됨)",
+    "upload": {
+      "failed": "업로드하지 못했어요.",
+      "discard": "삭제"
+    },
+    "actions": {
+      "confirmDelete": "삭제 확인"
+    },
+    "reply": {
+      "jump": "원본 메시지로 이동"
+    }
+  },
+  "list": {
+    "noHistoryPermission": "이 채널의 메시지 기록을 볼 권한이 없어요.",
+    "loading": "메시지를 불러오는 중",
+    "loadingOlder": "이전 메시지를 불러오는 중",
+    "loadFailed": "메시지를 불러오지 못했어요.",
+    "jumpToPresent": "최신 메시지로 이동",
+    "jump": {
+      "unavailable": "이 메시지를 더 이상 볼 수 없어요.",
+      "failed": "메시지를 불러오지 못했어요.",
+      "presentFailed": "최신 메시지를 불러오지 못했어요."
+    },
+    "unread": {
+      "label": "새 메시지",
+      "divider": "새 메시지",
+      "dividerWithDate": "새 메시지 · {{date}}"
+    },
+    "welcome": {
+      "channel": {
+        "title": "채널에 오신 걸 환영해요!",
+        "description": "여기서 대화가 시작돼요."
+      },
+      "group": {
+        "intro": "이 그룹의 첫 대화예요.",
+        "owner": "소유자: <owner>@{{name}}</owner>",
+        "openSettings": "그룹 설정 열기",
+        "leave": "그룹 나가기"
+      },
+      "dm": {
+        "fallbackName": "다이렉트 메시지",
+        "intro": "<strong>@{{name}}</strong> 님과의 대화가 시작됐어요.",
+        "removeFriend": "친구 삭제"
+      }
+    }
+  },
+  "composer": {
+    "noPermission": "이 채널에 메시지를 보낼 권한이 없어요.",
+    "placeholder": {
+      "channel": "#{{name}}에 메시지 보내기",
+      "dm": "@{{name}} 님에게 메시지 보내기"
+    },
+    "replyingTo": "답장 중",
+    "cancelReply": "답장 취소",
+    "removeAttachment": "첨부 파일 제거",
+    "attachFile": "파일 첨부",
+    "uploading": "업로드 중…",
+    "uploadingLabel": "업로드 중",
+    "failedCount_other": "{{count}}개 실패",
+    "failedHint": "실패한 첨부 파일을 제거하거나 다시 올린 후 보내세요.",
+    "gifPicker": "GIF 선택",
+    "emoji": "이모지",
+    "emojiPicker": "이모지 선택",
+    "send": "보내기",
+    "sendMessage": "메시지 보내기",
+    "uploadFailed": "{{file}} 업로드 실패: {{reason}}",
+    "uploadFailedReason": "업로드 실패",
+    "typing": {
+      "named_other": "{{names}} 님이 입력 중",
+      "several": "여러 명이 입력 중"
+    }
+  }
+}

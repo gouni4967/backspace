@@ -6,6 +6,9 @@
  * splits into their own chunks: a Russian user downloads the Russian
  * catalogs and nothing else, and an English user downloads none.
  */
+import { isOptInLanguage } from './languages';
+import { namespaces } from './resources';
+
 const catalogs = import.meta.glob<Record<string, unknown>>(
   ['../locales/*/*.json', '!../locales/en/*.json'],
   { import: 'default' },
@@ -39,6 +42,7 @@ export class LazyCatalogBackend {
   async read(language: string, namespace: string): Promise<Record<string, unknown>> {
     const load = catalogs[`../locales/${language}/${namespace}.json`];
     if (!load) {
+      if (isOptInLanguage(language) && namespaces.some((name) => name === namespace)) return {};
       throw new Error(`No catalog for ${language}/${namespace}`);
     }
     return load();

@@ -1,0 +1,49 @@
+{
+  "interfaceScale": {
+    "label": "화면 배율",
+    "description": "글자, 버튼, 패널의 크기를 조정해요. 설정은 현재 브라우저나 앱에 저장돼요.",
+    "reset": "100%로 초기화"
+  },
+  "voice": {
+    "title": "음성 및 영상",
+    "input": {
+      "title": "입력 장치",
+      "volume": {
+        "label": "마이크 음량"
+      }
+    },
+    "output": {
+      "title": "출력 장치",
+      "volume": {
+        "label": "출력 음량"
+      },
+      "testSound": "테스트 소리 재생"
+    },
+    "video": {
+      "title": "영상"
+    }
+  },
+  "nav": {
+    "userSettings": "사용자 설정",
+    "appSettings": "앱 설정",
+    "administration": "관리",
+    "tabs": {
+      "account": "계정",
+      "appearance": "화면 표시",
+      "voice": "음성 및 영상",
+      "privacy": "개인정보 보호",
+      "connections": "연결",
+      "keybinds": "단축키",
+      "desktop": "데스크톱",
+      "instance": "서버"
+    },
+    "logOut": "로그아웃",
+    "backToMenu": "설정 메뉴로 돌아가기"
+  },
+  "appearance": {
+    "title": "화면 표시"
+  },
+  "account": {
+    "title": "내 계정"
+  }
+}

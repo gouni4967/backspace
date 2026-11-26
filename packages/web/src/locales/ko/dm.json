@@ -1,0 +1,18 @@
+{
+  "names": {
+    "group": "그룹",
+    "directMessage": "다이렉트 메시지",
+    "theGroup": "그룹",
+    "unknownHandle": "알 수 없음",
+    "groupFallback": "그룹 메시지",
+    "emptyGroup": "멤버 없는 그룹"
+  },
+  "roster": {
+    "owner": "소유자"
+  },
+  "newDm": {
+    "title": "새 다이렉트 메시지",
+    "searchPlaceholder": "사용자 검색…",
+    "noUsers": "검색 결과가 없어요."
+  }
+}

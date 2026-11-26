@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "spaces": "공간",
+    "dms": "다이렉트 메시지",
+    "you": "내 프로필"
+  },
+  "you": {
+    "editProfile": "프로필 수정",
+    "homeInstance": "내 서버: {{domain}}",
+    "logOutConfirm": "로그아웃할까요?"
+  },
+  "chat": {
+    "openCall": "통화 열기",
+    "cancelCall": "통화 취소",
+    "unknownChannel": "채널"
+  }
+}
