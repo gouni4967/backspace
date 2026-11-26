@@ -1,0 +1,13 @@
+http://:18080 {
+    bind 127.0.0.1
+
+    handle_path /livekit/* {
+        reverse_proxy 127.0.0.1:7880
+    }
+
+    handle {
+        reverse_proxy backspace:3000 {
+            header_up X-Forwarded-Proto https
+        }
+    }
+}

@@ -1,0 +1,96 @@
+name: backspace-home
+
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: backspace-public
+    entrypoint: [tailscaled]
+    command:
+      - --tun=userspace-networking
+      - --state=/var/lib/tailscale/tailscaled.state
+    volumes:
+      - tailscale-state:/var/lib/tailscale
+    networks:
+      default:
+        ipv4_address: 10.253.245.2
+    restart: unless-stopped
+
+  backspace:
+    image: ${BACKSPACE_IMAGE:-ghcr.io/thezwiss/backspace:1.11.0}
+    environment:
+      DOMAIN: "${BACKSPACE_HOSTNAME:?Set BACKSPACE_HOSTNAME in .env}:8443"
+      PORT: "3000"
+      HOST: 0.0.0.0
+      NODE_ENV: production
+      JWT_SECRET: "${JWT_SECRET:?Set JWT_SECRET in .env}"
+      REGISTRATION_OPEN: "${REGISTRATION_OPEN:-false}"
+      TRUSTED_PROXY_ADDRESSES: 10.253.245.2
+      DB_PATH: /app/data/backspace.db
+      UPLOAD_DIR: /app/data/uploads
+      LIVEKIT_URL: "wss://${BACKSPACE_HOSTNAME}:8443/livekit"
+      LIVEKIT_API_KEY: "${LIVEKIT_API_KEY:?Set LIVEKIT_API_KEY in .env}"
+      LIVEKIT_API_SECRET: "${LIVEKIT_API_SECRET:?Set LIVEKIT_API_SECRET in .env}"
+    volumes:
+      - backspace-data:/app/data
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2.11.1-alpine
+    network_mode: service:tailscale
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
+
+  livekit:
+    image: livekit/livekit-server:v1.9.11
+    network_mode: service:tailscale
+    environment:
+      LIVEKIT_CONFIG: |
+        port: 7880
+        rtc:
+          udp_port: 17982
+          tcp_port: 17981
+          use_external_ip: false
+          node_ip: 10.253.245.2
+          turn_servers:
+            - host: ${PLAYIT_PUBLIC_IP:?Set PLAYIT_PUBLIC_IP in .env}
+              port: ${PLAYIT_PUBLIC_PORT:?Set PLAYIT_PUBLIC_PORT in .env}
+              protocol: udp
+              secret: "${PLAYIT_TURN_SECRET:?Set PLAYIT_TURN_SECRET in .env}"
+              ttl: 86400
+        turn:
+          enabled: true
+          domain: ${BACKSPACE_HOSTNAME}
+          tls_port: 5349
+          external_tls: true
+          relay_range_start: 30000
+          relay_range_end: 30100
+        keys:
+          ${LIVEKIT_API_KEY}: "${LIVEKIT_API_SECRET}"
+    restart: unless-stopped
+
+  playit-turn:
+    image: coturn/coturn:4
+    command:
+      - -c
+      - /etc/coturn/turnserver.conf
+      - --realm=${BACKSPACE_HOSTNAME}
+      - --static-auth-secret=${PLAYIT_TURN_SECRET}
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf:ro
+    ports:
+      - "127.0.0.1:${PLAYIT_LOCAL_PORT:-3479}:3478/udp"
+    networks:
+      default:
+        ipv4_address: 10.253.245.250
+    restart: unless-stopped
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.253.245.0/24
+
+volumes:
+  tailscale-state:
+  backspace-data:
