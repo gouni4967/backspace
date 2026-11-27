@@ -2,82 +2,82 @@
   "tabs": {
     "all": "전체",
     "pending": "대기 중",
-    "add": "친구 를 추가",
+    "add": "친구 추가",
     "activity": "활동"
   },
   "sections": {
-    "online": "Online — {{n}}",
+    "online": "온라인 · {{n}}",
     "all": "친구 전체 · {{n}}",
     "pending": "대기 중 · {{n}}",
     "active": "활동 중 · {{n}}",
-    "offline": "Offline — {{n}}"
+    "offline": "오프라인 · {{n}}"
   },
   "empty": {
-    "online": "아무도 지금 온라인 안 있어",
+    "online": "지금 온라인인 친구가 없어요.",
     "all": "아직 친구가 없어요. 친구를 추가해 보세요!",
     "pending": "대기 중인 요청이 없어요. 노리는 낮잠 중이에요.",
-    "activity": "지금은 조용해요 친구들이 활동을 시작하면 여기 보여드리죠!"
+    "activity": "지금은 조용해요… 친구가 활동을 시작하면 여기에 표시돼요!"
   },
   "friend": {
-    "viaInstance": "via {{host}}",
+    "viaInstance": "{{host}} 경유",
     "message": "메시지",
     "remove": "친구 삭제"
   },
   "sendMessage": {
-    "failed": "대화를 열 수 없었습니다. {{reason}}"
+    "failed": "대화를 열지 못했어요: {{reason}}"
   },
   "request": {
-    "incoming": "친구 의 요청",
-    "outgoing": "외로 나가는 친구 의 요청",
+    "incoming": "받은 친구 요청",
+    "outgoing": "보낸 친구 요청",
     "ignore": "무시",
-    "cancel": "취소 요청",
-    "send": "친구 요청 을 보내십시오",
-    "pending": "요청은 대기중",
+    "cancel": "요청 취소",
+    "send": "친구 요청 보내기",
+    "pending": "요청 대기 중",
     "sending": "보내는 중…",
-    "cancelling": "취소...",
-    "sent": "친구 요청이 보내졌어!"
+    "cancelling": "취소 중…",
+    "sent": "친구 요청을 보냈어요!"
   },
   "removeFriend": {
     "title": "친구 삭제",
-    "description": "{{name}}을 친구로 삭제하고 싶으신가요?",
+    "description": "{{name}} 님을 친구 목록에서 삭제할까요? 나중에 언제든 다시 친구 요청을 보낼 수 있어요.",
     "fallbackName": "이 사용자"
   },
   "add": {
-    "title": "사람 을 찾아",
-    "hint": "사용자 이름으로 검색하거나 <handle> user@instance </handle>을 사용하여 직접 누군가를 추가하십시오.",
-    "placeholder": "사용자 이름으로 검색하거나 추가...",
-    "direct": "친구 요청을 <handle>{{handle}} </handle>로 보내십시오",
-    "sendRequest": "요청 을 보내십시오",
-    "discover": "사람 들 을 발견 하라",
-    "noSearchResults": "사용자의 검색은 일치하지 않습니다.",
+    "title": "사용자 찾기",
+    "hint": "사용자 이름으로 검색하거나 <handle>user@instance</handle> 형식으로 바로 추가하세요.",
+    "placeholder": "사용자 이름으로 검색하거나 추가…",
+    "direct": "<handle>{{handle}}</handle> 님에게 친구 요청 보내기",
+    "sendRequest": "요청 보내기",
+    "discover": "사용자 찾기",
+    "noSearchResults": "검색 결과와 일치하는 사용자가 없어요.",
     "noDiscoverable": "검색 가능한 사용자가 없어요. 친구를 초대해 보세요!"
   },
   "mutuals": {
-    "friends_other": "{{count}} 상호 친구",
-    "spaces_other": "{{count}} 상호 공간",
-    "noFriends": "서로 다른 친구도 없습니다.",
-    "noSpaces": "상호 공간은 없습니다"
+    "friends_other": "함께 아는 친구 {{count}}명",
+    "spaces_other": "함께 있는 공간 {{count}}개",
+    "noFriends": "함께 아는 친구가 없어요.",
+    "noSpaces": "함께 있는 공간이 없어요."
   },
   "profile": {
     "tabs": {
       "about": "소개",
-      "mutualFriends": "상호 친구",
-      "mutualSpaces": "상호 공간"
+      "mutualFriends": "함께 아는 친구",
+      "mutualSpaces": "함께 있는 공간"
     },
-    "aboutMe": "나 에 관한 것",
+    "aboutMe": "자기소개",
     "roles": "역할",
-    "memberSince": "회원",
-    "sendMessage": "메시지 보내",
-    "editRoles": "역할 을 편집",
-    "viewFull": "전체 프로파일을 보기",
-    "addFriend": "친구 를 추가"
+    "memberSince": "가입일",
+    "sendMessage": "메시지 보내기",
+    "editRoles": "역할 수정",
+    "viewFull": "전체 프로필 보기",
+    "addFriend": "친구 추가"
   },
   "activity": {
     "title": "현재 활동",
-    "quietTitle": "지금은 조용해...",
-    "quietDescription": "친구가 게임을 하거나 음성으로 놀아주는 것 같은 활동을 시작할 때, 우리는 여기서 그것을 보여줄 것입니다!",
-    "online": "Online — {{n}}",
-    "offline": "Offline — {{n}}"
+    "quietTitle": "지금은 조용해요…",
+    "quietDescription": "친구가 게임을 하거나 음성 채널에 참여하는 등 활동을 시작하면 여기에 표시돼요!",
+    "online": "온라인 · {{n}}",
+    "offline": "오프라인 · {{n}}"
   },
-  "instanceNotConnected": "{{host}}에 연결되지 않았어 다시 연결하고 다시 시도해봐"
+  "instanceNotConnected": "{{host}}에 연결되지 않았어요. 다시 연결한 뒤 시도하세요."
 }

@@ -1,9 +1,9 @@
 {
   "transfers": {
     "title": "전송",
-    "count_other": "{{count}} 이전",
-    "clearCompleted": "명확하게 완료",
-    "empty": "적극적인 전송이 없습니다.",
+    "count_other": "전송 {{count}}건",
+    "clearCompleted": "완료된 항목 지우기",
+    "empty": "진행 중인 전송이 없어요.",
     "status": {
       "done": "완료",
       "failed": "실패: {{reason}}",
@@ -12,7 +12,7 @@
     }
   },
   "crop": {
-    "title": "농작물 이미지",
-    "applying": "적용하는 것..."
+    "title": "이미지 자르기",
+    "applying": "적용 중…"
   }
 }

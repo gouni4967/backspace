@@ -4,7 +4,7 @@
     "directMessage": "다이렉트 메시지",
     "theGroup": "그룹",
     "unknownHandle": "알 수 없음",
-    "groupFallback": "그룹 메시지",
+    "groupFallback": "그룹 다이렉트 메시지",
     "emptyGroup": "멤버 없는 그룹"
   },
   "preview": {
@@ -16,71 +16,71 @@
   },
   "system": {
     "spaceInviteNamed": "📨 {{spaceName}} 초대를 보냈어요.",
-    "memberAdded": "{{actor}} 추가된 {{target}}",
-    "memberAddedToGroup": "{{actor}} 그룹에 추가된 {{target}}",
-    "memberLeft": "{{target}}은 그룹을 떠났다",
-    "memberRemoved": "{{actor}} 삭제 {{target}}",
-    "memberRemovedFromGroup": "{{actor}} 그룹에서 {{target}}을 제거",
-    "ownerChanged": "{{newOwner}}은 이제 그룹 소유자입니다",
+    "memberAdded": "{{actor}} 님이 {{target}} 님을 추가했어요.",
+    "memberAddedToGroup": "{{actor}} 님이 그룹에 {{target}} 님을 추가했어요.",
+    "memberLeft": "{{target}} 님이 그룹에서 나갔어요.",
+    "memberRemoved": "{{actor}} 님이 {{target}} 님을 내보냈어요.",
+    "memberRemovedFromGroup": "{{actor}} 님이 그룹에서 {{target}} 님을 내보냈어요.",
+    "ownerChanged": "이제 {{newOwner}} 님이 그룹 소유자예요.",
     "renamed": "{{actor}} 님이 그룹 이름을 바꿨어요.",
-    "renamedTo": "{{actor}}은 그룹을 \" {{name}} \"로 명명합니다",
-    "nameCleared": "{{actor}} 그룹 이름을 정제",
-    "iconChanged": "{{actor}} 그룹 아이콘을 업데이트",
+    "renamedTo": "{{actor}} 님이 그룹 이름을 \"{{name}}\"(으)로 바꿨어요.",
+    "nameCleared": "{{actor}} 님이 그룹 이름을 지웠어요.",
+    "iconChanged": "{{actor}} 님이 그룹 아이콘을 바꿨어요.",
     "generic": "시스템 메시지"
   },
   "deletedNotice": {
-    "accountDeleted": "이 사용자 계정은 삭제되었습니다"
+    "accountDeleted": "이 사용자의 계정은 삭제됐어요."
   },
   "memberRow": {
     "viewProfile": "프로필 보기",
     "transferOwnership": "소유권 이전",
-    "removeFromGroup": "그룹에서 삭제",
+    "removeFromGroup": "그룹에서 내보내기",
     "removeFriend": "친구 삭제",
     "ownerTooltip": "그룹 소유자",
-    "actions": "회원 활동"
+    "actions": "멤버 메뉴"
   },
   "roster": {
     "owner": "소유자",
     "sectionCount": "{{label}} — {{total}}"
   },
   "kick": {
-    "title": "그룹에서 삭제",
-    "description": "이 그룹에서 {{name}} 님을 내보낼까요? 이후 메시지는 볼 수 없어요.",
-    "success": "그룹에서 제거된 {{name}}",
-    "failed": "멤버를 제거하지 못함"
+    "title": "그룹에서 내보내기",
+    "description": "이 그룹에서 {{name}} 님을 내보낼까요? 이후 새 메시지는 볼 수 없어요.",
+    "success": "그룹에서 {{name}} 님을 내보냈어요.",
+    "failed": "멤버를 내보내지 못했어요."
   },
   "transfer": {
     "title": "소유권 이전",
-    "description": "{{name}}에 소유권을 옮기면 소유권을 잃게 될 거야",
+    "description": "{{name}} 님에게 소유권을 이전할까요? 이전하면 소유자 권한을 잃게 돼요.",
     "confirm": "이전",
-    "success": "소유권이 {{name}}로 이전",
-    "failed": "소유권을 이전하지 못함"
+    "success": "{{name}} 님에게 소유권을 이전했어요.",
+    "failed": "소유권을 이전하지 못했어요."
   },
   "removeFriend": {
-    "failed": "친구 제거 실패"
+    "failed": "친구를 삭제하지 못했어요."
   },
   "leave": {
     "title": "그룹 나가기",
     "description": "‘{{name}}’에서 나갈까요? 이 대화의 새 메시지를 받지 않게 돼요.",
     "inProgress": "나가는 중…",
-    "failed": "그룹을 떠나지 못했다",
-    "explanation": "이 대화에서 메시지를 수신하는 것을 멈춥니다. 다른 멤버들은 시스템 메시지를 볼 것입니다."
+    "failed": "그룹에서 나가지 못했어요.",
+    "explanation": "이 대화의 새 메시지를 더 이상 받지 않아요. 다른 멤버에게는 시스템 메시지가 표시돼요."
   },
   "search": {
-    "trigger": "대화 를 시작 하거나 찾아",
-    "placeholder": "검색...",
-    "emptyHint": "채팅을 시작할 수 있는 사용자 검색",
+    "trigger": "대화 찾기 또는 시작",
+    "placeholder": "검색…",
+    "emptyHint": "대화를 시작할 사용자를 검색하세요.",
     "conversations": "대화",
     "users": "사용자",
-    "searching": "찾아...",
-    "noResults": "결과는 발견되지 않았다",
-    "createFailed": "DM를 생성하지 못했습니다"
+    "searching": "검색 중…",
+    "noResults": "검색 결과가 없어요.",
+    "createFailed": "다이렉트 메시지를 만들지 못했어요."
   },
   "list": {
     "title": "메시지",
-    "empty": "아직 대화가 없습니다.",
+    "empty": "아직 대화가 없어요.",
     "leaveGroup": "그룹 나가기",
-    "justNow": "지금",
+    "justNow": "방금",
     "minutesShort_other": "{{count}}분",
     "hoursShort_other": "{{count}}시간",
     "daysShort_other": "{{count}}일",
@@ -92,49 +92,49 @@
     "noUsers": "검색 결과가 없어요."
   },
   "addMember": {
-    "title": "DM 에 친구 들 을 추가",
-    "description": "이 대화에 추가할 친구들을 선택하세요.",
+    "title": "다이렉트 메시지에 친구 추가",
+    "description": "이 대화에 추가할 친구를 선택하세요.",
     "capacity": "{{current}}/{{max}}",
-    "searchPlaceholder": "친구들을 찾아...",
-    "limitReached": "이 그룹 DM는 {{max}}명의 구성원 제한을 달성했습니다.",
-    "alreadyInDm": "이미 이 DM에",
+    "searchPlaceholder": "친구 검색…",
+    "limitReached": "이 그룹 다이렉트 메시지는 최대 인원({{max}}명)에 도달했어요.",
+    "alreadyInDm": "이미 참여 중",
     "noMatch": "검색 결과가 없어요.",
     "noFriends": "아직 친구가 없어요.",
     "selectFriends": "친구 선택",
-    "addCount_other": "{{count}} 친구를 추가",
-    "adding": "더해...",
-    "noOtherMember": "이 대화의 다른 멤버를 파악할 수 없었습니다.",
-    "failed": "회원 추가 실패"
+    "addCount_other": "친구 {{count}}명 추가",
+    "adding": "추가 중…",
+    "noOtherMember": "이 대화의 상대방을 확인할 수 없어요.",
+    "failed": "멤버를 추가하지 못했어요."
   },
   "groupSettings": {
     "title": "그룹 설정",
     "general": "일반",
     "overview": "개요",
-    "backToMenu": "그룹 DM 설정 메뉴로 돌아가",
-    "changeIcon": "그룹 아이콘을 변경",
+    "backToMenu": "그룹 다이렉트 메시지 설정 메뉴로 돌아가기",
+    "changeIcon": "그룹 아이콘 변경",
     "icon": "그룹 아이콘",
-    "clickToUpload": "업로드하기 위해 클릭",
-    "removeIcon": "그룹 아이콘을 제거",
+    "clickToUpload": "클릭하여 업로드",
+    "removeIcon": "그룹 아이콘 제거",
     "nameLabel": "그룹 이름",
     "nameAria": "그룹 이름",
     "nameCount": "{{current}}/{{max}}",
-    "addMember": "회원 추가",
-    "groupFull": "그룹이 가득합니다",
+    "addMember": "멤버 추가",
+    "groupFull": "그룹 정원이 가득 찼어요.",
     "groupFullSuffix": " · 그룹 정원 초과",
-    "cropTitle": "작물 그룹 아이콘",
-    "saveFailed": "설정 저장 실패"
+    "cropTitle": "그룹 아이콘 자르기",
+    "saveFailed": "설정을 저장하지 못했어요."
   },
   "groupInfo": {
     "title": "그룹 정보",
-    "plainTitle": "Info",
-    "notFound": "대화는 발견되지 않았습니다.",
-    "notGroup": "이 대화에는 그룹 정보가 없습니다.",
+    "plainTitle": "정보",
+    "notFound": "대화를 찾을 수 없어요.",
+    "notGroup": "이 대화에는 그룹 정보가 없어요.",
     "cancelEdit": "수정 취소",
     "federated": "연합 그룹",
     "memberCount_other": "멤버 {{count}}명"
   },
   "ownerActions": {
-    "ownerNotConnected": "이 그룹은 {{host}}에서 관리됩니다. 이 서버에 연결하여 변경합니다.",
-    "ownerNotListed": "{{host}}은 아직 이 그룹을 나열하지 않았습니다."
+    "ownerNotConnected": "이 그룹은 {{host}}에서 관리돼요. 변경하려면 해당 서버에 연결하세요.",
+    "ownerNotListed": "{{host}}에 아직 이 그룹이 내 목록으로 표시되지 않아요. 잠시 후 다시 시도하세요."
   }
 }

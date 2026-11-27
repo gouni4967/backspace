@@ -2,45 +2,45 @@
   "connections": {
     "title": "연결된 서버",
     "description": "연동된 Backspace 서버의 계정을 연결하세요.",
-    "empty": "리모트 서버 연결이 없어 1개 추가해 연맹이 시작해",
+    "empty": "연결된 원격 서버가 없어요. 서버를 추가해 서버 연동을 시작하세요.",
     "addButton": "+ 서버 추가",
     "home": {
-      "title": "본부 사건",
+      "title": "홈 서버",
       "asUser": "{{username}} 계정으로",
-      "local": "Local"
+      "local": "로컬"
     },
     "status": {
       "connected": "연결됨",
       "disconnected": "연결 끊김",
       "unreachable": "연결할 수 없음",
-      "authExpired": "저작권 만료"
+      "authExpired": "인증 만료"
     },
     "add": {
       "title": "원격 서버 추가",
       "urlPlaceholder": "https://instance.example.com",
-      "probing": "탐구...",
+      "probing": "확인 중…",
       "connect": "연결",
       "connecting": "연결 중…",
       "registrationClosed": "이 서버는 외부 서버 계정의 신규 가입을 받지 않아요. 기존 계정은 로그인할 수 있어요.",
-      "passwordLabel": "{{host}}에 연결하기 위해 비밀번호를 입력하세요",
-      "passwordPlaceholder": "당신이 서명하는 사람",
-      "passwordHint": "비밀번호는 계정이 등록된 서버에서 확인하며 {{host}}에 전송되지 않아요. 해당 서버에는 전용 인증 정보가 발급됩니다.",
+      "passwordLabel": "{{host}}에 연결하려면 비밀번호를 입력하세요.",
+      "passwordPlaceholder": "로그인할 때 쓰는 비밀번호",
+      "passwordHint": "비밀번호는 계정이 등록된 서버에서 확인하며 {{host}}에는 전송되지 않아요. 해당 서버에는 그 서버 전용 인증 정보만 발급돼요.",
       "fallbackNotice": {
-        "credentialRefused": "{{host}}에서 이미 계정이 존재하고, 이 서버에서 발급한 인증서를 받아들이지 않습니다. 해당 instance에 설정한 비밀번호로 로그인하세요. 나중에 발급된 인증서에 전환됩니다.",
+        "credentialRefused": "{{host}}에 이미 계정이 있으며, 계정이 등록된 서버가 발급한 인증 정보를 받아들이지 않아요. 해당 서버에 설정한 비밀번호로 로그인하세요. 로그인하면 발급된 인증 정보로 자동 전환돼요.",
         "registrationClosed": "{{host}}에서 다른 서버의 신규 가입을 받지 않아 계정을 만들 수 없었어요. {{host}}에 이미 계정이 있다면 아래에서 로그인하세요."
       },
       "usernamePlaceholder": "이 서버의 사용자 이름",
       "remotePasswordLabel": "이 서버의 비밀번호",
       "remotePasswordPlaceholder": "원격 서버의 비밀번호",
       "loggingIn": "로그인 중…",
-      "loginAndConnect": "로그인 및 연결"
+      "loginAndConnect": "로그인하고 연결"
     },
     "filter": {
       "all": "전체",
       "connected": "연결됨",
       "disconnected": "연결 끊김",
-      "issues": "이슈",
-      "noMatch": "현재 필터와 일치하는 서버는 없습니다."
+      "issues": "문제 있음",
+      "noMatch": "현재 필터와 일치하는 서버가 없어요."
     },
     "sort": {
       "dateAdded": "추가된 날짜",
@@ -48,39 +48,39 @@
     },
     "row": {
       "asUser": "{{username}} 계정으로",
-      "added": "추가된 {{date}}",
-      "connectedAgo": "연결된 {{time}}",
-      "disconnectedAgo": "단속된 {{time}}",
-      "lastConnectedAgo": "마지막으로 연결된 {{time}}",
+      "added": "{{date}} 추가됨",
+      "connectedAgo": "{{time}} 연결됨",
+      "disconnectedAgo": "{{time}} 연결 끊김",
+      "lastConnectedAgo": "마지막 연결: {{time}}",
       "remoteUserId": "원격 사용자 ID",
       "addedLabel": "추가됨",
       "disconnectedLabel": "연결 끊김",
       "lastConnectedLabel": "마지막 연결",
       "homePasswordLabel": "홈 계정 비밀번호",
-      "disconnect": "통화 나가기",
+      "disconnect": "연결 해제",
       "reconnect": "다시 연결",
-      "reauthenticate": "재확인",
-      "forceRemove": "힘으로 제거",
-      "deleteIdentity": "아이덴티티 삭제",
-      "deleteIdentityDisabled": "먼저 연결을 해제하여 아이덴티티를 삭제",
+      "reauthenticate": "다시 인증",
+      "forceRemove": "강제 제거",
+      "deleteIdentity": "연동 계정 삭제",
+      "deleteIdentityDisabled": "연동 계정을 삭제하려면 먼저 연결을 해제하세요.",
       "reason": {
         "unreachable": "서버에 연결할 수 없어요.",
-        "sessionExpired": "저장된 세션이 만료되었습니다. 다시 연결하기 위해 재확인합니다.",
-        "reauthenticate": "연결하기 위해 다시 인증하세요.",
-        "authenticateHome": "계정이 등록된 서버에 연결하기 위해 인증"
+        "sessionExpired": "저장된 세션이 만료됐어요. 다시 연결하려면 재인증하세요.",
+        "reauthenticate": "연결하려면 다시 인증하세요.",
+        "authenticateHome": "계정이 등록된 서버에 연결하려면 인증하세요."
       }
     },
     "forceRemove": {
-      "title": "강제로 출입을 제거",
-      "description": "이 경우 {{name}}에 대한 레지스트리 항목을 삭제합니다. 원격 서버는 통지되지 않습니다. 이 서버가 영구적으로 접근할 수 없는 경우에만 사용하십시오.",
-      "confirm": "힘으로 제거"
+      "title": "연결 기록 강제 제거",
+      "description": "{{name}}의 연결 기록을 제거해요. 상대 서버에는 알림이 전송되지 않아요. 해당 서버에 영구적으로 연결할 수 없을 때만 사용하세요.",
+      "confirm": "강제 제거"
     },
     "deleteIdentity": {
-      "title": "아이덴티티 삭제",
-      "description": "<name>{{name}} </name>에 연결된 신원을 삭제하고,",
+      "title": "연동 계정 삭제",
+      "description": "<name>{{name}}</name>의 연동 계정을 제거해요. 데이터를 어떻게 처리할지 선택하세요.",
       "leave": {
-        "title": "조용히 떠나",
-        "description": "이 서버에서 연결을 끊으세요."
+        "title": "연결만 해제",
+        "description": "이 서버와의 연결만 끊어요. 계정과 모든 데이터는 그대로 남아요."
       },
       "soft": {
         "title": "사용자 삭제",
@@ -88,80 +88,80 @@
       },
       "full": {
         "title": "계정과 모든 데이터 삭제",
-        "description": "계정을 삭제하고 모든 메시지, 메시지, 반응 및 파일을 삭제합니다."
+        "description": "계정과 모든 메시지, 다이렉트 메시지, 반응, 파일을 삭제해요. 아무 데이터도 남지 않아요."
       },
       "scope": {
         "heading": "범위",
-        "this": "이 경우만",
-        "select": "예제들을 선택...",
+        "this": "이 서버만",
+        "select": "서버 선택…",
         "all": "모든 원격 서버"
       },
-      "deleting": "삭제...",
-      "disconnect": "통화 나가기",
-      "confirm": "아이덴티티 삭제",
+      "deleting": "삭제 중…",
+      "disconnect": "연결 해제",
+      "confirm": "연동 계정 삭제",
       "toast": {
-        "disconnected": "연결이 성공적으로 끊어졌습니다.",
-        "deleted_other": "{{count}}번의 경우 신분함 삭제",
-        "ownsSpaces": "{{host}} : 우선 공간 소유권 이전",
+        "disconnected": "연결을 해제했어요.",
+        "deleted_other": "서버 {{count}}곳에서 연동 계정을 삭제했어요.",
+        "ownsSpaces": "{{host}}: 먼저 공간 소유권을 이전하세요.",
         "failed": "{{host}}: {{error}}",
         "failedGeneric": "실패"
       }
     },
     "action": {
       "friendRequest": "친구 요청",
-      "spaceJoin": "공간 결합",
-      "directMessage": "직접적인 메시지",
-      "friendRequestTo": "친구 요청 {{target}}",
-      "joinSpace": "{{target}}에 가입하세요",
-      "directMessageTo": "{{target}}에 직접 메시지",
+      "spaceJoin": "공간 참가",
+      "directMessage": "다이렉트 메시지",
+      "friendRequestTo": "{{target}} 님에게 친구 요청",
+      "joinSpace": "{{target}} 참가",
+      "directMessageTo": "{{target}} 님에게 다이렉트 메시지",
       "instanceConnect": "연결",
-      "connectTo": "{{target}}에 연결하세요"
+      "connectTo": "{{target}}에 연결"
     },
     "pending": {
-      "title": "동료 의 승인 을 기다리고 있다",
-      "description": "이 요청이 진행되기 전에 관리자가 승인해야 합니다.",
+      "title": "서버 연동 승인 대기 중",
+      "description": "이 요청을 진행하려면 서버 관리자의 승인이 필요해요.",
       "onPeer": "<peer>{{peer}}</peer>에서",
-      "cancelling": "취소...",
-      "cancelled": "피어링 요청 취소",
-      "cancelFailed": "취소 실패: {{error}}"
+      "cancelling": "취소 중…",
+      "cancelled": "서버 연동 요청을 취소했어요.",
+      "cancelFailed": "취소하지 못했어요: {{error}}"
     },
     "outcomes": {
-      "title": "최근 동료 조사 결과",
-      "approved": "{{host}}에 대한 귀하의 피어링 요청은 관리자가 승인했습니다.",
-      "denied": "{{host}}에 대한 귀하의 피어링 요청은 관리자가 거부했습니다.",
-      "expired": "{{host}}에 대한 피어링 요청은 관리자 조치 없이 만료되었습니다.",
-      "originalAction": "원작 액션: {{action}}",
-      "retry": "{{action}}을 다시 시도해 보세요",
-      "dismissing": "해고...",
-      "dismissFailed": "배제 실패: {{error}}",
-      "dismissAllFailed": "모두 배제하지 못함: {{error}}"
+      "title": "최근 서버 연동 결과",
+      "approved": "{{host}} 서버 연동 요청을 관리자가 승인했어요.",
+      "denied": "{{host}} 서버 연동 요청을 관리자가 거부했어요.",
+      "expired": "{{host}} 서버 연동 요청이 관리자 응답 없이 만료됐어요.",
+      "originalAction": "원래 작업: {{action}}",
+      "retry": "{{action}} 다시 시도",
+      "dismissing": "닫는 중…",
+      "dismissFailed": "닫지 못했어요: {{error}}",
+      "dismissAllFailed": "모두 닫지 못했어요: {{error}}"
     },
     "peering": {
-      "unavailable": "{{name}}에 있는 사람들과의 메시지는 관리자가 확인을 승인하지 않는 한 전송될 수 없습니다.",
-      "inProgress": "{{name}}에 연락을 취하고 있습니다."
+      "unavailable": "관리자가 {{name}}와의 서버 연동을 승인하기 전까지는 해당 서버 사용자와 메시지를 주고받을 수 없어요.",
+      "inProgress": "{{name}}와 서버 연동을 설정하는 중이에요. 곧 해당 서버 사용자와 메시지를 주고받을 수 있어요."
     }
   },
   "admin": {
     "title": "서버 연동",
     "description": "서버 간 메시지 전달, 인증 키 교체, 연결된 서버를 관리해요.",
     "relay": {
-      "title": "리레 설정",
+      "title": "메시지 전달 설정",
       "description": "연동된 서버 간 다이렉트 메시지 전달을 설정하세요. 켜면 상대 서버 사용자에게 보낸 메시지가 서버 간에 전달돼요.",
       "enable": {
-        "label": "DM 리레를 활성화",
-        "description": "또래 서버로부터 직접 메시지를 전송"
+        "label": "다이렉트 메시지 전달 사용",
+        "description": "연동된 서버 간에 다이렉트 메시지를 전달해요."
       },
       "autoAccept": {
-        "label": "자동 수용 피어링",
+        "label": "서버 연동 자동 수락",
         "description": "다른 서버의 연동 요청을 자동으로 수락해요. 끄면 직접 시작한 연동만 허용돼요."
       },
       "ttl": {
-        "label": "리레 TTL (일)",
-        "description": "전송된 메시지는 청소하기 전에 우트박스에 얼마나 오래 보관됩니다"
+        "label": "전달 보관 기간(일)",
+        "description": "전달된 메시지가 정리되기 전 발신 대기함에 보관되는 기간이에요."
       },
       "rotation": {
-        "label": "기본 비밀 회전 (일)",
-        "description": "새로운 동료들의 자동 회전 간격. 기존 동료들은 현재의 설정을 유지합니다."
+        "label": "기본 인증 키 교체 주기(일)",
+        "description": "새로 연동하는 서버의 자동 교체 주기예요. 기존 연동 서버는 현재 설정을 유지해요."
       }
     },
     "status": {
@@ -170,14 +170,14 @@
       "unreachable": "연결할 수 없음",
       "rejectedShort": "거절됨",
       "revoked": "비활성화됨",
-      "awaitingApproval": "승인 을 기다리고 있다",
-      "needsAttention": "관심 을 필요로 한다"
+      "awaitingApproval": "승인 대기 중",
+      "needsAttention": "확인 필요"
     },
     "filter": {
-      "statusHeading": "Status",
+      "statusHeading": "상태",
       "sort": {
         "domain": "도메인 (A-Z)",
-        "lastSeen": "마지막으로 봤어요",
+        "lastSeen": "마지막 통신",
         "dateAdded": "추가된 날짜",
         "failures": "실패",
         "revokedDate": "비활성화 날짜"
@@ -189,144 +189,144 @@
     },
     "peer": {
       "instanceName": "서버 이름",
-      "revokedMeta": "철회: {{revoked}} · 동료: {{peered}}",
-      "unreachableMeta": "마지막으로 볼 수 있는: {{lastSeen}} · {{failures}}",
-      "activeMeta": "마지막으로 확인된: {{lastSeen}} · 시네크로스: {{synced}}",
-      "failures_other": "{{count}} 실패",
-      "reinitiate": "또다시 짝짓기 시작",
+      "revokedMeta": "해제: {{revoked}} · 연동: {{peered}}",
+      "unreachableMeta": "마지막 통신: {{lastSeen}} · {{failures}}",
+      "activeMeta": "마지막 통신: {{lastSeen}} · 동기화: {{synced}}",
+      "failures_other": "실패 {{count}}회",
+      "reinitiate": "서버 연동 다시 시작",
       "deletePermanently": "영구 삭제",
       "consecutiveFailures": "연속 실패",
       "authFailures": "인증 실패",
       "lastFailure": "마지막 실패",
-      "peeredSince": "그 후 부터 짝짓기",
-      "secretRotated": "비밀 회전",
-      "autoRotate": "자동 회전",
-      "rotationStatus": "회전 상태",
+      "peeredSince": "연동 시작일",
+      "secretRotated": "인증 키 교체일",
+      "autoRotate": "자동 교체",
+      "rotationStatus": "교체 상태",
       "rotateEvery_other": "{{count}}일마다",
-      "defaultTag": "(전반)",
-      "inProgress": "진행 중인",
-      "idle": "자리 비움",
-      "intervalRange": "1~365이어야지",
-      "intervalUpdated": "로테이션 간격 업데이트",
+      "defaultTag": "(기본값)",
+      "inProgress": "진행 중",
+      "idle": "대기 중",
+      "intervalRange": "1~365 사이의 값을 입력하세요.",
+      "intervalUpdated": "교체 주기를 업데이트했어요.",
       "checking": "확인 중…",
-      "checkNow": "지금 확인해",
-      "resetPeering": "짝짓기를 다시 설정",
-      "rotateSecret": "로터 비밀",
-      "rotationInProgress": "이미 진행 중인 회전",
-      "revoke": "비활성화",
-      "editInterval": "회전 간격을 수정",
+      "checkNow": "지금 확인",
+      "resetPeering": "서버 연동 초기화",
+      "rotateSecret": "인증 키 교체",
+      "rotationInProgress": "이미 키 교체가 진행 중이에요.",
+      "revoke": "연동 해제",
+      "editInterval": "교체 주기 수정",
       "reason": {
-        "auth_failures": "서명된 배달은 계속 실패합니다.",
-        "peer_reset_detected": "새로운 아이덴티티로 다시 설치",
-        "repeer_incomplete": "재검토를 확인할 수 없었다",
-        "denied_by_local_admin": "관리자가 거절했습니다",
-        "denied_by_remote": "관리자가 거절",
-        "revoked_by_remote": "그들의 관리자가 취소",
-        "expired_on_remote": "그들의 측에서 청구가 만료되었습니다",
+        "auth_failures": "서명된 메시지 전달이 계속 실패함",
+        "peer_reset_detected": "새 서버 식별자로 재설치됨",
+        "repeer_incomplete": "재연동 확인 실패",
+        "denied_by_local_admin": "내 서버 관리자가 거부함",
+        "denied_by_remote": "상대 서버 관리자가 거부함",
+        "revoked_by_remote": "상대 서버 관리자가 해제함",
+        "expired_on_remote": "상대 서버에서 요청 만료됨",
         "stale_peering_on_remote": "상대 서버에 이전 연동 기록이 남아 있어요."
       },
       "reasonDetail": {
-        "auth_failures": "{{host}}은 5회 연속 출입을 거부했기 때문에 두 서버는 더 이상 같은 비밀을 공유하지 않습니다.",
-        "peer_reset_detected": "{{host}}은 다시 설치되었습니다. 이전과는 다른 서버 아이덴티티를 보고합니다. 위의 배너에서 재시경을 사용하여 새로운 서버에 연결하고 오래된 서버의 계정을 청소합니다.",
-        "repeer_incomplete": "{{host}}는 손떨림을 받아들였지만 새 비밀로 서명된 체크가 실패했기 때문에 피어링은 사용하지 않습니다. 다시 설정하고 다시 시도하십시오. 다시 실패하면 관리자는 그들의 측면을 다시 설정해야합니다.",
-        "denied_by_local_admin": "{{host}}에서 peering 요청을 거부한 관리자입니다. 이 항목을 다시 시작하거나 삭제할 때까지 그 요청은 거부됩니다.",
-        "denied_by_remote": "{{host}}의 관리자는 이 서버를 보고 싶어 하지 않았어",
-        "revoked_by_remote": "{{host}}의 관리자는 이 서버를 통해 피어링을 취소했습니다",
-        "expired_on_remote": "{{host}}의 관리자는 30일 이내에 피어링 요청에 응답하지 않았습니다",
-        "stale_peering_on_remote": "{{host}}은 이 서버와 오래된 픽링을 유지하고 있으며, 관리자가 리셋할 때까지 새로운 것을 거부합니다. 이 서버는 15 분마다 확인하고, 즉시 연결됩니다."
+        "auth_failures": "{{host}}에서 서명된 전달을 5회 연속 거부해 두 서버의 공유 인증 키가 일치하지 않아요. 서버 연동을 초기화한 뒤 다시 연동하세요.",
+        "peer_reset_detected": "{{host}} 서버가 재설치되어 이전과 다른 서버 식별자를 반환해요. 위 배너의 ‘다시 연동’을 눌러 새 서버에 연결하고 이전 서버의 계정을 정리하세요.",
+        "repeer_incomplete": "{{host}}가 연동 요청을 수락했지만 새 인증 키로 서명한 확인에 실패해 연동이 활성화되지 않았어요. 초기화한 뒤 다시 시도하세요. 계속 실패하면 상대 서버 관리자도 자신의 쪽을 초기화해야 해요.",
+        "denied_by_local_admin": "이 서버의 관리자가 {{host}}의 서버 연동 요청을 거부했어요. 다시 시작하거나 이 항목을 삭제하기 전까지 요청이 차단돼요.",
+        "denied_by_remote": "{{host}}의 관리자가 이 서버와의 연동을 거부했어요. 상대방이 동의하면 다시 시작하세요.",
+        "revoked_by_remote": "{{host}}의 관리자가 이 서버와의 연동을 해제했어요. 상대 서버에서 다시 시작하면 복구돼요.",
+        "expired_on_remote": "{{host}}의 관리자가 30일 이내에 연동 요청에 응답하지 않았어요. 다시 요청하려면 연동을 다시 시작하세요.",
+        "stale_peering_on_remote": "{{host}}에 이 서버와의 이전 연동 기록이 남아 있어 상대 관리자가 초기화하기 전까지 새 연동을 거부해요. 이 서버는 15분마다 확인하며, 초기화되면 자동으로 연결돼요."
       }
     },
     "approvals": {
-      "title": "승인 요청 을 기다리고 있는 것",
+      "title": "승인 대기 중인 요청",
       "outboundTitle_other": "{{name}} · 사용자 {{count}}명이 연동을 신청했어요.",
-      "requested": "요청된 {{time}}",
+      "requested": "{{time}} 요청됨",
       "subscriber": {
-        "friendAdd": "친구 추가 {{target}}",
-        "spaceJoin": "{{target}}에 가입하고자 합니다.",
-        "directMessage": "{{target}}달러를 원하고 있습니다.",
-        "instanceConnect": "{{target}}에 계정을 연결"
+        "friendAdd": "{{target}} 님에게 친구 추가",
+        "spaceJoin": "{{target}} 참가 희망",
+        "directMessage": "{{target}} 님에게 다이렉트 메시지 희망",
+        "instanceConnect": "{{target}}에 계정 연결"
       },
       "approve": "승인",
       "deny": "거부",
-      "established": "{{name}}로 확정된 피어링",
-      "deniedToast": "{{name}}의 피어링 요청은 거절당했다",
+      "established": "{{name}}와 서버 연동을 완료했어요.",
+      "deniedToast": "{{name}}의 서버 연동 요청을 거부했어요.",
       "confirm": {
-        "approveTitle": "동료 의 요청 을 승인 하십시오",
-        "denyTitle": "동료 의 요청 을 거절",
-        "approveOutbound_other": "참가를 신청한 사용자 {{count}}명을 대신해 {{name}} 서버와 연동을 시작합니다. 상대 서버에 연결할 수 있어야 해요.",
-        "approveInbound": "이 방법은 {{name}}로 짝짓기를 시작합니다. 원격 서버는 접근할 수 있어야 합니다.",
-        "denyOutbound_other": "이렇게 하면 출력 피어링 요청이 거부되고 요청하는 사용자에게 알릴 수 있습니다. 그들은 그들이 한 것을 반복하여 다시 질문 할 수 있습니다.",
-        "denyInbound": "이것은 요청을 거부하고 {{name}}에서 미래의 자동 조회 요청을 차단합니다. 나중에 거부된 동시 목록에서 그들을 해제할 수 있습니다.",
-        "approveAndPeer": "승인 & 동료",
+        "approveTitle": "서버 연동 요청 승인",
+        "denyTitle": "서버 연동 요청 거부",
+        "approveOutbound_other": "요청한 사용자 {{count}}명을 대신해 {{name}}와 서버 연동을 시작해요. 상대 서버에 연결할 수 있어야 해요.",
+        "approveInbound": "{{name}}와 서버 연동을 시작해요. 상대 서버에 연결할 수 있어야 해요.",
+        "denyOutbound_other": "발신 서버 연동 요청을 거부하고 요청한 사용자에게 알려요. 사용자는 같은 동작을 다시 시도해 재요청할 수 있어요.",
+        "denyInbound": "요청을 거부하고 앞으로 {{name}}에서 오는 자동 서버 연동 요청을 차단해요. 나중에 거부 목록에서 차단을 해제할 수 있어요.",
+        "approveAndPeer": "승인하고 연동",
         "approve": "승인",
-        "denyAndNotify": "거부 & 통지",
+        "denyAndNotify": "거부하고 알림",
         "deny": "거부"
       }
     },
     "resetCleanup": {
-      "title": "재설정 청소",
-      "peerReset": "{{name}}은 다시 설정되었습니다",
+      "title": "재설치 서버 정리",
+      "peerReset": "{{name}} 서버가 초기화됐어요.",
       "peerResetDescription": "이 도메인에서 새 서버가 실행 중이에요. 친구 목록과 다이렉트 메시지를 다시 연결하려면 서버 연동을 복구하세요.",
-      "repeer": "다시 돌아보게",
-      "resetToast": "{{host}}은 재설정되었습니다",
+      "repeer": "다시 연동",
+      "resetToast": "{{host}} 서버가 초기화돼 서버 연동을 다시 설정해야 해요.",
       "repeerIncomplete": "연동을 완료하지 못했어요. {{name}}에 이전 연동 기록이 남아 있어요. 상대 서버 관리자가 해당 기록을 초기화한 뒤 다시 시도하세요.",
-      "repeerInitiated": "{{name}}으로 재검토가 시작되었다",
-      "removed": "{{username}} 및 그 모든 내용이 삭제되었습니다.",
+      "repeerInitiated": "{{name}}와의 재연동을 시작했어요.",
+      "removed": "{{username}} 계정과 모든 콘텐츠를 삭제했어요.",
       "ownsSpaces": "{{username}} 님이 소유한 공간이 있어요. 공간 설정 → 소유권에서 먼저 소유권을 이전하세요.",
       "staleRemote": "상대 서버에 이전 연동 기록이 남아 있어요. 상대 서버 관리자에게 해당 기록을 초기화해 달라고 한 뒤 다시 연동하세요.",
-      "eventSummary": "<host>{{host}} </host>은 자동 청소, {{identities}} 로컬 컨텐츠 분리된 {{accounts}}으로 재설정되었습니다. 분리된 계정은 로컬로 계속 작동합니다. 소유자는 기존 비밀번호로 액세스 할 수 있습니다. 소유자는 해당 계정의 설정에서 분리된 계정을 해당 계정의 새로운 홈 아이덴티티에 다시 연결할 수 있습니다.",
-      "identitiesCleaned_other": "{{count}} 복제된 정체성",
-      "accountsDetached_other": "{{count}} 계좌",
-      "memberships_other": "{{count}} 회원국",
-      "messages_other": "{{count}} 메시지",
+      "eventSummary": "<host>{{host}}</host> 서버가 초기화되어 {{identities}}이(가) 자동 정리되었고, 로컬 콘텐츠가 있는 {{accounts}}이(가) 분리됐어요. 분리된 계정은 이 서버에서 로컬 계정으로 계속 사용할 수 있으며 기존 비밀번호로 로그인할 수 있어요. 계정 소유자는 양쪽 서버에 로그인한 상태에서 계정 설정(계정 → 연결 분리 안내)을 통해 새 홈 계정에 다시 연결할 수 있어요.",
+      "identitiesCleaned_other": "복제 계정 {{count}}개",
+      "accountsDetached_other": "계정 {{count}}개",
+      "memberships_other": "멤버십 {{count}}개",
+      "messages_other": "메시지 {{count}}개",
       "owns": "소유자: {{spaces}}",
       "dismissKeep": "닫기 · 연결 해제된 계정 모두 유지",
       "confirm": {
         "repeerTitle": "서버 다시 연동",
-        "removeTitle": "분리된 계정을 삭제",
-        "repeerDescription": "이 방법은 로컬 피어 레코드를 삭제하고 {{origin}}으로 새로운 인증된 손떨림을 시작합니다. 원격은 접근 가능하고 (자동적으로 받아들이지 않는 경우) 요청을 승인해야합니다.",
-        "removeDescription": "{{username}}과 그 모든 내용을 영구적으로 삭제할 수 있나요?",
-        "repeerConfirm": "재검토 & 치유",
+        "removeTitle": "분리된 계정 삭제",
+        "repeerDescription": "로컬 연동 기록을 삭제하고 {{origin}}와 새 인증 연동 절차를 시작해요. 상대 서버에 연결할 수 있어야 하며, 자동 수락이 꺼져 있다면 상대 관리자의 승인이 필요해요.",
+        "removeDescription": "이 서버에서 {{username}} 계정과 모든 콘텐츠를 영구 삭제할까요? 이 작업은 되돌릴 수 없어요.",
+        "repeerConfirm": "다시 연동하고 복구",
         "removeConfirm": "영구 삭제"
       }
     },
     "peers": {
-      "title": "비슷한 서버",
-      "empty": "페더레이션 피어 (Peer) 는 구성되지 않습니다. 사용자가 원격 서버에 연결할 때 자동으로 피어 (peer) 를 생성합니다.",
-      "noMatch": "현재 필터와 일치하는 동료가 없습니다.",
-      "noRevoked": "폐지된 동료가 없습니다.",
-      "backOnline": "{{name}}은 다시 온라인에 있습니다",
-      "stillUnreachable": "{{name}}은 아직 도달할 수 없습니다",
+      "title": "연동된 서버",
+      "empty": "연동된 서버가 없어요. 사용자가 원격 서버에 연결하면 자동으로 추가돼요.",
+      "noMatch": "현재 필터와 일치하는 연동 서버가 없어요.",
+      "noRevoked": "해제된 연동 서버가 없어요.",
+      "backOnline": "{{name}} 서버가 다시 온라인 상태예요.",
+      "stillUnreachable": "{{name}} 서버에 아직 연결할 수 없어요.",
       "rotationInitiated": "인증 키 교체를 시작했어요. 15분 동안 기존 키도 쓸 수 있어요.",
-      "revoked": "동료가 취소되었다",
-      "reinitiated": "삐어링이 다시 시작되었습니다",
-      "reinitiateFailed": "피어 레코드가 삭제되었으나 손떨림이 실패: {{error}}. 수동으로 다시 {{origin}}로 피어",
-      "deleted": "영구적으로 삭제된 피어",
-      "resetDone": "{{name}}에 대한 피어링 리셋",
+      "revoked": "서버 연동을 해제했어요.",
+      "reinitiated": "서버 연동을 다시 시작했어요.",
+      "reinitiateFailed": "기존 연동 기록을 삭제했지만 연동 절차에 실패했어요: {{error}}. {{origin}}와 수동으로 다시 연동하세요.",
+      "deleted": "연동 기록을 영구 삭제했어요.",
+      "resetDone": "{{name}}와의 서버 연동을 초기화했어요.",
       "confirm": {
         "rotate": {
-          "title": "HMAC 비밀 회전",
-          "description": "이것은 {{name}}에 대한 새로운 HMAC 비밀을 생성할 것입니다. 두 경우 모두 15분간의 용납 기간 동안 새 비밀과 오래된 비밀을 수용할 것입니다.",
+          "title": "HMAC 인증 키 교체",
+          "description": "{{name}}용 새 HMAC 인증 키를 생성해요. 15분의 유예 기간 동안 양쪽 서버에서 이전 키와 새 키를 모두 허용해요.",
           "confirm": "교체"
         },
         "revoke": {
           "title": "서버 연동 해제",
           "description": "{{name}}와의 메시지 전달을 모두 중지하고 전송 대기 항목을 삭제해요. 나중에 다시 연동할 수 있어요.",
-          "confirm": "비활성화"
+          "confirm": "연동 해제"
         },
         "reinitiate": {
-          "title": "또다시 짝짓기 시작",
-          "description": "이것은 취소된 기록을 삭제하고 {{origin}}로 새로운 손떨림을 시작합니다. 원격 서버는 접근이 가능해야 합니다.",
+          "title": "서버 연동 다시 시작",
+          "description": "해제된 기록을 삭제하고 {{origin}}와 새 연동 절차를 시작해요. 상대 서버에 연결할 수 있어야 해요.",
           "confirm": "다시 시작"
         },
         "delete": {
-          "title": "동료 기록을 삭제",
-          "description": "이 방법은 {{name}}의 동료 기록을 영구적으로 삭제할 것입니다.",
+          "title": "연동 기록 삭제",
+          "description": "{{name}}의 연동 기록을 영구 삭제해요. 이 작업은 되돌릴 수 없어요.",
           "confirm": "삭제"
         },
         "reset": {
-          "title": "짝짓기를 다시 설정",
-          "description": "{{name}} 로 삐어링을 재설정? 이 경우 로컬 피어 레코드 및 모든 대기중 오웃박스 항목을 삭제합니다. 리모트 관리자에서 삐어린을 다시 시작해야 합니다. 리셋 후. 이 작업을 해제할 수 없습니다.",
+          "title": "서버 연동 초기화",
+          "description": "{{name}}와의 서버 연동을 초기화할까요? 로컬 연동 기록과 대기 중인 발신 항목이 모두 삭제돼요. 초기화 후에는 상대 서버 관리자와 협의해 연동을 다시 시작해야 해요. 이 작업은 되돌릴 수 없어요.",
           "confirm": "초기화"
         }
       }
@@ -335,12 +335,12 @@
   "peerRejected": {
     "auth_failures": "공유 인증 키를 사용할 수 없어 {{name}}에 메시지를 보내지 못했어요. 관리자가 서버 연동을 초기화해야 해요.",
     "peer_reset_detected": "상대 서버를 다시 설치해 {{name}}에 메시지를 보내지 못했어요. 관리자가 서버를 다시 연동해야 해요.",
-    "repeer_incomplete": "{{name}}에 대한 메시지는 전달되지 않습니다. 재검토를 확인할 수 없습니다. 관리자는 재설정해야 합니다.",
+    "repeer_incomplete": "재연동을 확인하지 못해 {{name}}에 메시지를 보낼 수 없어요. 관리자가 서버 연동을 초기화해야 해요.",
     "denied_by_local_admin": "내 서버 관리자가 연동을 거부해 {{name}}에 메시지를 보낼 수 없어요.",
     "denied_by_remote": "상대 서버 관리자가 연동을 거부해 {{name}}에 메시지를 보낼 수 없어요.",
     "revoked_by_remote": "상대 서버 관리자가 연동을 해제해 {{name}}에 메시지를 보낼 수 없어요.",
     "expired_on_remote": "상대 서버 관리자가 기한 내에 연동에 응답하지 않아 {{name}}에 메시지를 보낼 수 없어요.",
-    "stale_peering_on_remote": "{{name}}에 대한 메시지는 아직 전달될 수 없습니다. 이 경우 관리자가 다시 설정해야 하는 오래된 연결이 여전히 있습니다.",
-    "fallback": "{{name}}번 번호에 메시지를 전달할 수 없습니다: {{reason}}"
+    "stale_peering_on_remote": "{{name}}에 이 서버와의 이전 연동 기록이 남아 있어 아직 메시지를 보낼 수 없어요. 상대 서버 관리자가 초기화해야 해요.",
+    "fallback": "{{name}}에 메시지를 보낼 수 없어요: {{reason}}"
   }
 }

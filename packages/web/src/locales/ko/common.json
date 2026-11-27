@@ -100,10 +100,10 @@
     "mbps": "{{value}} Mbps"
   },
   "colors": {
-    "mint": "Mint",
+    "mint": "민트색",
     "sky": "하늘색",
     "lavender": "연보라색",
-    "coral": "Coral",
+    "coral": "코랄색",
     "rose": "장미색",
     "teal": "청록색",
     "amber": "호박색",
@@ -111,7 +111,7 @@
   },
   "language": {
     "label": "언어",
-    "description": "메뉴, 버튼, 시스템 안내에 사용할 언어를 선택하세요. 다른 사람이 작성한 메시지는 원문으로 표시됩니다."
+    "description": "메뉴, 버튼, 시스템 안내가 이 언어로 표시돼요. 다른 사람이 작성한 메시지는 원문 그대로 표시돼요."
   },
   "crash": {
     "title": "문제가 발생했어요.",
@@ -123,15 +123,15 @@
   },
   "chrome": {
     "toggleMemberList": "멤버 목록 표시 전환",
-    "closeSettings": "클로즈 설정"
+    "closeSettings": "설정 닫기"
   },
   "sourceCode": {
     "label": "소스 코드 (AGPL)",
     "labelWithBuild": "소스 코드 (AGPL) · {{build}}",
-    "title": "이 서버가 실행 중인 버전의 소스 코드를 참조하십시오 (AGPL-3.0)"
+    "title": "이 서버에서 실행 중인 버전의 소스 코드 보기 (AGPL-3.0)"
   },
   "devices": {
-    "newAudioInput": "{{label}}를 감지합니다. 음성 설정에서 선택하여 전환합니다.",
-    "unnamedAudioInput": "새로운 오디오 장치"
+    "newAudioInput": "{{label}} 장치가 감지됐어요. 전환하려면 음성 설정에서 선택하세요.",
+    "unnamedAudioInput": "새 오디오 장치"
   }
 }

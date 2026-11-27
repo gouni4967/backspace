@@ -128,7 +128,7 @@ const ko: Catalog = {
   'menu.edit': '편집',
   'menu.window': '창',
   'update.check': '업데이트 확인…',
-  'update.checkAfterFailure': '업데이트 다시 확인…',
+  'update.checkAfterFailure': '업데이트 확인… (이전 시도 실패)',
   'update.checking': '업데이트 확인 중…',
   'update.downloading': '업데이트 다운로드 중…',
   'update.ready': '업데이트 준비 완료',

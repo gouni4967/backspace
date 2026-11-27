@@ -17,15 +17,15 @@
       "jump": "원본 메시지로 이동"
     },
     "mention": {
-      "unknownUser": "알려지지 않은 사용자",
-      "unknownRole": "알려지지 않은 역할"
+      "unknownUser": "알 수 없는 사용자",
+      "unknownRole": "알 수 없는 역할"
     },
     "reactions": {
-      "you": "내 프로필",
-      "others_other": "{{count}} 기타",
-      "bySelf": "당신은 반응했습니다.",
-      "byOne": "{{name}} 반응",
-      "byMany": "{{names}} 반응"
+      "you": "나",
+      "others_other": "다른 {{count}}명",
+      "bySelf": "반응: 나",
+      "byOne": "반응: {{name}}",
+      "byMany": "반응: {{names}}"
     }
   },
   "list": {
@@ -52,14 +52,14 @@
       "group": {
         "intro": "이 그룹의 첫 대화예요.",
         "owner": "소유자: <owner>@{{name}}</owner>",
-        "federatedNotice": "메시지는 당신과 수신자의 가정에서 저장됩니다. 그들은 끝에서 끝까지 암호화되지 않습니다.",
+        "federatedNotice": "메시지는 나와 대화 상대들의 계정이 등록된 서버에 저장돼요. 종단간 암호화는 적용되지 않아요.",
         "openSettings": "그룹 설정 열기",
         "leave": "그룹 나가기"
       },
       "dm": {
         "fallbackName": "다이렉트 메시지",
         "intro": "<strong>@{{name}}</strong> 님과의 대화가 시작됐어요.",
-        "federatedNotice": "메시지는 당신과 수신자의 가정에서 저장됩니다. 그들은 끝에서 끝까지 암호화되지 않습니다.",
+        "federatedNotice": "메시지는 나와 상대방의 계정이 등록된 서버에 저장돼요. 종단간 암호화는 적용되지 않아요.",
         "removeFriend": "친구 삭제"
       }
     }
@@ -93,19 +93,19 @@
   },
   "menu": {
     "saveImage": "이미지 저장",
-    "copyImage": "복사 이미지",
-    "openOriginal": "오픈 오리지널",
-    "saveVideo": "비디오 저장",
+    "copyImage": "이미지 복사",
+    "openOriginal": "원본 열기",
+    "saveVideo": "영상 저장",
     "saveAudio": "오디오 저장",
-    "copyLink": "복사 링크",
-    "openLink": "오픈 링크",
-    "copySelectedText": "선택 된 텍스트 를 복사",
-    "copyText": "복사 텍스트",
-    "markUnread": "마르크 미독",
-    "editMessage": "메시지 편집",
+    "copyLink": "링크 복사",
+    "openLink": "링크 열기",
+    "copySelectedText": "선택한 텍스트 복사",
+    "copyText": "텍스트 복사",
+    "markUnread": "읽지 않음으로 표시",
+    "editMessage": "메시지 수정",
     "deleteMessage": "메시지 삭제",
-    "linkCopied": "복사된 링크",
-    "linkCopyFailed": "복사 링크가 실패"
+    "linkCopied": "링크를 복사했어요.",
+    "linkCopyFailed": "링크를 복사하지 못했어요."
   },
   "attachment": {
     "progress": {
@@ -113,57 +113,57 @@
     },
     "video": {
       "cannotPlayDownload": "여기서 재생할 수 없어요. 다운로드하세요.",
-      "unsupportedFormat": "지원되지 않는 비디오 형식",
-      "unsupportedBrowser": "귀하의 브라우저는 비디오 재생을 지원하지 않습니다."
+      "unsupportedFormat": "지원하지 않는 영상 형식이에요.",
+      "unsupportedBrowser": "이 브라우저에서는 영상을 재생할 수 없어요."
     },
     "audio": {
-      "unsupportedBrowser": "귀하의 브라우저는 오디오 재생을 지원하지 않습니다."
+      "unsupportedBrowser": "이 브라우저에서는 오디오를 재생할 수 없어요."
     },
     "federation": {
-      "remoteNamed": "{{sender}}의 서버에서 호스팅되었습니다. 로컬 복사본을 보관하기 위해 다운로드합니다.",
-      "remoteUnknown": "송신자의 서버에 호스팅되어 있습니다. 로컬 복사본을 보관하기 위해 다운로드합니다.",
-      "partialGeneric": "일부 수신자는 이 파일을 로컬로 캐쉬할 수 없습니다.",
-      "partialInstance": "{{username}}의 경우 (한계: {{limit}})",
-      "partialList": "{{instances}}에서 캐쉬가 안 됐어",
-      "listPair": "{{first}} 및 {{second}}"
+      "remoteNamed": "{{sender}} 님의 서버에 저장된 파일이에요. 보관하려면 다운로드하세요.",
+      "remoteUnknown": "보낸 사람의 서버에 저장된 파일이에요. 보관하려면 다운로드하세요.",
+      "partialGeneric": "일부 수신자의 서버에서는 이 파일을 로컬에 캐시할 수 없어요.",
+      "partialInstance": "{{username}} 님의 서버 (제한: {{limit}})",
+      "partialList": "{{instances}}에 파일을 캐시하지 못했어요. 내 서버를 통해서는 계속 볼 수 있어요.",
+      "listPair": "{{first}}, {{second}}"
     }
   },
   "gif": {
     "searchPlaceholder": "GIF 검색",
-    "noResults": "GIF가 발견되지 않았다",
-    "noTrending": "트렌딩 GIF가 없습니다",
-    "attribution": "Klipy의 전력"
+    "noResults": "검색 결과가 없어요.",
+    "noTrending": "인기 GIF가 없어요.",
+    "attribution": "Klipy 제공"
   },
   "preview": {
     "save": "이미지 저장",
-    "copy": "복사 이미지",
+    "copy": "이미지 복사",
     "alt": "이미지 미리보기"
   },
   "invite": {
-    "sentBy": "{{name}}은 초대장을 보냈습니다",
+    "sentBy": "{{name}} 님이 초대를 보냈어요.",
     "memberCount_other": "멤버 {{count}}명",
-    "revoked": "초청이 유효하지 않습니다",
+    "revoked": "더 이상 유효하지 않은 초대예요.",
     "join": "참가",
     "joining": "참가 중…",
-    "joinFailed": "가입하지 못했어요",
-    "askToJoin": "가입 부탁해",
+    "joinFailed": "참가하지 못했어요.",
+    "askToJoin": "참가 신청",
     "sendingRequest": "보내는 중…",
-    "requestSent": "요청이 발송",
-    "requestPending": "청구가 진행중",
-    "requestNotice": "이 공간에는 합병 요청이 필요하고 관리자가 각각을 승인합니다.",
-    "requestReview": "매니저가 당신의 요청을 검토할 것입니다."
+    "requestSent": "신청 완료",
+    "requestPending": "승인 대기 중",
+    "requestNotice": "이 공간은 참가 신청을 받아요. 관리자가 각 신청을 승인해요.",
+    "requestReview": "관리자가 신청을 검토할 거예요."
   },
   "notification": {
     "unknownSender": "누군가",
-    "attachmentOnly": "첨부파일을 보냈습니다"
+    "attachmentOnly": "첨부 파일을 보냈어요."
   },
   "embed": {
-    "loadAction": "로드하기 위해 클릭",
-    "loadNamed": "부하 {{name}}",
-    "loadUnnamed": "로드 임베디드",
+    "loadAction": "클릭해서 불러오기",
+    "loadNamed": "{{name}} 불러오기",
+    "loadUnnamed": "임베드 불러오기",
     "frameTitle": "미리보기",
-    "playNamed": "{{title}}를 플레이",
-    "playUnnamed": "비디오 재생",
+    "playNamed": "{{title}} 재생",
+    "playUnnamed": "영상 재생",
     "videoTitle": "영상"
   },
   "stickers": {
@@ -171,42 +171,42 @@
     "upload": "이미지 업로드",
     "limits": "PNG, JPEG, WebP 또는 GIF · 최대 5 MB",
     "loading": "불러오는 중…",
-    "empty": "여기부터 스티커 컬렉션이 시작됩니다",
+    "empty": "여기에 내 스티커 컬렉션이 모여요.",
     "remove": "제거",
     "save": "내 스티커에 추가",
-    "saved": "내 스티커에 추가",
-    "preview": "미리보기 스티커",
+    "saved": "내 스티커에 추가됨",
+    "preview": "스티커 미리보기",
     "manage": "관리",
     "done": "완료",
-    "collectionHint": "보내기 위한 스티커를 골라서 이 공간을 스스로 만들어라.",
-    "removeHint": "컬렉션에서 스티커를 제거하세요. 기존 메시지는 변하지 않습니다.",
-    "emptyHint": "좋아하는 순간들을 스티커로 저장하고 다음 답변을 준비하세요.",
+    "collectionHint": "보낼 스티커를 선택하세요. 나만의 공간으로 꾸며 보세요.",
+    "removeHint": "컬렉션에서 스티커를 제거해요. 이미 보낸 메시지는 그대로 유지돼요.",
+    "emptyHint": "좋아하는 순간을 스티커로 저장해 두고 다음 대화에서 바로 써 보세요.",
     "chooseImage": "이미지 선택",
     "cancel": "취소",
     "replace": "이미지 교체",
     "name": "스티커 이름",
-    "dropImage": "여기 이미지를 클릭하거나 내려 놓으십시오",
-    "pasteHint": "또한 클립보드에서 이미지를 붙일 수 있습니다.",
-    "uploading": "스티커 더해...",
-    "singleImage": "한 번에 한 이미지를 선택하세요.",
-    "invalidSize": "5 MB까지의 비공개 이미지를 선택하십시오.",
-    "invalidType": "PNG, JPEG, WebP 및 GIF 이미지만 지원됩니다.",
-    "invalidImage": "이 이미지는 미리 볼 수 없습니다. 유효한 이미지를 선택하세요.",
-    "removeNamed": "{{name}} 선택 해제",
+    "dropImage": "여기를 클릭하거나 이미지를 끌어다 놓으세요.",
+    "pasteHint": "클립보드에서 이미지를 붙여넣을 수도 있어요.",
+    "uploading": "스티커 추가 중…",
+    "singleImage": "이미지는 한 번에 하나만 선택하세요.",
+    "invalidSize": "5 MB 이하의 비어 있지 않은 이미지를 선택하세요.",
+    "invalidType": "PNG, JPEG, WebP, GIF 이미지만 지원해요.",
+    "invalidImage": "이 이미지는 미리 볼 수 없어요. 올바른 이미지를 선택하세요.",
+    "removeNamed": "{{name}} 제거",
     "addMore": "더 추가",
-    "selectedCount_other": "{{count}} 스티커 선택",
-    "dropMore": "여기에 더 많은 이미지를 클릭하거나 내려 놓으십시오",
+    "selectedCount_other": "스티커 {{count}}개 선택됨",
+    "dropMore": "여기를 클릭하거나 이미지를 더 끌어다 놓으세요.",
     "sticker": "Sticker",
-    "downloadFailed": "이미지는 로드할 수 없었습니다.",
+    "downloadFailed": "이미지를 불러오지 못했어요.",
     "batchLimit_other": "이미지는 한 번에 {{count}}개까지 선택할 수 있어요.",
     "capacityLimit_other": "스티커를 {{count}}개 더 추가할 수 있어요.",
-    "full": "컬렉션이 가득한데, 스티커를 빼고 또 하나 넣으세요.",
-    "batchFailed_other": "{{count}} 이미지 를 추가 할 수 없었습니다. 그 들 은 여전히 아래 에 나열 되어 있습니다.",
-    "uploadingProgress": "{{total}}의 {{current}}을 추가한다..."
+    "full": "스티커 컬렉션이 가득 찼어요. 새 스티커를 추가하려면 기존 스티커를 제거하세요.",
+    "batchFailed_other": "이미지 {{count}}개를 추가하지 못했어요. 아래 목록에 그대로 남아 있어요.",
+    "uploadingProgress": "{{total}}개 중 {{current}}개 추가 중…"
   },
   "poke": {
     "action": "콕 찌르기",
-    "received": "{{actor}} 튀긴 {{target}}",
-    "disconnected": "연결이 끊어졌어, 포크가 보내지 않았어"
+    "received": "{{actor}} 님이 {{target}} 님을 콕 찔렀어요.",
+    "disconnected": "연결이 끊겨 콕 찌르기를 보내지 못했어요."
   }
 }

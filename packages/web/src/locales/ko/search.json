@@ -1,6 +1,6 @@
 {
   "input": {
-    "placeholder": "검색 메시지..."
+    "placeholder": "메시지 검색…"
   },
   "filters": {
     "toggle": "필터",
@@ -13,7 +13,7 @@
       "any": "모두",
       "file": "파일",
       "image": "이미지",
-      "link": "Link"
+      "link": "링크"
     },
     "before": {
       "label": "이전"
@@ -23,10 +23,10 @@
     }
   },
   "results": {
-    "empty": "결과는 발견되지 않았다",
-    "hint": "이 채널에서 검색 메시지를 입력",
-    "count_other": "{{count}} 결과",
-    "loadMore": "더 많은 부하 ({{remaining}} 남아있다)",
-    "attachments_other": "{{count}} 부착"
+    "empty": "검색 결과가 없어요.",
+    "hint": "이 채널의 메시지를 검색하려면 검색어를 입력하세요.",
+    "count_other": "검색 결과 {{count}}개",
+    "loadMore": "더 불러오기 ({{remaining}}개 남음)",
+    "attachments_other": "첨부 파일 {{count}}개"
   }
 }

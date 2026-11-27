@@ -4,27 +4,27 @@
     "close": "채팅 닫기"
   },
   "badges": {
-    "mutedNoPermission": "침묵 (언론 허가 없음)",
-    "spaceMuted": "공간은 조용하다",
-    "mutedSpaceDeafened": "무음 (Space Deafened)",
-    "spaceDeafened": "우주가 청각장애인",
-    "locallyMuted": "지역적으로 침묵",
+    "mutedNoPermission": "마이크 꺼짐 (말하기 권한 없음)",
+    "spaceMuted": "공간 마이크 꺼짐",
+    "mutedSpaceDeafened": "마이크 꺼짐 (공간 소리 꺼짐)",
+    "spaceDeafened": "공간 소리 꺼짐",
+    "locallyMuted": "로컬 음소거됨",
     "live": "방송 중",
     "you": "(나)"
   },
   "moderation": {
-    "spaceMute": "공간 침묵",
-    "spaceUnmute": "우주 무명",
-    "spaceDeafen": "우주 청각장애인",
-    "spaceUndeafen": "우주 무사",
-    "disconnect": "통화 나가기",
+    "spaceMute": "공간 마이크 끄기",
+    "spaceUnmute": "공간 마이크 켜기",
+    "spaceDeafen": "공간 소리 끄기",
+    "spaceUndeafen": "공간 소리 켜기",
+    "disconnect": "연결 끊기",
     "moveTo": "이동"
   },
   "participantMenu": {
-    "watchCamera": "시계 카메라",
-    "stopWatchingCamera": "카메라를 보지 말고",
-    "muteUser": "무성 사용자",
-    "userVolume": "사용자 수량"
+    "watchCamera": "카메라 보기",
+    "stopWatchingCamera": "카메라 보기 중지",
+    "muteUser": "사용자 음소거",
+    "userVolume": "사용자 음량"
   },
   "incomingCall": {
     "status": "음성 통화 수신 중…",
@@ -32,12 +32,12 @@
     "notificationBody": "{{name}} 님이 전화를 걸고 있어요."
   },
   "grid": {
-    "waitingForOthers": "다른 사람들이 합류하기를 기다리고 있습니다.",
-    "returnToGridHint": "그리드 표시로 돌아가기 위해 클릭",
-    "backToGrid": "격자 표시로 돌아갑니다",
+    "waitingForOthers": "다른 멤버가 들어오길 기다리는 중…",
+    "returnToGridHint": "클릭하여 격자 보기로 돌아가기",
+    "backToGrid": "격자 보기로 돌아가기",
     "gridButton": "격자 보기",
     "showMembers": "멤버 보기",
-    "hideMembers": "위원들을 숨기"
+    "hideMembers": "멤버 숨기기"
   },
   "connectionInfo": {
     "title": "연결 정보",
@@ -127,17 +127,17 @@
     "customBitrateDisabled": "관리자가 비트레이트 직접 설정을 껐어요.",
     "customBitrateDisabledByHost": "{{host}}에서 비트레이트 직접 설정을 껐어요.",
     "systemAudio": "시스템 소리",
-    "chromeEchoNote": "크롬은 캡처 타입이 지원할 때 Backspace 오디오를 배제할 수 있습니다",
-    "electronWindowsAudioNote": "윈도우 루프백은 제한OwnAudio가 지원되지 않은 경우 호출 오디오를 캡처할 수 있습니다",
-    "electronMacAudioNote": "macOS 13+에는 스크린 & 시스템 오디오 녹음 권한이 필요합니다.",
+    "chromeEchoNote": "캡처 방식이 지원하면 Chrome에서 Backspace 소리를 제외할 수 있어요.",
+    "electronWindowsAudioNote": "restrictOwnAudio가 지원되지 않으면 Windows 루프백에 통화 소리도 함께 캡처될 수 있어요.",
+    "electronMacAudioNote": "macOS 13 이상에서는 ‘화면 및 시스템 오디오 녹음’ 권한이 필요해요.",
     "electronLinuxAudioNote": "Linux에서는 PulseAudio 호환 환경이 필요해요. Backspace 소리도 함께 공유될 수 있어요.",
     "systemAudioNote": {
-      "excluded": "시청자들은 컴퓨터의 소리를 듣지만 음성 채팅이나 다른 Backspace 오디오는 듣지 않습니다.",
-      "excludedMac": "시청자들은 Mac의 소리를 듣지만 음성 채팅이나 다른 Backspace 오디오를 듣지 않습니다. macOS는 화면 및 시스템 오디오 녹음 권한을 요청합니다.",
-      "includedWindows": "이 윈도우 버전은 음성 채팅을 포함한 모든 소리를 공유합니다. 시청자들은 자신의 목소리를 듣게 됩니다. 윈도우 11에서는 Backspace의 오디오가 제외됩니다.",
-      "includedMac": "이 macOS 버전은 음성 채팅을 포함하여 모든 소리를 공유합니다. 시청자들은 자신의 목소리를 듣게됩니다. macOS 14.2 및 후 버전에서는 Backspace의 자체 오디오가 제외됩니다. mac OS는 스크린 & 시스템 오디오 녹음 권한을 요청합니다.",
-      "includedLinux": "리눅스는 음성 채팅을 포함한 모든 소리를 공유합니다. 시청자들은 자신의 목소리를 들을 수 있습니다.",
-      "unavailableMac": "시스템 오디오는 macOS 13 또는 이후가 필요합니다."
+      "excluded": "시청자에게 컴퓨터 소리는 들리지만, 음성 채팅이나 다른 Backspace 소리는 제외돼요.",
+      "excludedMac": "시청자에게 Mac 소리는 들리지만, 음성 채팅이나 다른 Backspace 소리는 제외돼요. macOS에서 ‘화면 및 시스템 오디오 녹음’ 권한을 요청해요.",
+      "includedWindows": "이 Windows 버전에서는 음성 채팅을 포함한 모든 소리가 공유돼 시청자에게 본인 목소리가 다시 들릴 수 있어요. Windows 11에서는 Backspace 소리가 자동으로 제외돼요.",
+      "includedMac": "이 macOS 버전에서는 음성 채팅을 포함한 모든 소리가 공유돼 시청자에게 본인 목소리가 다시 들릴 수 있어요. macOS 14.2 이상에서는 Backspace 소리가 자동으로 제외돼요. macOS에서 ‘화면 및 시스템 오디오 녹음’ 권한을 요청해요.",
+      "includedLinux": "Linux에서는 음성 채팅을 포함한 모든 소리가 공유돼 시청자에게 본인 목소리가 다시 들릴 수 있어요. PulseAudio 또는 pipewire-pulse가 설치된 PipeWire가 필요해요.",
+      "unavailableMac": "시스템 소리를 공유하려면 macOS 13 이상이 필요해요."
     },
     "systemAudioStartFailed": "시스템 소리를 포함해 공유를 시작하지 못했어요. 지원하지 않는 플랫폼에서는 시스템 소리 공유를 끄세요.",
     "systemAudioAddFailed": "화면 공유에 시스템 소리를 추가하지 못했어요.",
@@ -174,12 +174,12 @@
   },
   "voiceDiagnostics": {
     "selfNetwork": "내 연결이 불안정해요.",
-    "participantNetwork": "{{name}}의 연결이 불안정하다",
-    "reconnecting": "음성 서버 연결이 끊어졌어요"
+    "participantNetwork": "{{name}} 님의 연결이 불안정해요.",
+    "reconnecting": "음성 서버와의 연결이 끊겼어요. 다시 연결 중…"
   },
-  "channelDuration": "{{duration}}에 대한 채널 활동",
+  "channelDuration": "채널 활성화 시간: {{duration}}",
   "controls": {
-    "spaceMutedSelfMuted": "공간 무화 (자동 무화)",
+    "spaceMutedSelfMuted": "공간 마이크 꺼짐 (내 마이크도 꺼짐)",
     "unmuteShortcut": "마이크 켜기 (M)",
     "muteShortcut": "마이크 끄기 (M)",
     "undeafenShortcut": "소리 켜기 (D)",
@@ -202,7 +202,7 @@
     "noiseSuppressionOn": "AI 소음 제거 켜기"
   },
   "status": {
-    "dmCall": "다이렉트 통화",
+    "dmCall": "다이렉트 메시지 통화",
     "voiceChannel": "음성 채널",
     "voiceCall": "음성 통화",
     "connectionFailed": "연결 실패",
@@ -218,55 +218,55 @@
     "autoSystemDefault": "자동 (시스템 기본)",
     "selected": "선택된 카메라",
     "fallbackName": "카메라 {{index}}",
-    "select": "카메라를 선택",
-    "switch": "카메라 스위치",
-    "turnOn": "카메라를 켜",
-    "turnOff": "카메라를 끄세요"
+    "select": "카메라 선택",
+    "switch": "카메라 전환",
+    "turnOn": "카메라 켜기",
+    "turnOff": "카메라 끄기"
   },
   "joinSheet": {
     "peopleInVoice_other": "음성 채널에 {{count}}명 참여 중",
-    "switchNotice": "당신은 <current>{{current}} </current>을 떠나 <target>{{target}} </target>에 합류합니다",
-    "checkingCamera": "카메라 확인...",
-    "tapToPreview": "미리보기 카메라를 누르",
-    "cameraDenied": "카메라 허가 거부",
+    "switchNotice": "<current>{{current}}</current>에서 나가고 <target>{{target}}</target>에 참가해요.",
+    "checkingCamera": "카메라 확인 중…",
+    "tapToPreview": "탭하여 카메라 미리보기",
+    "cameraDenied": "카메라 권한이 거부됐어요.",
     "stopPreview": "미리보기 중지",
-    "enablePreview": "카메라 미리보기를 활성화",
+    "enablePreview": "카메라 미리보기 켜기",
     "previewError": {
-      "inUse": "카메라는 다른 응용 프로그램에서 사용되고 있습니다.",
-      "unavailable": "선택된 카메라가 사용할 수 없습니다.",
-      "notFound": "카메라가 발견되지 않았습니다.",
-      "failed": "카메라 미리보기를 시작하지 못했습니다."
+      "inUse": "다른 앱에서 카메라를 사용 중이에요.",
+      "unavailable": "선택한 카메라를 사용할 수 없어요.",
+      "notFound": "감지된 카메라가 없어요.",
+      "failed": "카메라 미리보기를 시작하지 못했어요."
     },
     "empty": {
-      "title": "아직 이 채널에 아무도 없습니다.",
-      "hint": "먼저 합류해!"
+      "title": "아직 이 채널에 아무도 없어요.",
+      "hint": "가장 먼저 참가해 보세요!"
     },
-    "unmuteMicrophone": "무음성 마이크",
-    "muteMicrophone": "무동 마이크",
-    "switchChannel": "스위치 채널",
+    "unmuteMicrophone": "마이크 켜기",
+    "muteMicrophone": "마이크 끄기",
+    "switchChannel": "채널 이동",
     "join": "음성 채널 참가"
   },
   "mobileCall": {
-    "collapse": "붕괴 전화",
-    "connectedCount_other": "{{count}} 연결",
-    "viewMembers": "회원을 보기",
+    "collapse": "통화 화면 접기",
+    "connectedCount_other": "{{count}}명 연결됨",
+    "viewMembers": "멤버 보기",
     "micDenied": {
-      "title": "마이크 접속 거부",
-      "description": "네가 듣는 것은 다른 사람들이 듣지 못한다는 것 뿐이야",
-      "allow": "마이크를 허용"
+      "title": "마이크 접근이 거부됐어요.",
+      "description": "듣기 전용으로 연결됐어요. 다른 사람에게 내 목소리가 들리지 않아요.",
+      "allow": "마이크 허용"
     },
-    "shareScreen": "공유 화면",
-    "stopSharingScreen": "화면 공유를 중지",
-    "disconnect": "전화에서 분리"
+    "shareScreen": "화면 공유",
+    "stopSharingScreen": "화면 공유 중지",
+    "disconnect": "통화 나가기"
   },
-  "connectLocked": "이 채널에 접속할 권한이 없습니다",
+  "connectLocked": "이 채널에 연결할 권한이 없어요.",
   "micPrearm": {
     "denied": "마이크 접근 권한이 없어 듣기 전용으로 참가했어요. ‘마이크 허용’을 눌러 권한을 부여하세요.",
-    "notFound": "마이크도 발견되지 않았어"
+    "notFound": "감지된 마이크가 없어 듣기 전용으로 참가했어요."
   },
   "micRetry": {
-    "stillDenied": "마이크 접속은 여전히 거부됩니다. 브라우저 또는 장치 설정에서 이 사이트에 접속할 수 있도록 허용하세요.",
-    "notFound": "마이크는 발견되지 않았습니다.",
-    "failed": "마이크에 접속할 수 없었어요"
+    "stillDenied": "마이크 접근이 여전히 거부되어 있어요. 브라우저나 기기 설정에서 이 사이트의 마이크 권한을 허용하세요.",
+    "notFound": "감지된 마이크가 없어요.",
+    "failed": "마이크에 접근하지 못했어요."
   }
 }

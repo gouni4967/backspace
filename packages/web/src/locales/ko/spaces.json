@@ -5,22 +5,22 @@
       "upload": "업로드",
       "previewAlt": "아이콘 미리보기",
       "colorLabel": "아이콘 색상",
-      "cropTitle": "Crop Space 아이콘",
-      "uploadFailed": "아이콘 업로드 실패"
+      "cropTitle": "공간 아이콘 자르기",
+      "uploadFailed": "아이콘을 업로드하지 못했어요."
     },
     "name": {
       "label": "공간 이름",
       "placeholder": "내 멋진 공간",
-      "required": "공간 이름이 요구됩니다"
+      "required": "공간 이름을 입력하세요."
     },
     "visibilityLabel": "공개 범위",
     "description": {
       "label": "설명",
-      "placeholder": "당신의 공간에 대한 짧은 설명...",
+      "placeholder": "공간에 대한 짧은 설명을 입력하세요…",
       "counter": "{{length}}/{{max}}"
     },
     "submit": "만들기",
-    "submitting": "창조하는 것..."
+    "submitting": "만드는 중…"
   },
   "channel": {
     "create": {
@@ -33,76 +33,76 @@
         },
         "voice": {
           "name": "음성",
-          "description": "음향과 영상으로 어울려"
+          "description": "음성과 영상으로 함께 대화하기"
         }
       },
       "nameLabel": "채널 이름",
-      "namePlaceholder": "새로운 채널",
+      "namePlaceholder": "새-채널",
       "topicLabel": "주제 (선택)",
-      "topicPlaceholder": "이 채널은 뭐야?",
+      "topicPlaceholder": "이 채널은 어떤 이야기를 나누는 곳인가요?",
       "categoryLabel": "카테고리",
       "noCategory": "카테고리 없음",
-      "nameRequired": "채널 이름이 요구됩니다",
-      "noSpaceSelected": "선택된 공간이 없습니다",
-      "submit": "채널을 생성",
-      "submitting": "창조하는 것..."
+      "nameRequired": "채널 이름을 입력하세요.",
+      "noSpaceSelected": "선택된 공간이 없어요.",
+      "submit": "채널 만들기",
+      "submitting": "만드는 중…"
     },
     "settings": {
       "title": "채널 설정",
-      "rename": "채널의 명칭 변경",
+      "rename": "채널 이름 변경",
       "nameLabel": "채널 이름",
       "channelLabel": "채널",
       "topic": {
         "label": "주제",
-        "placeholder": "이 채널은 뭐야?",
-        "hint": "채널 헤더에 표시되어 있습니다. 그 곳에서 누구나 전체 텍스트를 열 수 있습니다.",
+        "placeholder": "이 채널은 어떤 이야기를 나누는 곳인가요?",
+        "hint": "채널 상단에 표시돼요. 누구나 클릭해서 전체 내용을 볼 수 있어요.",
         "counter": "{{used}}/{{max}}",
-        "tooLong": "주제를 {{max}} 문자로 줄여서 저장합니다.",
-        "empty": "주제가 없습니다.",
+        "tooLong": "저장하려면 주제를 {{max}}자 이하로 줄여 주세요.",
+        "empty": "설정된 주제가 없어요.",
         "reset": "변경 사항 되돌리기"
       },
       "private": {
         "label": "비공개 채널",
-        "description": "선택된 멤버들만 이 채널을 볼 수 있을 것이다.",
-        "note": "이 채널은 명시적 접근이 없는 회원들로부터 숨겨져 있습니다. 관리자 권한 또는 공간 소유자를 가진 사용자는 항상 모든 채널을 볼 수 있습니다.",
-        "unhideOnSave": "이 채널은 모든 구성원에게 가시화됩니다."
+        "description": "선택한 멤버와 역할만 이 채널을 볼 수 있어요.",
+        "note": "접근 권한이 명시적으로 부여되지 않은 멤버에게는 이 채널이 숨겨져요. 관리자 권한이 있는 사용자와 공간 소유자는 항상 모든 채널을 볼 수 있어요.",
+        "unhideOnSave": "저장하면 모든 멤버에게 이 채널이 표시돼요."
       },
-      "deleteButton": "채널을 삭제"
+      "deleteButton": "채널 삭제"
     },
     "delete": {
       "title": "#{{name}} 채널을 삭제할까요?",
-      "description": "<strong> #{{name}} </strong> 채널과 모든 메시지를 영구 삭제합니다. 이 작업은 되돌릴 수 없어요.",
-      "descriptionVoice": "이 경우 <strong> # {{name}} </strong> 및 그 모든 메시지가 영구적으로 삭제됩니다. 이 음성 채널의 모든 사용자는 연결을 끊습니다. 이 동작은 취소할 수 없습니다.",
-      "confirm": "채널을 삭제"
+      "description": "<strong>#{{name}}</strong> 채널과 모든 메시지가 영구적으로 삭제돼요. 이 작업은 되돌릴 수 없어요.",
+      "descriptionVoice": "<strong>#{{name}}</strong> 채널과 모든 메시지가 영구적으로 삭제돼요. 현재 이 음성 채널에 있는 사용자는 모두 연결이 끊겨요. 이 작업은 되돌릴 수 없어요.",
+      "confirm": "채널 삭제"
     }
   },
   "category": {
     "create": {
       "title": "카테고리 만들기",
       "nameLabel": "카테고리 이름",
-      "namePlaceholder": "새로운 분류",
-      "nameRequired": "카테고리 이름이 요구됩니다",
-      "noSpaceSelected": "선택된 공간이 없습니다",
-      "submit": "카테고리를 생성",
-      "submitting": "창조하는 것..."
+      "namePlaceholder": "새 카테고리",
+      "nameRequired": "카테고리 이름을 입력하세요.",
+      "noSpaceSelected": "선택된 공간이 없어요.",
+      "submit": "카테고리 만들기",
+      "submitting": "만드는 중…"
     },
     "settings": {
       "title": "카테고리 설정",
-      "rename": "명칭 변경 분류",
+      "rename": "카테고리 이름 변경",
       "nameLabel": "카테고리 이름",
       "categoryLabel": "카테고리",
       "private": {
         "label": "비공개 카테고리",
-        "description": "이 카테고리에 있는 채널을 볼 수 있는 것은 선택된 멤버들 및 역할들뿐입니다.",
-        "note": "이 카테고리는 명시적 접근이 없는 회원들에게 숨겨져 있습니다. 내부 채널은 명시적으로 이를 과장하지 않는 한 이 제한을 상속합니다.",
-        "unhideOnSave": "저장하는 것은 이 카테고리와 그 안에 있는 채널을 모든 구성원들에게 볼 수 있게 해줍니다."
+        "description": "선택한 멤버와 역할만 이 카테고리의 채널을 볼 수 있어요.",
+        "note": "접근 권한이 명시적으로 부여되지 않은 멤버에게는 이 카테고리가 숨겨져요. 카테고리 안의 채널은 개별 권한으로 재정의하지 않는 한 이 제한을 그대로 따르게 돼요.",
+        "unhideOnSave": "저장하면 이 카테고리와 별도로 숨겨지지 않은 내부 채널이 모든 멤버에게 표시돼요."
       },
-      "deleteButton": "카테고리를 삭제"
+      "deleteButton": "카테고리 삭제"
     },
     "delete": {
       "title": "‘{{name}}’ 카테고리를 삭제할까요?",
-      "description": "<strong>{{name}} </strong> 카테고리를 영구적으로 삭제합니다. 그 안의 채널은 최고 레벨로 이동됩니다. 이 동작은 취소할 수 없습니다.",
-      "confirm": "카테고리를 삭제"
+      "description": "<strong>{{name}}</strong> 카테고리가 영구적으로 삭제돼요. 카테고리 안의 채널은 최상위로 이동돼요. 이 작업은 되돌릴 수 없어요.",
+      "confirm": "카테고리 삭제"
     }
   },
   "invite": {
@@ -140,20 +140,20 @@
   },
   "join": {
     "title": "공간 참가",
-    "discoverIntro": "가입할 수 있는 공간을 찾아보세요. 또는 모든 것을 탐구함에서 탐색하세요.",
-    "discoverError": "아직 탐구 공간을 로드할 수 없었어요",
-    "discoverEmpty": "아직 발견할 공간이 없습니다. 아래의 초청 코드를 시도하거나 나중에 확인하세요.",
+    "discoverIntro": "참가할 공간을 찾아보거나 둘러보기에서 모든 공간을 살펴보세요.",
+    "discoverError": "지금은 추천 공간을 불러오지 못했어요. 아래에 초대 코드를 입력해 참가할 수 있어요.",
+    "discoverEmpty": "아직 둘러볼 수 있는 공간이 없어요. 아래에 초대 코드를 입력하거나 나중에 다시 확인해 보세요.",
     "browseExplore": "둘러보기에서 모두 보기",
-    "discoveryOff": "우주 탐구는 이 경우에 비활성화되어 있습니다",
+    "discoveryOff": "이 서버에서는 공간 검색이 꺼져 있어요. 초대 코드가 있다면 아래에서 참가할 수 있어요.",
     "inviteDivider": "초대 코드가 있나요?",
     "invitePlaceholder": "예: abc123 또는 https://instance.com/join/abc123",
-    "submit": "우주에 가입",
-    "submitting": "합류해...",
+    "submit": "공간 참가",
+    "submitting": "참가 중…",
     "connect": {
-      "intro": "<host>{{host}} </host>에 연결해서 이 공간에 가입하세요.",
-      "passwordLabel": "연결하려면 비밀번호를 입력하세요",
+      "intro": "이 공간에 참가하려면 <host>{{host}}</host>에 연결하세요.",
+      "passwordLabel": "연결하려면 비밀번호를 입력하세요.",
       "passwordPlaceholder": "계정 비밀번호",
-      "passwordNote": "비밀번호는 계정이 등록된 서버에서 확인하며 {{host}}에 전송되지 않아요. 해당 서버에는 전용 인증 정보가 발급됩니다.",
+      "passwordNote": "비밀번호는 계정이 등록된 서버에서 확인하며 {{host}}에는 전송되지 않아요. 해당 서버에는 그 서버 전용 인증 정보만 발급돼요.",
       "submit": "연결하고 참가",
       "submitting": "연결 중…"
     },
@@ -162,94 +162,94 @@
       "passwordLabel": "이 서버의 비밀번호",
       "passwordPlaceholder": "원격 서버의 비밀번호",
       "submit": "로그인하고 참가",
-      "submitting": "로그인..."
+      "submitting": "로그인 중…"
     },
     "request": {
-      "notice": "이 공간에는 합병 요청이 필요해요",
+      "notice": "이 공간은 참가 신청을 받아요. 신청을 보내면 관리자가 검토해요.",
       "messageLabel": "신청 메모",
-      "sent": "요청이 보내졌습니다. 관리자가 그것을 검토하고, 그 공간이 승인되면 목록에 표시됩니다.",
+      "sent": "참가 신청을 보냈어요. 관리자가 승인하면 내 공간 목록에 표시돼요.",
       "pending": "이 공간에 이미 참가를 신청했어요. 관리자의 승인을 기다리고 있어요."
     }
   },
   "explore": {
     "title": "둘러보기",
-    "searchPlaceholder": "검색 공간...",
+    "searchPlaceholder": "공간 검색…",
     "discoveryOff": {
-      "member": "이 서버 관리자가 공간 검색을 껐어요. 이 공간에는 초대 링크로만 참가할 수 있어요.",
-      "admin": "우주 탐구는 이 경우에 비활성화되어 있습니다. 이 공간은 초대 링크에서만 연결될 수 있습니다.",
-      "enable": "우주 탐사를 활성화",
-      "failed": "설정을 바꿀 수 없었어요"
+      "member": "이 서버의 관리자가 공간 검색을 껐어요. 이 서버의 공간에는 초대 링크로만 참가할 수 있어요.",
+      "admin": "이 서버에서는 공간 검색이 꺼져 있어요. 이 서버의 공간에는 초대 링크로만 참가할 수 있어요.",
+      "enable": "공간 검색 켜기",
+      "failed": "설정을 변경하지 못했어요."
     },
     "browseOff": {
-      "member": "다른 서버의 공간은 서버 관리자가 그것을 끄기 때문에 표시되지 않습니다.",
-      "admin": "다른 서버의 공간은 여기에 표시되지 않습니다.",
-      "action": "탐구에서 글로벌 공간을 표시",
+      "member": "서버 관리자가 외부 공간 표시를 꺼 두어 다른 서버의 공간이 표시되지 않아요.",
+      "admin": "다른 서버의 공간은 여기에 표시되지 않아요.",
+      "action": "둘러보기에 외부 서버 공간 표시",
       "confirm": {
         "title": "다른 서버의 공간을 여기에 표시할까요?",
-        "exposure": "이러한 경우를 통해 브라우저를 로드하는 모든 브라우저의 IP 주소를 볼 수 있으며, 이 경우의 관리자는 이를 제어하지 않습니다.",
-        "off": "나중에 보여주지 않게 하기 위해: 설정, 서버, 일반, 탐구에서 글로벌 공간의 스위치",
-        "action": "글로벌 공간을 표시"
+        "exposure": "해당 서버에서는 공간을 불러오는 모든 브라우저의 IP 주소를 확인할 수 있으며, 이 서버의 관리자가 그 서버를 관리하지 않아요.",
+        "off": "나중에 다시 끄려면 ‘설정 → 서버 → 일반’에서 둘러보기 외부 공간 표시 스위치를 끄세요.",
+        "action": "외부 서버 공간 표시"
       }
     },
     "notListed": {
-      "text": "공중 디렉토리에 있는 공간은 없습니다.",
-      "action": "그 들 을 나열 하십시오",
+      "text": "이 서버의 어떤 공간도 공개 디렉터리에 등록되어 있지 않아요.",
+      "action": "공개 목록에 등록",
       "confirm": {
         "title": "이 서버의 공간을 공개 목록에 표시할까요?",
-        "optIn": "단지 소유자가 등록을 활성화하는 공간만 전송되므로 이 스위치는 자리에서 공간을 등록하지 않습니다.",
-        "off": "나중에는 목록이 종료될 경우: 설정, 서버, 일반, 우주 발견 선택.",
-        "action": "목록 공간"
+        "optIn": "공간 소유자가 공개 목록 등록을 켠 공간만 전송되므로, 이 설정을 켜는 것만으로는 어떤 공간도 자동으로 등록되지 않아요.",
+        "off": "나중에 등록을 중지하려면 ‘설정 → 서버 → 일반’에서 공간 검색 설정을 변경하세요.",
+        "action": "공간 등록 허용"
       }
     },
-    "noMatches": "당신의 검색과 일치하는 공간은 없습니다.",
-    "empty": "아직 발견할 수 있는 공간이 없습니다.",
+    "noMatches": "검색 결과와 일치하는 공간이 없어요.",
+    "empty": "아직 둘러볼 수 있는 공간이 없어요.",
     "joinedSection": "참가함",
-    "notConnected": "{{host}}에 연결되지 않은",
+    "notConnected": "{{host}}에 연결되지 않음",
     "inner": {
       "title": "내 서버의 공간",
-      "subtitle": "내 서버의 공간",
-      "noneAnswered": "답이 없는 경우도 없습니다. 내부 공간은 아무도 없는 때까지 공허합니다.",
-      "unreachable_other": "{{hosts}}에 도달할 수 없었습니다. 그 서버에 있는 공간은 표시되지 않았습니다."
+      "subtitle": "연결된 내 서버의 공간",
+      "noneAnswered": "응답한 서버가 없어요. 연결된 서버가 응답하면 ‘내 서버의 공간’에 표시돼요.",
+      "unreachable_other": "{{hosts}}에 연결하지 못했어요. 해당 서버의 공간은 표시되지 않아요."
     },
     "outer": {
       "title": "외부 서버의 공간",
       "subtitle": "Backspace 커뮤니티의 공간",
-      "empty": "아직은 아무것도 없습니다. 디렉토리에 가입하는 공간은 여기 나타납니다.",
-      "noMatches": "우주에서 찾아낸 것과 일치하는 것은 없습니다.",
-      "showMore": "더 많이 보여줘",
-      "connectAndJoin": "연결하고 가입",
-      "connectAndRequest": "연결 및 요청",
-      "closedBadge": "새로운 계좌로 종료"
+      "empty": "아직 등록된 공간이 없어요. 공개 디렉터리 등록을 켠 공간이 여기에 표시돼요.",
+      "noMatches": "‘외부 서버의 공간’에서 검색 결과와 일치하는 공간이 없어요.",
+      "showMore": "더 보기",
+      "connectAndJoin": "연결하고 참가",
+      "connectAndRequest": "연결하고 참가 신청",
+      "closedBadge": "신규 가입 중단"
     },
     "connections": {
       "title": "확인이 필요한 연결",
-      "sessionExpired": "세션 종료",
+      "sessionExpired": "세션 만료",
       "unreachable": "연결 불가",
       "reconnect": "다시 연결",
       "retry": "다시 시도"
     },
     "connect": {
       "title": "{{name}} 참가",
-      "intro": "이 공간은 <host>{{host}} </host>에 위치하고 있습니다. 연결은 <home>{{home}} </home>에 연결된 귀하의 아이덴티티를 생성합니다.",
-      "probing": "{{host}}에 도착합니다",
+      "intro": "이 공간은 <host>{{host}}</host>에 있어요. 연결하면 <home>{{home}}</home>의 계정과 연동된 프로필이 해당 서버에 생성돼요.",
+      "probing": "{{host}}에 연결 확인 중…",
       "connecting": "연결 중…",
-      "requested": "{{name}}에 가입해달라고 요청한 건 보내졌어"
+      "requested": "{{name}}에 참가 신청을 보냈어요."
     },
     "badges": {
       "joined": "참가함",
       "public": "공개",
       "request": "신청"
     },
-    "noDescription": "설명이 없습니다",
+    "noDescription": "설명이 없어요.",
     "memberCount_other": "멤버 {{count}}명",
-    "viewSpace": "공간 관람",
-    "join": "우주에 가입",
-    "joining": "합류해...",
-    "requestPending": "요청은 대기중",
-    "requestMessagePlaceholder": "왜 가입하고 싶니?",
-    "sendRequest": "요청 을 보내십시오",
+    "viewSpace": "공간 보기",
+    "join": "공간 참가",
+    "joining": "참가 중…",
+    "requestPending": "승인 대기 중",
+    "requestMessagePlaceholder": "참가하고 싶은 이유를 적어 주세요 (선택)",
+    "sendRequest": "신청 보내기",
     "sendingRequest": "보내는 중…",
-    "requestToJoin": "참여 요청",
+    "requestToJoin": "참가 신청",
     "preview": {
       "join": "참가",
       "joining": "참가 중…",
@@ -260,7 +260,7 @@
   },
   "settings": {
     "title": "공간 설정",
-    "backAria": "공간 설정 메뉴로 돌아가",
+    "backAria": "공간 설정 메뉴로 돌아가기",
     "nav": {
       "general": "일반",
       "management": "관리",
@@ -271,236 +271,236 @@
         "bans": "차단 목록"
       }
     },
-    "discardChanges": "삭제",
+    "discardChanges": "변경 취소",
     "overview": {
-      "identity": "우주 정체성",
-      "iconLabel": "우주 아이콘",
+      "identity": "공간 정보",
+      "iconLabel": "공간 아이콘",
       "iconAlt": "공간 아이콘",
       "colorLabel": "아이콘 색상",
-      "bannerLabel": "우주 배너",
-      "bannerAlt": "우주 배너",
-      "uploadBanner": "배너 를 업로드 해 (16:9)",
+      "bannerLabel": "공간 배너",
+      "bannerAlt": "공간 배너",
+      "uploadBanner": "배너 업로드 (16:9)",
       "removeBanner": "배너 제거",
       "nameLabel": "공간 이름",
-      "iconUploadFailed": "아이콘 업로드 실패",
-      "bannerUploadFailed": "배너 업로드 실패",
-      "cropIconTitle": "Crop Space 아이콘",
+      "iconUploadFailed": "아이콘을 업로드하지 못했어요.",
+      "bannerUploadFailed": "배너를 업로드하지 못했어요.",
+      "cropIconTitle": "공간 아이콘 자르기",
       "cropBannerTitle": "공간 배너 자르기",
       "transfer": {
-        "description": "다른 회원이 소유권을 넘겨주면 정규 회원이 됩니다.",
-        "prompt": "소유권을 <strong>{{name}} </strong>으로 옮길까요?",
+        "description": "다른 멤버에게 소유권을 이전해요. 이전하면 일반 멤버가 돼요.",
+        "prompt": "<strong>{{name}}</strong> 님에게 소유권을 이전할까요?",
         "button": "소유권 이전",
         "confirm": "이전",
-        "transferring": "이송...",
-        "success": "소유권이 {{name}}로 이전",
-        "failed": "소유권을 이전하지 못함"
+        "transferring": "이전 중…",
+        "success": "{{name}} 님에게 소유권을 이전했어요.",
+        "failed": "소유권을 이전하지 못했어요."
       },
       "delete": {
-        "description": "공간과 모든 데이터를 영구 삭제합니다. 이 작업은 되돌릴 수 없어요.",
+        "description": "이 공간과 모든 데이터를 영구 삭제해요. 이 작업은 되돌릴 수 없어요.",
         "button": "공간 삭제",
-        "confirmAgain": "삭제 확인을 위해 다시 클릭",
-        "failed": "공간 삭제 실패"
+        "confirmAgain": "삭제를 확인하려면 한 번 더 클릭하세요.",
+        "failed": "공간을 삭제하지 못했어요."
       }
     },
     "discovery": {
       "title": "공간 검색",
-      "disabledNotice": "공간 탐구는 서버 관리자에서 비활성화됩니다. 탐구는 다시 활성화 될 때까지 가시성을 변경하는 것은 아무런 효과가 없습니다.",
+      "disabledNotice": "서버 관리자가 공간 검색을 꺼 두었어요. 공간 검색이 다시 켜질 때까지 공개 범위를 바꿔도 적용되지 않아요.",
       "visibility": {
         "label": "공개 범위",
-        "hint": "누가 이 공간을 발견하고 가입할 수 있는지 통제합니다.",
+        "hint": "이 공간을 누가 찾고 참가할 수 있는지 설정해요.",
         "options": {
           "private": {
             "label": "비공개",
-            "description": "초대 링크를 가진 사람만 가입할 수 있습니다."
+            "description": "초대 링크가 있는 사람만 참가할 수 있어요."
           },
           "request": {
-            "label": "참여 요청",
-            "description": "탐구에서 볼 수 있습니다. 사람들은 가입을 요청할 수 있습니다."
+            "label": "참가 신청",
+            "description": "둘러보기에 표시되며, 사용자가 참가를 신청할 수 있어요."
           },
           "public": {
             "label": "공개",
-            "description": "탐구에서 볼 수 있습니다; 누구나 즉시 가입할 수 있습니다"
+            "description": "둘러보기에 표시되며, 누구나 바로 참가할 수 있어요."
           }
         }
       },
       "directory": {
-        "label": "글로벌 Backspace 디렉토리 목록",
+        "label": "전체 Backspace 디렉터리에 등록",
         "hint": "다른 Backspace 서버에서도 둘러보기의 ‘외부 서버의 공간’에 이 공간이 표시돼요.",
-        "notConfigured": "이 서버는 디렉토리에 도달하도록 구성되어 있지 않으므로 이 공간을 나열하면 아무것도 도달하지 않습니다.",
-        "adminOff": "서버 관리자는 글로벌 리스트를 허용해야 합니다.",
-        "adminOffSelf": "이 경우 글로벌 목록은 허용되지 않습니다.",
-        "adminOffSelfAction": "켜",
-        "adminOffSelfIntro": "이것은 전체 서버 전체에 대한 글로벌 리스트를 허용합니다. 여기의 공간은 탐구에서 발견될 수 있게 되고, 서버는 퍼블릭 디렉토리에 스스로 보고되기 시작합니다.",
-        "privateSpace": "대중에게 가시성을 설정하거나 먼저 가입을 요청하십시오.",
-        "disclosure": "목록은 공개합니다. 공간의 이름, 설명, 아이콘, 배너, 회원 수 및 이 서버의 주소. 디렉토리를 탐색하는 사람들은 이 서버에서 아이콘과 배너를 로드합니다."
+        "notConfigured": "이 서버는 디렉터리에 연결되도록 설정되어 있지 않아 등록해도 어디에도 표시되지 않아요.",
+        "adminOff": "서버 관리자가 전체 공개 등록을 허용해야 해요.",
+        "adminOffSelf": "이 서버에서는 전체 공개 등록이 허용되지 않았어요.",
+        "adminOffSelfAction": "허용하기",
+        "adminOffSelfIntro": "이 설정을 켜면 서버 전체에 전체 공개 등록이 허용돼요. 이 서버의 공간을 둘러보기에서 찾을 수 있게 되며, 서버가 공개 디렉터리에 정보를 보내기 시작해요.",
+        "privateSpace": "먼저 공개 범위를 ‘공개’ 또는 ‘참가 신청’으로 변경하세요.",
+        "disclosure": "등록하면 공간의 이름, 설명, 아이콘, 배너, 멤버 수, 그리고 이 서버의 주소가 공개돼요. 디렉터리를 보는 사람은 이 서버에서 아이콘과 배너를 직접 불러오게 돼요."
       },
       "description": {
         "label": "설명",
-        "hint": "탐구 페이지 에 표시 된 짧은 요약.",
-        "placeholder": "탐색 페이지에 대한 짧은 설명...",
+        "hint": "둘러보기 페이지에 표시되는 짧은 소개예요.",
+        "placeholder": "둘러보기 페이지에 표시할 짧은 설명…",
         "counter": "{{length}}/{{max}}"
       },
       "requests": {
-        "title": "참여 요청 을 기다리고 있다",
-        "empty": "가입 요청은 아직 없습니다.",
-        "actionFailed": "행동 실패"
+        "title": "대기 중인 참가 신청",
+        "empty": "대기 중인 참가 신청이 없어요.",
+        "actionFailed": "작업을 처리하지 못했어요."
       }
     },
     "members": {
-      "description": "이 공간의 멤버들을 관리하고, 멤버를 클릭하여 그들의 역할을 편집합니다.",
-      "listHeading": "의원 ({{total}})",
+      "description": "이 공간의 멤버를 관리해요. 멤버를 클릭해 역할을 수정할 수 있어요.",
+      "listHeading": "멤버 ({{total}})",
       "owner": "소유자",
-      "noRoles": "역할이 없습니다",
+      "noRoles": "역할 없음",
       "ban": "차단",
       "kick": "내보내기",
       "confirm": {
         "banTitle": "{{name}} 차단",
-        "kickTitle": "{{name}} 발 발자국",
-        "banDescription": "금지되지 않는 한 영구적으로 이 공간에서 금지됩니다.",
-        "kickDescription": "초대 링크를 통해 다시 가입할 수 있습니다."
+        "kickTitle": "{{name}} 내보내기",
+        "banDescription": "차단을 해제하기 전까지 이 공간에 다시 참가할 수 없어요.",
+        "kickDescription": "초대 링크가 있으면 다시 참가할 수 있어요."
       },
-      "updateRolesFailed": "역할 업데이트 실패",
+      "updateRolesFailed": "역할을 업데이트하지 못했어요.",
       "kickFailed": "멤버를 내보내지 못했어요.",
-      "banFailed": "회원 금지 실패",
-      "rolesAboveYou": "당신의 최고 역할 이상의 역할은 잠겨 있습니다.",
-      "rolesUnheld": "권한이 없는 역할은 주어지지 않습니다."
+      "banFailed": "멤버를 차단하지 못했어요.",
+      "rolesAboveYou": "내가 가진 가장 높은 역할과 같거나 더 높은 역할은 잠겨 있어요.",
+      "rolesUnheld": "내가 가지고 있지 않은 권한이 포함된 역할은 부여할 수 없어요."
     }
   },
   "bans": {
     "title": "차단 목록",
-    "description": "금지된 사용자는 금지되지 않는 한 이 공간에 다시 가입할 수 없습니다.",
-    "loading": "로딩 금지...",
-    "empty": "금지된 사용자들이 없습니다",
-    "listHeading": "금지 ({{total}})",
-    "bannedBy": "{{date}}에서 {{moderator}}에 의해 금지",
+    "description": "차단된 사용자는 차단을 해제하기 전까지 이 공간에 다시 참가할 수 없어요.",
+    "loading": "차단 목록 불러오는 중…",
+    "empty": "차단된 사용자가 없어요.",
+    "listHeading": "차단 목록 ({{total}})",
+    "bannedBy": "{{date}}에 {{moderator}} 님이 차단함",
     "bannedByWithReason": "{{date}}에 {{moderator}} 님이 차단함 · 사유: {{reason}}",
     "unban": "차단 해제",
-    "loadFailed": "로드 금지 조치를 취하지 못했습니다",
-    "unbanFailed": "사용자를 해제하지 못했다"
+    "loadFailed": "차단 목록을 불러오지 못했어요.",
+    "unbanFailed": "차단을 해제하지 못했어요."
   },
   "roles": {
     "title": "역할",
-    "create": "역할 창조",
-    "creating": "창조하는 것...",
+    "create": "역할 만들기",
+    "creating": "만드는 중…",
     "listHeading": "역할",
-    "description": "역할은 구성원들의 권한을 정의합니다.",
-    "hierarchyHint": "목록에서 높은 역할은 그 아래에 있는 역할보다 높습니다.",
+    "description": "역할에 따라 멤버가 가질 권한이 결정돼요.",
+    "hierarchyHint": "목록 위쪽에 있는 역할이 아래쪽 역할보다 높은 순위를 가져요.",
     "defaultName": "새 역할",
     "copyName": "{{name}}의 복사본",
-    "backToList": "역으로 돌아가",
-    "created": "역할이 만들어졌습니다. 아래에서 사용자 정의하십시오.",
-    "aboveYou": "이 역할은 당신의 가장 높은 역할보다 높습니다. 당신은 그것을 볼 수 있지만 바꿀 수 없습니다.",
+    "backToList": "역할 목록으로 돌아가기",
+    "created": "역할을 만들었어요. 아래에서 세부 설정을 변경하세요.",
+    "aboveYou": "이 역할은 내가 가진 가장 높은 역할과 같거나 더 높아요. 볼 수는 있지만 변경할 수 없어요.",
     "reorder": {
-      "handle": "이동 {{name}}",
-      "handleHint": "래그 또는 아래로 올라가는 화살표 키를 사용하세요",
+      "handle": "{{name}} 이동",
+      "handleHint": "드래그하거나 위·아래 방향키를 사용하세요.",
       "up": "{{name}} 위로 이동",
       "down": "{{name}} 아래로 이동",
-      "locked": "{{name}} 당신의 가장 높은 역할에서 또는 그 이상의 순위",
-      "moved": "{{name}}은 {{total}}의 {{position}} 위치로 옮겨졌습니다."
+      "locked": "{{name}} 역할은 내가 가진 가장 높은 역할과 같거나 더 높아요.",
+      "moved": "{{name}} 역할을 {{total}}개 중 {{position}}번째 위치로 옮겼어요."
     },
-    "identity": "계정 정보",
+    "identity": "기본 정보",
     "nameLabel": "역할 이름",
     "colorLabel": "역할 색상",
-    "nameEmpty": "역할 이름은 빈이 될 수 없습니다",
-    "nameDuplicate": "이 이름의 역할은 이미 존재합니다",
+    "nameEmpty": "역할 이름을 입력하세요.",
+    "nameDuplicate": "같은 이름의 역할이 이미 있어요.",
     "groups": {
       "general": "일반",
       "text": "텍스트",
       "voice": "음성"
     },
-    "saved": "저장된 역할",
-    "copy": "복제 역할",
-    "copying": "복사...",
+    "saved": "역할을 저장했어요.",
+    "copy": "역할 복제",
+    "copying": "복제 중…",
     "delete": "역할 삭제",
-    "deleting": "삭제...",
-    "confirmDelete": "확인?",
-    "createFailed": "역할 창출에 실패",
-    "saveFailed": "역할을 절약하지 못했다",
-    "deleteFailed": "역할 삭제 실패",
-    "copyFailed": "복사 역할이 실패",
-    "unheldLocked": "당신만 권한이 바뀌면 돼 다른 것들은 잠겨있어요",
-    "unheldPermission": "당신에겐 이 허락이 없습니다.",
-    "copyUnheld": "내게 없는 권한이 포함된 역할이라 복사할 수 없어요.",
-    "copyDeleteUnheld": "이 역할에는 당신이 가지고 있지 않은 권한이 있으므로 복사하거나 삭제할 수 없습니다."
+    "deleting": "삭제 중…",
+    "confirmDelete": "삭제할까요?",
+    "createFailed": "역할을 만들지 못했어요.",
+    "saveFailed": "역할을 저장하지 못했어요.",
+    "deleteFailed": "역할을 삭제하지 못했어요.",
+    "copyFailed": "역할을 복제하지 못했어요.",
+    "unheldLocked": "내가 가진 권한만 바꿀 수 있어요. 나머지 권한은 잠겨 있어요.",
+    "unheldPermission": "이 권한이 없어요.",
+    "copyUnheld": "내가 가지고 있지 않은 권한이 포함된 역할이라 복제할 수 없어요.",
+    "copyDeleteUnheld": "내가 가지고 있지 않은 권한이 포함된 역할이라 복제하거나 삭제할 수 없어요."
   },
   "memberRoles": {
-    "title": "{{name}}에 대한 역할 편집",
+    "title": "{{name}} 역할 수정",
     "viewProfile": "프로필 보기",
-    "affectsAll": "허가 변경은 이 역할을 수행하는 모든 회원에게 적용됩니다.",
-    "selectRole": "권한 편집을 위한 역할을 선택하십시오.",
-    "saved": "저장된 변경 사항"
+    "affectsAll": "권한 변경 사항은 이 역할을 가진 모든 멤버에게 적용돼요.",
+    "selectRole": "권한을 수정할 역할을 선택하세요.",
+    "saved": "변경 사항을 저장했어요."
   },
   "permissions": {
     "title": "권한",
     "names": {
-      "administrator": "Administrator",
-      "viewChannel": "채널을 보기",
+      "administrator": "관리자",
+      "viewChannel": "채널 보기",
       "manageChannels": "채널 관리",
       "manageRoles": "역할 관리",
       "manageSpace": "공간 관리",
       "createInvite": "초대 만들기",
       "kickMembers": "멤버 내보내기",
-      "banMembers": "금지 의원",
+      "banMembers": "멤버 차단",
       "sendMessages": "메시지 보내기",
       "manageMessages": "메시지 관리",
-      "attachFiles": "파일 을 첨부",
-      "readMessageHistory": "메시지 역사 를 읽어 보십시오",
-      "addReactions": "반응 을 추가 한다",
+      "attachFiles": "파일 첨부",
+      "readMessageHistory": "메시지 기록 보기",
+      "addReactions": "반응 추가",
       "connect": "연결",
       "speak": "말하기",
-      "muteMembers": "침묵 없는 회원",
-      "deafenMembers": "청각 장애인",
+      "muteMembers": "멤버 마이크 끄기",
+      "deafenMembers": "멤버 소리 끄기",
       "moveMembers": "멤버 이동",
       "stream": "화면 공유",
-      "disconnectMembers": "연결을 끊는 회원",
-      "mentionEveryone": "모두들, 여기와 역할에 대해 언급하세요"
+      "disconnectMembers": "멤버 연결 끊기",
+      "mentionEveryone": "@everyone, @here 및 역할 멘션"
     },
     "tristate": {
       "deny": "거부",
-      "neutral": "중립 (유산)",
+      "neutral": "기본값 (상속)",
       "allow": "허용"
     },
-    "overrideCount_other": "{{count}} 과장",
-    "removeOverride": "오버라이드를 제거",
-    "removeOverrideFor": "{{name}}에 대한 오버라이드를 제거",
-    "removeOverrideHint": "그 없이, 여기는 우주 전체의 권한이 적용됩니다.",
+    "overrideCount_other": "개별 권한 {{count}}개",
+    "removeOverride": "개별 권한 제거",
+    "removeOverrideFor": "{{name}}의 개별 권한 제거",
+    "removeOverrideHint": "제거하면 여기에도 공간의 기본 권한이 적용돼요.",
     "noRoleOverrides": "별도로 설정한 역할 권한이 없어요. 이 채널에서도 공간의 기본 역할 권한이 적용돼요.",
-    "noMemberOverrides": "어떤 회원이도 우월하지 않습니다.",
-    "roleOverrides": "역할 과제",
-    "memberOverrides": "회원 과제",
+    "noMemberOverrides": "별도로 설정한 멤버 권한이 없어요.",
+    "roleOverrides": "역할별 개별 권한",
+    "memberOverrides": "멤버별 개별 권한",
     "addRole": "역할 추가",
-    "addMember": "회원 추가",
-    "noMoreRoles": "추가할 역할이 없어",
-    "loadFailed": "오버라이드 로딩 실패",
-    "saveFailed": "오버레이드를 저장하지 못함",
-    "partialFailure_other": "{{count}} 오버라이드는 저장되지 않았습니다",
-    "unheldLocked": "당신만 권한이 바뀌면 돼 다른 것들은 잠겨있어요",
-    "unheldPermission": "당신에겐 이 허락이 없습니다.",
-    "removeUnheld": "이 오버라이드는 당신이 가지고 있지 않은 권한을 설정합니다. 그것을 가지고 있는 사람만이 제거할 수 있습니다.",
-    "removeUnheldShort": "이 권한이 있는 사람만 제거할 수 있습니다",
-    "aboveYouRole": "이 역할은 당신의 가장 높은 역할에 위치하고 있습니다. 당신은 그것의 과장점을 볼 수 있지만 변경하거나 제거하지 않습니다.",
-    "aboveYouMember": "이 회원은 당신 위에 위치하고 있습니다. 당신은 그들의 오버라이드를 볼 수 있지만 변경하거나 제거하지 않습니다.",
-    "aboveYouShort": "가장 높은 역할에서 또는 그 이상"
+    "addMember": "멤버 추가",
+    "noMoreRoles": "추가할 수 있는 역할이 없어요.",
+    "loadFailed": "개별 권한을 불러오지 못했어요.",
+    "saveFailed": "개별 권한을 저장하지 못했어요.",
+    "partialFailure_other": "개별 권한 {{count}}개를 저장하지 못했어요.",
+    "unheldLocked": "내가 가진 권한만 바꿀 수 있어요. 나머지 권한은 잠겨 있어요.",
+    "unheldPermission": "이 권한이 없어요.",
+    "removeUnheld": "이 개별 권한에는 내가 가지고 있지 않은 권한이 포함되어 있어요. 해당 권한을 가진 사람만 제거할 수 있어요.",
+    "removeUnheldShort": "해당 권한이 있는 사람만 제거할 수 있어요.",
+    "aboveYouRole": "이 역할은 내가 가진 가장 높은 역할과 같거나 더 높아요. 개별 권한을 볼 수는 있지만 변경하거나 제거할 수 없어요.",
+    "aboveYouMember": "이 멤버는 나보다 같거나 높은 순위예요. 개별 권한을 볼 수는 있지만 변경하거나 제거할 수 없어요.",
+    "aboveYouShort": "내가 가진 가장 높은 역할과 같거나 더 높음"
   },
   "sidebar": {
-    "directMessages": "직접적인 메시지",
+    "directMessages": "다이렉트 메시지",
     "addSpace": "공간 추가",
-    "joinSpace": "공간에 가입",
-    "exploreSpaces": "공간 을 탐구",
+    "joinSpace": "공간 참가",
+    "exploreSpaces": "공간 둘러보기",
     "folder": {
       "tooltip_other": "폴더 ({{count}})",
-      "spaceCount_other": "{{count}} 공간",
+      "spaceCount_other": "공간 {{count}}개",
       "unnamed": "이름 없는 폴더",
-      "rename": "폴더의 이름을 변경",
+      "rename": "폴더 이름 변경",
       "color": "폴더 색상",
-      "create": "폴더를 생성",
+      "create": "폴더 만들기",
       "moveTo": "폴더로 이동",
       "removeFrom": "폴더에서 삭제",
       "ungroup": "그룹 해제",
-      "created": "생성된 폴더",
+      "created": "폴더를 만들었어요.",
       "moved": "폴더로 이동했어요.",
-      "removed": "폴더에서 삭제",
-      "ungrouped": "폴더가 그룹화되지 않은"
+      "removed": "폴더에서 제거했어요.",
+      "ungrouped": "폴더 그룹을 해제했어요."
     },
     "space": {
       "inviteCopied": "초대 링크를 복사했어요.",
@@ -508,27 +508,27 @@
       "inviteFailed": "초대를 만들지 못했어요.",
       "transferOwnership": "소유권 이전",
       "settings": "공간 설정",
-      "leave": "공간을 떠나",
-      "reconnecting": "{{instance}}로 다시 연결...",
+      "leave": "공간 나가기",
+      "reconnecting": "{{instance}}에 다시 연결 중…",
       "remoteInstance": "원격 서버",
       "leaveConfirm": {
-        "title": "공간을 떠나",
-        "titleNamed": "{{name}}를 남겨두세요",
-        "description": "이 공간을 떠나고 싶다는 건 확실해?"
+        "title": "공간 나가기",
+        "titleNamed": "{{name}} 나가기",
+        "description": "이 공간에서 나갈까요? 다시 참가하려면 새 초대가 필요해요."
       },
-      "left": "왼쪽 공간",
-      "leaveFailed": "공간에서 빠져나오지 못했다",
-      "unreadMessages_other": "{{count}} 읽지 않은 메시지",
-      "unreadMessagesOver99": "99개 이상의 미독된 메시지"
+      "left": "공간에서 나왔어요.",
+      "leaveFailed": "공간에서 나가지 못했어요.",
+      "unreadMessages_other": "읽지 않은 메시지 {{count}}개",
+      "unreadMessagesOver99": "읽지 않은 메시지 99개 이상"
     },
     "dmList": {
       "explore": "둘러보기",
       "newDm": "새 다이렉트 메시지",
-      "empty": "아직 대화가 없습니다.",
+      "empty": "아직 대화가 없어요.",
       "leaveGroup": "그룹 나가기",
       "leaveGroupConfirm": {
-        "title": "그룹 DM를 떠나",
-        "description": "당신이 떠나고 싶다고 확신할 수 있나요?"
+        "title": "그룹 다이렉트 메시지 나가기",
+        "description": "이 그룹에서 나갈까요? 다른 멤버가 다시 추가하기 전에는 돌아올 수 없어요."
       }
     },
     "userArea": {
@@ -539,43 +539,43 @@
       "inputVolume": "마이크 음량",
       "outputVolume": "출력 음량",
       "systemDefault": "시스템 기본값",
-      "microphonePermission": "마이크 허가 필요해요",
-      "audioPermission": "오디오 권한이 필요해요",
+      "microphonePermission": "마이크 권한이 필요해요.",
+      "audioPermission": "오디오 권한이 필요해요.",
       "enable": "켜기",
       "voiceSettings": "음성 설정",
       "mute": "마이크 끄기",
       "unmute": "마이크 켜기",
       "deafen": "소리 끄기",
       "undeafen": "소리 켜기",
-      "spaceMuted": "공간은 조용하다",
-      "spaceDeafened": "우주가 청각장애인",
-      "permissionMuted": "침묵 (언론 허가 없음)"
+      "spaceMuted": "공간 마이크 꺼짐",
+      "spaceDeafened": "공간 소리 꺼짐",
+      "permissionMuted": "마이크 꺼짐 (말하기 권한 없음)"
     },
-    "dmUnreadMessages_other": "{{count}} 읽지 않은 직접 메시지",
-    "dmUnreadMessagesOver99": "99개 이상의 읽지 않은 직접 메시지"
+    "dmUnreadMessages_other": "읽지 않은 다이렉트 메시지 {{count}}개",
+    "dmUnreadMessagesOver99": "읽지 않은 다이렉트 메시지 99개 이상"
   },
   "channels": {
-    "loading": "로딩 채널",
-    "create": "채널을 생성",
-    "createCategory": "카테고리를 생성",
+    "loading": "채널 불러오는 중",
+    "create": "채널 만들기",
+    "createCategory": "카테고리 만들기",
     "settings": "채널 설정",
     "categorySettings": "카테고리 설정",
-    "delete": "채널을 삭제",
-    "deleteCategory": "카테고리를 삭제",
-    "emptyCategory": "채널이 없습니다",
-    "empty": "아직 채널이 없습니다.",
+    "delete": "채널 삭제",
+    "deleteCategory": "카테고리 삭제",
+    "emptyCategory": "채널 없음",
+    "empty": "아직 채널이 없어요.",
     "deleteConfirm": {
-      "title": "채널을 삭제",
-      "description": "이 채널과 모든 메시지가 영구적으로 삭제됩니다."
+      "title": "채널 삭제",
+      "description": "정말 삭제할까요? 이 채널과 모든 메시지가 영구적으로 삭제돼요."
     },
     "deleteCategoryConfirm": {
-      "title": "카테고리를 삭제",
-      "description": "이 카테고리를 삭제하고 싶으신가요? 이 카테로리의 채널은 카테고리가 없도록 이동됩니다."
+      "title": "카테고리 삭제",
+      "description": "이 카테고리를 삭제할까요? 카테고리 안의 채널은 미분류로 이동되며 채널은 삭제되지 않아요."
     },
-    "deleted": "채널 삭제",
-    "deleteFailed": "채널 삭제 실패",
-    "categoryDeleted": "삭제된 분류",
-    "categoryDeleteFailed": "카테고리를 삭제하지 못했습니다"
+    "deleted": "채널을 삭제했어요.",
+    "deleteFailed": "채널을 삭제하지 못했어요.",
+    "categoryDeleted": "카테고리를 삭제했어요.",
+    "categoryDeleteFailed": "카테고리를 삭제하지 못했어요."
   },
   "members": {
     "titleWithCount_other": "멤버 · {{count}}명",
@@ -584,102 +584,102 @@
       "owner": "소유자"
     },
     "ownerTitle": {
-      "edit": "소유자 타이틀을 편집",
+      "edit": "소유자 표시 수정",
       "label": "소유자 표시",
       "hint": "공간의 모든 멤버에게 표시돼요. 1~{{max}}자를 입력하세요. 권한에는 영향이 없어요.",
       "reset": "기본값으로 초기화"
     },
     "menu": {
-      "profile": "프로파일을 보기",
-      "nickname": "공간의 별명을 바꿔...",
+      "profile": "프로필 보기",
+      "nickname": "공간 별명 변경…",
       "roles": "역할"
     },
     "nickname": {
-      "title": "공간 별명을 변경",
+      "title": "공간 별명 변경",
       "label": "공간 별명",
       "descriptionSelf": "별명은 이 공간에서만 적용돼요. 계정 이름과 다른 공간의 별명은 그대로예요. 비워 두면 계정 이름이 표시돼요.",
       "descriptionOther": "별명은 이 공간에서만 적용돼요. {{name}} 님의 계정 이름은 그대로예요. 비워 두면 계정 이름이 표시돼요.",
-      "reset": "계정 이름으로 재설정",
+      "reset": "계정 이름으로 초기화",
       "shownAs": "이 공간의 별명: {{nickname}}"
     }
   },
   "mobile": {
     "addSheet": {
-      "createSpace": "공간을 만들어",
-      "joinSpace": "우주에 가입",
-      "exploreSpaces": "공간 을 탐구"
+      "createSpace": "공간 만들기",
+      "joinSpace": "공간 참가",
+      "exploreSpaces": "공간 둘러보기"
     },
-    "muteUser": "무성 사용자"
+    "muteUser": "사용자 음소거"
   },
   "main": {
-    "selectChannel": "채널을 선택",
-    "selectChannelHint": "시작하기 위해 문자 또는 음성 채널을 선택",
-    "notificationSettings": "통지 설정",
+    "selectChannel": "채널을 선택하세요.",
+    "selectChannelHint": "시작하려면 텍스트 또는 음성 채널을 선택하세요.",
+    "notificationSettings": "알림 설정",
     "topic": {
-      "show": "전체 주제를 표시",
+      "show": "전체 주제 보기",
       "dialogTitle": "#{{name}}"
     },
     "voice": {
       "connectionFailed": "연결 실패",
       "connected": "연결됨",
       "connecting": "연결 중…",
-      "participants_other": "{{count}} 연결",
-      "inCall_other": "{{count}} 전화",
-      "empty": "현재 이 음성 채널에는 아무도 없습니다.",
+      "participants_other": "{{count}}명 연결됨",
+      "inCall_other": "{{count}}명 통화 중",
+      "empty": "현재 이 음성 채널에 아무도 없어요.",
       "join": "음성 채널 참가"
     },
     "dm": {
       "fallbackName": "다이렉트 메시지",
-      "composerPlaceholder": "{{target}} 메시지",
-      "calling": "{{name}}에 전화합니다",
+      "composerPlaceholder": "{{target}}에 메시지 보내기",
+      "calling": "{{name}} 님에게 거는 중…",
       "groupSettings": "그룹 설정",
-      "openGroupSettings": "개방 그룹 설정",
-      "memberCount_other": "(회원 {{count}})",
-      "startVoiceCall": "음성 호출 시작",
-      "joinCall": "참여 전화",
-      "startVideoCall": "비디오 통화 시작",
-      "addFriends": "DM 에 친구 들 을 추가"
+      "openGroupSettings": "그룹 설정 열기",
+      "memberCount_other": "(멤버 {{count}}명)",
+      "startVoiceCall": "음성 통화 시작",
+      "joinCall": "통화 참가",
+      "startVideoCall": "영상 통화 시작",
+      "addFriends": "다이렉트 메시지에 친구 추가"
     }
   },
   "ownership": {
     "title": "소유권 이전",
-    "description": "<name>{{name}} </name>의 새로운 소유자가 되기 위해 회원을 선택하세요",
-    "confirmQuestion": "<name>{{space}} </name>에서 <name>{{member}} </name>까지의 소유권 이전?",
-    "regularMember": "당신은 정규 멤버가 될 것입니다.",
-    "transferring": "이송...",
+    "description": "<name>{{name}}</name>의 새 소유자가 될 멤버를 선택하세요.",
+    "confirmQuestion": "<name>{{space}}</name>의 소유권을 <name>{{member}}</name> 님에게 이전할까요?",
+    "regularMember": "이전하면 일반 멤버가 돼요.",
+    "transferring": "이전 중…",
     "confirm": "이전",
-    "loading": "로딩 멤버들...",
-    "success": "소유권이 {{name}}로 이전",
-    "failed": "소유권을 이전하지 못함"
+    "loading": "멤버 불러오는 중…",
+    "success": "{{name}} 님에게 소유권을 이전했어요.",
+    "failed": "소유권을 이전하지 못했어요."
   },
   "notifications": {
-    "open": "통지 설정",
-    "channelTitle": "# {{channel}}에 대한 통지",
-    "spaceTitle": "{{space}}에 대한 통지",
-    "levelHeading": "알려줘",
+    "open": "알림 설정",
+    "channelTitle": "#{{channel}} 알림",
+    "spaceTitle": "{{space}} 알림",
+    "levelHeading": "알림 범위",
     "level": {
       "all": "모든 메시지",
-      "mentions": "단지 @명령",
+      "mentions": "@멘션만",
       "nothing": "없음",
-      "inherit": "공간 기본 ({{level}})"
+      "inherit": "공간 기본값 ({{level}})"
     },
-    "dmNote": "직접적인 메시지는 항상 알려줍니다.",
-    "muteHeading": "마이크 끄기",
+    "dmNote": "다이렉트 메시지는 항상 알림이 울려요.",
+    "muteHeading": "알림 끄기",
     "mute": {
       "oneHour": "1시간 동안",
       "eightHours": "8시간 동안",
       "oneDay": "24시간 동안",
-      "indefinite": "내가 침묵을 깨뜨릴 때까지"
+      "indefinite": "다시 켤 때까지"
     },
-    "unmute": "마이크 켜기",
-    "mutedUntil": "{{time}}까지 마비",
-    "mutedIndefinitely": "당신이 침묵을 깨뜨릴 때까지",
-    "spaceMuted": "이 공간은 침묵하고, 그 채널도 침묵하고 있습니다.",
-    "mutedIndicator": "음소거됨",
-    "saveFailed": "알림 설정을 저장할 수 없었습니다",
-    "suppressEveryone": "모든 분과 여기를 삭제하세요",
-    "suppressRoles": "역할 언급을 억제",
-    "massHeading": "그룹 명칭",
-    "massNote": "@here는 @everyone와 같은 회원에게 도달합니다."
+    "unmute": "알림 켜기",
+    "mutedUntil": "{{time}}까지 알림 꺼짐",
+    "mutedIndefinitely": "다시 켤 때까지 알림 꺼짐",
+    "spaceMuted": "이 공간의 알림이 꺼져 있어 하위 채널의 알림도 꺼져 있어요.",
+    "mutedIndicator": "알림 꺼짐",
+    "saveFailed": "알림 설정을 저장하지 못했어요.",
+    "suppressEveryone": "@everyone 및 @here 알림 끄기",
+    "suppressRoles": "역할 멘션 알림 끄기",
+    "massHeading": "단체 멘션",
+    "massNote": "@here는 @everyone과 같은 멤버에게 알림을 보내요. 나를 직접 멘션한 메시지는 항상 알림이 울려요."
   }
 }
