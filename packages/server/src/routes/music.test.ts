@@ -365,7 +365,8 @@ describe('music bot routes & voice channel commands', () => {
     expect(sentBody.url).toBe('https://www.youtube.com/watch?v=aqz-KE-bpKQ');
     expect(sentBody.requestedBy).toBe('speaker');
 
-    const jwtPayload = decodeJwtPayload(sentBody.token);
+    expect(sentBody.token).toBeTypeOf('string');
+    const jwtPayload = decodeJwtPayload(sentBody.token ?? '');
     expect(jwtPayload.sub).toBe('music-bot:음악 봇');
     expect(jwtPayload.video).toMatchObject({
       room: VOICE_CH_A,
