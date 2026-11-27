@@ -196,7 +196,7 @@
     "addMore": "더 추가",
     "selectedCount_other": "스티커 {{count}}개 선택됨",
     "dropMore": "여기를 클릭하거나 이미지를 더 끌어다 놓으세요.",
-    "sticker": "Sticker",
+    "sticker": "스티커",
     "downloadFailed": "이미지를 불러오지 못했어요.",
     "batchLimit_other": "이미지는 한 번에 {{count}}개까지 선택할 수 있어요.",
     "capacityLimit_other": "스티커를 {{count}}개 더 추가할 수 있어요.",
