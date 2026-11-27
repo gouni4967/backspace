@@ -320,12 +320,18 @@ class YouTubePcmStream:
         if self._closed:
             return
         self._closed = True
-        if self._pump_task is not None and not self._pump_task.done():
-            self._pump_task.cancel()
+        pump = self._pump_task
+        if pump is not None and not pump.done():
+            pump.cancel()
+        # The pump can be waiting for FFmpeg to consume buffered input. Stop
+        # the decoder first so closing its input cannot block playback teardown.
+        await asyncio.gather(
+            _terminate_process(self._ytdlp, "yt-dlp"),
+            _terminate_process(self._ffmpeg, "ffmpeg"),
+        )
+        if pump is not None:
             with contextlib.suppress(asyncio.CancelledError, Exception):
-                await self._pump_task
-        await _terminate_process(self._ytdlp, "yt-dlp")
-        await _terminate_process(self._ffmpeg, "ffmpeg")
+                await asyncio.wait_for(pump, timeout=2.0)
         self._ytdlp = None
         self._ffmpeg = None
         self._pump_task = None
