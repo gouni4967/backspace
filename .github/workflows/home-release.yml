@@ -1,0 +1,84 @@
+name: Release Home Backspace
+
+on:
+  push:
+    branches: [codex/home-deployment]
+    paths:
+      - '.github/workflows/home-release.yml'
+      - 'packages/desktop/package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  server-image:
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      tag: ko-preview
+
+  windows:
+    runs-on: windows-2022
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 10.34.3
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared package
+        run: pnpm --filter @backspace/shared build
+
+      - name: Build Windows x64 installer and update metadata
+        working-directory: packages/desktop
+        run: |
+          pnpm exec tsc
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          pnpm exec electron-builder --win --x64 --publish never
+
+      - name: Verify Windows installer and publish release
+        working-directory: packages/desktop
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = (Get-Content -LiteralPath package.json -Raw | ConvertFrom-Json).version
+          $tag = "v$version"
+          $installer = "Backspace-$version-win-x64.exe"
+          $dist = 'dist-electron'
+          $assets = @("$dist/$installer", "$dist/$installer.blockmap", "$dist/latest.yml")
+
+          foreach ($asset in $assets) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) { throw "Missing $asset" }
+          }
+
+          $feed = Get-Content -LiteralPath "$dist/win-unpacked/resources/app-update.yml" -Raw
+          if ($feed -notmatch '(?m)^provider: github\s*$' -or $feed -notmatch '(?m)^owner: gouni4967\s*$' -or $feed -notmatch '(?m)^repo: backspace\s*$') {
+            throw 'The packaged app does not use the fork update feed'
+          }
+
+          $manifest = Get-Content -LiteralPath "$dist/latest.yml" -Raw
+          $installerHash = (Get-FileHash -LiteralPath $assets[0] -Algorithm SHA512).Hash
+          $checksum = [Convert]::ToBase64String([Convert]::FromHexString($installerHash))
+          if ($manifest -notmatch "(?m)^version: $([regex]::Escape($version))\s*$" -or
+              $manifest -notmatch "(?m)^path: $([regex]::Escape($installer))\s*$" -or
+              $manifest -notmatch "(?m)^sha512: $([regex]::Escape($checksum))\s*$") {
+            throw 'The update manifest does not match the installer'
+          }
+
+          gh release create $tag @assets --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title "Backspace $version (Windows x64)" --notes "Windows x64 build from the home deployment branch with Korean localization. This installer uses the fork's GitHub Releases for future updates." --latest
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
