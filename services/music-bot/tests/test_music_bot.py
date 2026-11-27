@@ -362,5 +362,79 @@ class PlaybackIsolationAndLifecycleTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(code_stop, 400)
 
 
+class PlaybackQueueTests(unittest.IsolatedAsyncioTestCase):
+    async def asyncSetUp(self) -> None:
+        self.finished: list[asyncio.Event] = []
+        self.publisher = FakePublisher()
+        self.manager = PlaybackManager(
+            _test_config(), probe_fn=self.probe, stream_factory=self.make_stream,
+            publisher_factory=lambda: self.publisher,
+        )
+        self.addAsyncCleanup(self.manager.shutdown)
+
+    async def probe(self, url: str) -> YouTubeTrack:
+        video_id, canonical = validate_youtube_url(url)
+        return YouTubeTrack(
+            video_id=video_id, canonical_url=canonical,
+            title=video_id, duration_seconds=1,
+        )
+
+    def make_stream(self, _url: str) -> FakePcmStream:
+        finished = asyncio.Event()
+        self.finished.append(finished)
+
+        class ControlledStream(FakePcmStream):
+            async def chunks(self, chunk_size: int = 3840) -> AsyncIterator[bytes]:
+                await finished.wait()
+                yield b"\x00" * chunk_size
+
+        return ControlledStream()
+
+    async def play(self, video: str) -> dict[str, object]:
+        return await self.manager.play(
+            channel_id="room-A", livekit_url="ws://localhost:7880",
+            token="fake-token", raw_url=f"https://youtu.be/{video}",
+        )
+
+    async def wait_for_track(self, video: str) -> None:
+        async with asyncio.timeout(2):
+            while (
+                self.manager.status("room-A")["videoId"] != video
+                or self.manager._active is None
+                or self.manager._active.track_task is None
+            ):
+                await asyncio.sleep(0)
+
+    async def test_queue_advances_in_order_on_same_connection(self) -> None:
+        await self.play("aqz-KE-bpKQ")
+        second = await self.play("jNQXAC9IVRw")
+        third = await self.play("XOj4iv_L0Ug")
+        self.assertEqual(second["videoId"], "aqz-KE-bpKQ")
+        self.assertEqual(third["queueLength"], 2)
+        self.assertNotIn("queueLength", self.manager.status("room-B"))
+        self.finished[0].set()
+        await self.wait_for_track("jNQXAC9IVRw")
+        self.assertFalse(self.publisher.closed)
+        self.finished[1].set()
+        await self.wait_for_track("XOj4iv_L0Ug")
+        self.assertEqual(self.manager.status("room-A")["queueLength"], 0)
+        self.assertFalse(self.publisher.closed)
+
+    async def test_skip_is_channel_scoped_and_stop_clears_queue(self) -> None:
+        await self.play("aqz-KE-bpKQ")
+        await self.play("jNQXAC9IVRw")
+        await self.play("XOj4iv_L0Ug")
+        await self.wait_for_track("aqz-KE-bpKQ")
+        _, ignored = await dispatch_stop(self.manager, {"channelId": "room-B", "skip": True})
+        self.assertFalse(ignored["stopped"])
+        _, skipped = await dispatch_stop(self.manager, {"channelId": "room-A", "skip": True})
+        self.assertTrue(skipped["stopped"])
+        await self.wait_for_track("jNQXAC9IVRw")
+        await dispatch_stop(self.manager, {"channelId": "room-A"})
+        self.assertTrue(self.publisher.closed)
+        self.assertEqual(self.manager.status("room-A")["state"], "idle")
+        self.assertEqual(len(self.finished), 2)
+
+
 if __name__ == "__main__":
     unittest.main()

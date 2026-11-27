@@ -301,6 +301,8 @@ describe('validateYouTubeUrl & parseMusicCommand', () => {
       url: 'https://youtu.be/aqz-KE-bpKQ',
     });
     expect(parseMusicCommand('  /STOP  ')).toEqual({ command: 'stop' });
+    expect(parseMusicCommand('/skip')).toEqual({ command: 'skip' });
+    expect(parseMusicCommand('/skip extra')).toBeNull();
     expect(parseMusicCommand('/play')).toEqual({ command: 'invalid_play' });
     expect(parseMusicCommand('hello world')).toBeNull();
   });

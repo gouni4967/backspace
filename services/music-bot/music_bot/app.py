@@ -6,7 +6,7 @@ import shutil
 from typing import Any
 
 from .config import MusicBotConfig, load_config
-from .session import PlaybackBusyError, PlaybackManager
+from .session import PlaybackBusyError, PlaybackManager, PlaybackQueueFullError
 from .youtube import YouTubeSourceError, YouTubeValidationError
 
 logger = logging.getLogger(__name__)
@@ -75,11 +75,13 @@ async def dispatch_play(
             requested_by=str(requested_by).strip() if isinstance(requested_by, str) and requested_by.strip() else None,
         )
         return 200, status
-    except PlaybackBusyError:
+    except PlaybackQueueFullError as exc:
+        return 409, {"error": str(exc), "code": "queue_full"}
+    except PlaybackBusyError as exc:
         return (
             409,
             {
-                "error": "Music bot is already playing in another voice channel",
+                "error": str(exc).rstrip("."),
                 "code": "playback_busy",
             },
         )
@@ -98,7 +100,8 @@ async def dispatch_stop(playback: PlaybackManager, body: Any) -> tuple[int, dict
     channel_id = body.get("channelId")
     if not isinstance(channel_id, str) or not channel_id.strip():
         return 400, {"error": "channelId is required"}
-    result = await playback.stop(channel_id=channel_id.strip())
+    action = playback.skip if body.get("skip") is True else playback.stop
+    result = await action(channel_id=channel_id.strip())
     return 200, result
 
 

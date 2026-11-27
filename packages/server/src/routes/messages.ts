@@ -383,6 +383,7 @@ export async function messageRoutes(app: FastifyInstance): Promise<void> {
         : await requestMusicStop({
             userId: request.userId,
             channelId: id,
+            skip: musicCmd.command === 'skip',
           });
       if (!cmdResult.ok) {
         if (cmdResult.message) {

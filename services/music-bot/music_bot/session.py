@@ -4,6 +4,7 @@ import asyncio
 import contextlib
 import logging
 import time
+from collections import deque
 from collections.abc import AsyncIterator, Awaitable, Callable
 from dataclasses import dataclass
 from typing import Protocol
@@ -13,10 +14,15 @@ from .livekit_publisher import AudioPublisher, LiveKitAudioPublisher
 from .youtube import YouTubePcmStream, YouTubeTrack, probe_youtube_track, validate_youtube_url
 
 logger = logging.getLogger(__name__)
+MAX_PENDING_TRACKS = 20
 
 
 class PlaybackBusyError(RuntimeError):
     """Raised when playback is requested in another channel while already active."""
+
+
+class PlaybackQueueFullError(RuntimeError):
+    """Raised when the active channel's queue has reached its limit."""
 
 
 class PcmStream(Protocol):
@@ -39,10 +45,12 @@ class ActivePlayback:
     stream: PcmStream
     publisher: AudioPublisher
     task: asyncio.Task[None] | None = None
+    track_task: asyncio.Task[None] | None = None
+    accepting: bool = True
 
 
 class PlaybackManager:
-    """Manages a single active voice-channel playback session (v1 scope).
+    """Manages a single active voice-channel playback session and queue.
 
     All busy checks, session starts, and stops are serialized under ``self._lock``.
     All status and error responses are strictly scoped to the requested ``channel_id``
@@ -85,6 +93,7 @@ class PlaybackManager:
         self._lock = asyncio.Lock()
         self._active: ActivePlayback | None = None
         self._last_errors: dict[str, str] = {}
+        self._pending: deque[tuple[str, str | None]] = deque()
 
     def is_playing(self) -> bool:
         return self._active is not None
@@ -106,6 +115,7 @@ class PlaybackManager:
                 "requestedBy": active.requested_by,
                 "startedAt": int(active.started_at * 1000),
                 "lastError": None,
+                "queueLength": len(self._pending),
             }
         return {
             "state": "idle",
@@ -137,9 +147,13 @@ class PlaybackManager:
             if self._active is not None and self._active.channel_id != cid:
                 raise PlaybackBusyError("Music bot is already playing in another voice channel.")
 
-            # Same-channel replacement: cleanly stop the previous track in this channel first.
-            if self._active is not None and self._active.channel_id == cid:
-                await self._stop_locked()
+            if self._active is not None:
+                if not self._active.accepting:
+                    raise PlaybackBusyError("Music playback is closing. Try again.")
+                if len(self._pending) >= MAX_PENDING_TRACKS:
+                    raise PlaybackQueueFullError("Music queue is full.")
+                self._pending.append((canonical_url, requested_by))
+                return self.status(cid)
 
             self._last_errors.pop(cid, None)
 
@@ -189,11 +203,21 @@ class PlaybackManager:
                 "status": self.status(cid),
             }
 
+    async def skip(self, *, channel_id: str) -> dict[str, object]:
+        async with self._lock:
+            active = self._active
+            task = active.track_task if active is not None and active.channel_id == channel_id else None
+            skipped = task is not None and not task.done()
+            if task is not None and skipped:
+                task.cancel()
+            return {"stopped": skipped, "status": self.status(channel_id)}
+
     async def shutdown(self) -> None:
         async with self._lock:
             await self._stop_locked()
 
     async def _stop_locked(self) -> None:
+        self._pending.clear()
         active = self._active
         if active is None:
             return
@@ -207,22 +231,58 @@ class PlaybackManager:
     async def _run_playback(self, playback: ActivePlayback) -> None:
         frame_bytes = ((self._config.sample_rate * self._config.frame_ms) // 1000) * self._config.num_channels * 2
         try:
-            await playback.publisher.stream_pcm(playback.stream.chunks(frame_bytes))
-            logger.info(
-                "Playback finished cleanly channel=%s video=%s",
-                playback.channel_id,
-                playback.track.video_id,
-            )
-        except asyncio.CancelledError:
-            logger.info("Playback cancelled channel=%s", playback.channel_id)
-            raise
-        except Exception as exc:
-            self._last_errors[playback.channel_id] = str(exc)
-            logger.exception("Playback failed channel=%s", playback.channel_id)
+            while True:
+                playback.track_task = asyncio.create_task(
+                    playback.publisher.stream_pcm(playback.stream.chunks(frame_bytes))
+                )
+                try:
+                    await playback.track_task
+                except asyncio.CancelledError:
+                    # /skip cancels only the track. /stop cancels this session task.
+                    owner = asyncio.current_task()
+                    if owner is not None and owner.cancelling():
+                        raise
+                except Exception as exc:
+                    self._last_errors[playback.channel_id] = str(exc)
+                    logger.exception("Playback failed channel=%s", playback.channel_id)
+                finally:
+                    playback.track_task = None
+                    with contextlib.suppress(Exception):
+                        await playback.stream.close()
+
+                if not await self._advance(playback):
+                    return
         finally:
             await self._cleanup_resources(playback.stream, playback.publisher)
             if self._active is playback:
                 self._active = None
+
+    async def _advance(self, playback: ActivePlayback) -> bool:
+        while True:
+            async with self._lock:
+                if self._active is not playback:
+                    return False
+                if not self._pending:
+                    playback.accepting = False
+                    return False
+                url, requested_by = self._pending.popleft()
+
+            try:
+                track = await self._probe_fn(url)
+                playback.stream = self._stream_factory(track.canonical_url)
+                await playback.stream.start()
+            except Exception as exc:
+                self._last_errors[playback.channel_id] = str(exc)
+                logger.exception("Queued track failed channel=%s", playback.channel_id)
+                with contextlib.suppress(Exception):
+                    await playback.stream.close()
+                continue
+
+            self._last_errors.pop(playback.channel_id, None)
+            playback.track = track
+            playback.requested_by = requested_by
+            playback.started_at = time.time()
+            return True
 
     @staticmethod
     async def _cleanup_resources(stream: PcmStream, publisher: AudioPublisher) -> None:

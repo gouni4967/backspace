@@ -29,7 +29,7 @@ export interface ValidatedYouTubeUrl {
 
 export type ParsedMusicCommand =
   | { command: 'play'; url: string }
-  | { command: 'stop' }
+  | { command: 'stop' | 'skip' }
   | { command: 'invalid_play' };
 
 export interface MusicServiceError {
@@ -56,6 +56,7 @@ export interface MusicPlaybackStatus {
   durationSeconds: number | null;
   requestedBy: string | null;
   startedAt: number | null;
+  queueLength?: number;
   lastError: string | null;
 }
 
@@ -156,8 +157,8 @@ export function parseMusicCommand(content: string | null | undefined): ParsedMus
 
   const parts = trimmed.split(/\s+/);
   const cmd = parts[0]?.toLowerCase();
-  if (cmd === '/stop' && parts.length === 1) {
-    return { command: 'stop' };
+  if ((cmd === '/stop' || cmd === '/skip') && parts.length === 1) {
+    return { command: cmd === '/skip' ? 'skip' : 'stop' };
   }
   if (cmd === '/play') {
     if (parts.length !== 2 || !parts[1]) {
@@ -354,6 +355,7 @@ export async function requestMusicPlay(params: {
 export async function requestMusicStop(params: {
   userId: string;
   channelId: string;
+  skip?: boolean;
 }): Promise<MusicServiceResult<MusicStopResponse>> {
   if (!config.livekit.apiKey || !config.livekit.apiSecret) {
     return { ok: false, status: 503, code: 'voice_disabled' };
@@ -364,7 +366,7 @@ export async function requestMusicStop(params: {
 
   const res = await callMusicBotApi<MusicStopResponse>('/stop', {
     method: 'POST',
-    body: { channelId: params.channelId },
+    body: { channelId: params.channelId, ...(params.skip ? { skip: true } : {}) },
   });
   if (!res.ok) return res;
   return {
