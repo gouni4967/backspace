@@ -37,7 +37,9 @@ jobs:
           context: .
           platforms: linux/arm64
           push: true
-          tags: ghcr.io/gouni4967/backspace:ko-pi
+          tags: |
+            ghcr.io/gouni4967/backspace:ko-pi
+            ghcr.io/gouni4967/backspace:ko-pi-${{ github.sha }}
           build-args: BACKSPACE_COMMIT=${{ steps.revision.outputs.short }}
           labels: |
             org.opencontainers.image.source=https://github.com/gouni4967/backspace
