@@ -67,7 +67,7 @@ export function VoiceUserRow({
         <span className="truncate">{displayName}</span>
         {isBot && (
           <span className="bg-accent-primary/25 text-accent-primary text-[9px] font-bold px-1 rounded leading-[14px] uppercase flex-shrink-0">
-            BOT
+            {/* i18n-check: allow-literal */}            BOT
           </span>
         )}
       </span>

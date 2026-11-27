@@ -189,7 +189,7 @@ export function VoiceUser({ tile, large }: VoiceUserProps) {
             </span>
             {isBot && (
               <span className="bg-accent-primary/25 text-accent-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0">
-                BOT
+                {/* i18n-check: allow-literal */}                BOT
               </span>
             )}
             {isLocal && (
