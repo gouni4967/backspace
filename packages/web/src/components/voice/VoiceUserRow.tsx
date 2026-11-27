@@ -16,6 +16,7 @@ export interface VoiceUserRowProps {
   isPermissionMuted?: boolean;
   isLocallyMuted?: boolean;
   isSpeaking?: boolean;
+  isBot?: boolean;
   connectionWarning?: string | null;
   size?: 'compact' | 'default';
   className?: string;
@@ -36,6 +37,7 @@ export function VoiceUserRow({
   isPermissionMuted,
   isLocallyMuted,
   isSpeaking,
+  isBot,
   connectionWarning,
   size = 'default',
   className = '',
@@ -61,8 +63,13 @@ export function VoiceUserRow({
         avatarColor={avatarColor}
         className={isSpeaking ? 'rounded-full ring-2 ring-status-online' : ''}
       />
-      <span className="text-[13px] text-txt-secondary truncate flex-1 min-w-0">
-        {displayName}
+      <span className="text-[13px] text-txt-secondary truncate flex-1 min-w-0 flex items-center gap-1.5">
+        <span className="truncate">{displayName}</span>
+        {isBot && (
+          <span className="bg-accent-primary/25 text-accent-primary text-[9px] font-bold px-1 rounded leading-[14px] uppercase flex-shrink-0">
+            BOT
+          </span>
+        )}
       </span>
       {/* Status badges */}
       <div className="flex items-center gap-1 flex-shrink-0">

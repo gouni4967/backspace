@@ -21,6 +21,12 @@ import { deleteAttachmentFiles } from '../utils/fileCleanup.js';
 import { sendError } from '../utils/httpErrors.js';
 import { parseHistoryPage, selectHistoryPage, markHistoryPageHonoured } from '../utils/messagePaging.js';
 import { fetchEmbedsForMessages, resolveEmbeds, reResolveEmbeds, embedRowToEmbed } from '../utils/embedResolver.js';
+import {
+  isMusicBotConfigured,
+  parseMusicCommand,
+  requestMusicPlay,
+  requestMusicStop,
+} from '../utils/musicBot.js';
 
 /**
  * Fetch reactions for a set of message IDs.
@@ -352,6 +358,43 @@ export async function messageRoutes(app: FastifyInstance): Promise<void> {
 
     if (content && content.length > MAX_MESSAGE_LENGTH) {
       return sendError(reply, 400, 'content_too_long', { max: MAX_MESSAGE_LENGTH });
+    }
+
+    // Handle /play <YouTube URL> and /stop commands when the music bot service is configured.
+    // Ordinary messages and deployments without MUSIC_BOT_URL/MUSIC_BOT_SECRET are unaffected.
+    const musicCmd = hasContent && !hasAttachments && !replyToId && isMusicBotConfigured()
+      ? parseMusicCommand(content)
+      : null;
+    if (musicCmd) {
+      if (musicCmd.command === 'invalid_play') {
+        return reply.code(400).send({
+          error: 'Usage: /play <https://www.youtube.com/watch?v=...>',
+          code: 'validation_failed',
+          statusCode: 400,
+        });
+      }
+      const cmdResult = musicCmd.command === 'play'
+        ? await requestMusicPlay({
+            userId: request.userId,
+            username: request.username,
+            channelId: id,
+            rawUrl: musicCmd.url,
+          })
+        : await requestMusicStop({
+            userId: request.userId,
+            channelId: id,
+          });
+      if (!cmdResult.ok) {
+        if (cmdResult.message) {
+          return reply.code(cmdResult.status).send({
+            error: cmdResult.message,
+            code: cmdResult.code,
+            ...(cmdResult.details ? { details: cmdResult.details } : {}),
+            statusCode: cmdResult.status,
+          });
+        }
+        return sendError(reply, cmdResult.status, cmdResult.code, cmdResult.details);
+      }
     }
 
     // @everyone, @here and role mentions alert many people; only MENTION_EVERYONE

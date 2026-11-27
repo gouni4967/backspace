@@ -8,6 +8,7 @@ import { useSpaceStore } from '../../stores/spaceStore';
 import { useVoiceParticipantMeta } from '../../hooks/useVoiceParticipantMeta';
 import { getActiveRoom, setCameraSubscription } from '../../hooks/useLiveKit';
 import type { UserTile } from '../../hooks/useLiveKit';
+import { isMusicBotUserId } from '../../utils/musicBot';
 
 interface VoiceUserProps {
   tile: UserTile;
@@ -34,6 +35,7 @@ export function VoiceUser({ tile, large }: VoiceUserProps) {
   const [, forceUpdate] = useState(0);
 
   const isLocal = participant.isLocal;
+  const isBot = isMusicBotUserId(participant.userId);
   const avatarUserId = participant.homeUserId ?? participant.userId;
   const { displayName, avatar, user, origin: userOrigin } = useVoiceParticipantMeta(participant);
 
@@ -74,8 +76,8 @@ export function VoiceUser({ tile, large }: VoiceUserProps) {
       const targetUserId = participant.userId;
       const channelId = currentVoiceChannelId;
 
-      // Build moderation items
-      const modItems = buildVoiceModMenuItems(targetUserId, channelId);
+      // Build moderation items (skip space moderation for the music bot participant)
+      const modItems = isBot ? [] : buildVoiceModMenuItems(targetUserId, channelId);
 
       const items: ContextMenuItem[] = [...modItems];
 
@@ -138,7 +140,7 @@ export function VoiceUser({ tile, large }: VoiceUserProps) {
 
       openContextMenu({ x: e.clientX, y: e.clientY }, items);
     },
-    [isLocal, currentVoiceChannelId, participant.userId, openContextMenu, t],
+    [isLocal, isBot, currentVoiceChannelId, participant.userId, openContextMenu, t],
   );
 
   return (
@@ -185,6 +187,11 @@ export function VoiceUser({ tile, large }: VoiceUserProps) {
             >
               {displayName}
             </span>
+            {isBot && (
+              <span className="bg-accent-primary/25 text-accent-primary text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0">
+                BOT
+              </span>
+            )}
             {isLocal && (
               <span className="text-[10px] text-white/40 font-medium">
                 {t('voice:badges.you')}

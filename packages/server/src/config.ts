@@ -260,6 +260,14 @@ export const config = {
     apiSecret: envOptional('LIVEKIT_API_SECRET'),
   },
 
+  musicBot: {
+    url: envOptional('MUSIC_BOT_URL')?.replace(/\/+$/, ''),
+    secret: envOptional('MUSIC_BOT_SECRET'),
+    livekitUrl: envOptional('MUSIC_BOT_LIVEKIT_URL'),
+    displayName: envOptional('MUSIC_BOT_DISPLAY_NAME') ?? '음악 봇',
+    requestTimeoutMs: envInt('MUSIC_BOT_REQUEST_TIMEOUT_MS', 30_000),
+  },
+
   federation: {
     /**
      * Allow an origin that a stranger asserted to resolve to a private address.

@@ -17,6 +17,7 @@ import { uploadRoutes } from './routes/uploads.js';
 import { filesRoutes } from './routes/files.js';
 import { dmRoutes } from './routes/dm.js';
 import { livekitRoutes } from './routes/livekit.js';
+import { musicRoutes } from './routes/music.js';
 import { socialRoutes } from './routes/social.js';
 import { settingsRoutes } from './routes/settings.js';
 import { notificationSettingsRoutes } from './routes/notificationSettings.js';
@@ -219,6 +220,7 @@ async function main(): Promise<void> {
   await app.register(filesRoutes);
   await app.register(dmRoutes);
   await app.register(livekitRoutes);
+  await app.register(musicRoutes);
   await app.register(socialRoutes);
   await app.register(settingsRoutes);
   await app.register(notificationSettingsRoutes);

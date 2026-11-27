@@ -5,6 +5,7 @@ import { useSelfIdInChannel } from '../../utils/channelUser';
 import { useContextMenuStore, type ContextMenuItem } from '../../stores/contextMenuStore';
 import { buildVoiceModMenuItems, VolumeSliderItem } from './voiceMenuItems';
 import { VoiceUserRow } from './VoiceUserRow';
+import { DEFAULT_MUSIC_BOT_NAME, isMusicBotUserId } from '../../utils/musicBot';
 import { useTranslation } from 'react-i18next';
 import { useFormatters } from '../../i18n/formatters';
 import { useSharedSecondBeat } from '../../hooks/useSharedSecondBeat';
@@ -109,8 +110,8 @@ export function VoiceChannel({ channelId, channelName, onClick, locked, canManag
       e.preventDefault();
       e.stopPropagation();
 
-      // Build moderation items
-      const modItems = buildVoiceModMenuItems(userId, channelId);
+      // Build moderation items (skip space moderation for the music bot)
+      const modItems = isMusicBotUserId(userId) ? [] : buildVoiceModMenuItems(userId, channelId);
 
       const items: ContextMenuItem[] = [...modItems];
 
@@ -208,7 +209,11 @@ export function VoiceChannel({ channelId, channelName, onClick, locked, canManag
           {voiceUsers.map((userId) => {
             const member = members.find(m => m.userId === userId);
             const participant = participants.find(p => p.userId === userId);
-            const displayName = member?.user.displayName ?? member?.user.username ?? participant?.username ?? userId;
+            const isBot = isMusicBotUserId(userId);
+            const displayName = member?.user.displayName
+              ?? member?.user.username
+              ?? participant?.username
+              ?? (isBot ? DEFAULT_MUSIC_BOT_NAME : userId);
             const avatar = member?.user.avatar ?? null;
             const avatarColor = member?.user.avatarColor;
             const wsStatus = voiceUserStates.get(userId);
@@ -240,7 +245,7 @@ export function VoiceChannel({ channelId, channelName, onClick, locked, canManag
               : null;
 
             const userDrag = voiceUserHandlers?.(userId, channelId);
-            const isDraggable = !!(userDrag?.draggable && userId !== myIdHere);
+            const isDraggable = !!(userDrag?.draggable && userId !== myIdHere && !isBot);
             const isBeingDragged = userDrag?.isBeingDragged ?? false;
 
             return (
@@ -269,6 +274,7 @@ export function VoiceChannel({ channelId, channelName, onClick, locked, canManag
                   isPermissionMuted={isPermissionMuted}
                   isLocallyMuted={userId !== myIdHere && (participantMutes.get(userId) ?? false)}
                   isSpeaking={speakingUserIds.has(userId)}
+                  isBot={isBot}
                   connectionWarning={connectionWarning}
                 />
               </div>

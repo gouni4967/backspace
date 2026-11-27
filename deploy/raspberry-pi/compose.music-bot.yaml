@@ -1,0 +1,39 @@
+# Standalone Compose overlay for testing the Backspace YouTube music bot on Raspberry Pi (ARM64).
+# Existing production compose.yaml, Tailscale Funnel, Caddy, LiveKit, and Playit paths stay untouched.
+#
+# Usage (from deploy/raspberry-pi):
+#   cp .env.music-bot.example .env.music-bot
+#   # set MUSIC_BOT_API_SECRET=$(openssl rand -hex 32) inside .env.music-bot
+#   docker compose -f compose.yaml -f compose.music-bot.yaml \
+#     --env-file .env --env-file .env.music-bot up -d --build music-bot backspace
+
+services:
+  backspace:
+    image: ${BACKSPACE_MUSIC_TEST_IMAGE:-backspace-music-bot:local}
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    environment:
+      MUSIC_BOT_URL: http://music-bot:3100
+      MUSIC_BOT_SECRET: "${MUSIC_BOT_API_SECRET:?Set MUSIC_BOT_API_SECRET in .env.music-bot}"
+      # Talk directly to the local LiveKit container on the Docker bridge (bypassing Funnel/Playit).
+      MUSIC_BOT_LIVEKIT_URL: "${MUSIC_BOT_LIVEKIT_URL:-ws://10.253.245.2:7880}"
+      MUSIC_BOT_DISPLAY_NAME: "${MUSIC_BOT_DISPLAY_NAME:-음악 봇}"
+    depends_on:
+      music-bot:
+        condition: service_healthy
+
+  music-bot:
+    image: ${MUSIC_BOT_IMAGE:-backspace-music-bot-worker:local}
+    build:
+      context: ../../services/music-bot
+      dockerfile: Dockerfile
+    environment:
+      MUSIC_BOT_HOST: 0.0.0.0
+      MUSIC_BOT_PORT: "3100"
+      MUSIC_BOT_API_SECRET: "${MUSIC_BOT_API_SECRET:?Set MUSIC_BOT_API_SECRET in .env.music-bot}"
+      MUSIC_BOT_LIVEKIT_URL: "${MUSIC_BOT_LIVEKIT_URL:-ws://10.253.245.2:7880}"
+      MUSIC_BOT_MAX_DURATION_SECONDS: "${MUSIC_BOT_MAX_DURATION_SECONDS:-10800}"
+      MUSIC_BOT_LOG_LEVEL: "${MUSIC_BOT_LOG_LEVEL:-INFO}"
+    mem_limit: 512m
+    restart: unless-stopped
