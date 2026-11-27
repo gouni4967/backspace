@@ -5,7 +5,7 @@
  * The renderer owns the language choice and reports it over the
  * `set-language` IPC channel; main remembers it in userData so the tray is
  * right from the first paint on the next launch. Before the renderer has
- * ever said anything, the OS locale decides.
+ * ever said anything, the OS locale is used with a Korean default.
  *
  * This is deliberately not i18next: the main process has under thirty
  * strings and no React, and pulling the library into the Electron bundle
@@ -151,11 +151,12 @@ function baseLanguage(tag: string): DesktopLanguage | null {
 }
 
 /**
- * Stored renderer choice first, then the OS locale, then English.
+ * Stored renderer choice first, then the OS locale with a Korean default.
  */
 export function resolveDesktopLanguage(stored: string | null, appLocale: string): DesktopLanguage {
   if (isDesktopLanguage(stored)) return stored;
-  return baseLanguage(appLocale) ?? 'en';
+  const detected = baseLanguage(appLocale);
+  return detected && detected !== 'en' ? detected : 'ko';
 }
 
 export function translateDesktop(
@@ -189,7 +190,7 @@ export function saveStoredLanguage(language: DesktopLanguage): void {
   fs.writeFileSync(getLanguagePath(), JSON.stringify({ language }));
 }
 
-/** The language for the current process: stored choice, else OS locale, else English. */
+/** The language for the current process, including the Korean default. */
 export function getDesktopLanguage(): DesktopLanguage {
   return resolveDesktopLanguage(loadStoredLanguage(), app.getLocale());
 }

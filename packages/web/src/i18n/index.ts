@@ -4,6 +4,7 @@ import { LazyCatalogBackend } from './loader';
 import { defaultNS, namespaces, resources } from './resources';
 import {
   DEFAULT_LANGUAGE,
+  FALLBACK_LANGUAGE,
   LANGUAGE_STORAGE_KEY,
   getLanguageDirection,
   isSupportedLanguage,
@@ -79,7 +80,7 @@ export async function initI18n(options: InitI18nOptions = {}): Promise<typeof i1
       .use(initReactI18next)
       .init({
         lng: language,
-        fallbackLng: DEFAULT_LANGUAGE,
+        fallbackLng: FALLBACK_LANGUAGE,
         supportedLngs: [...supportedLanguageCodes],
         load: 'languageOnly',
         defaultNS,

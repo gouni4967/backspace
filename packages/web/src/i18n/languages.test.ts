@@ -33,9 +33,12 @@ describe('pickLanguage', () => {
     expect(pickLanguage(null, ['fr-FR', 'de-DE', 'ru'], allReleased)).toBe('de');
   });
 
-  it('falls back to English when nothing matches', () => {
-    expect(pickLanguage(null, ['fr-FR', 'ja'])).toBe('en');
-    expect(pickLanguage(null, [])).toBe('en');
+  it('defaults to Korean for English or unsupported browser locales', () => {
+    expect(pickLanguage(null, ['en-US'])).toBe('ko');
+    expect(pickLanguage(null, ['fr-FR', 'ja'])).toBe('ko');
+    expect(pickLanguage(null, [])).toBe('ko');
+    expect(pickLanguage('en', ['ko-KR'])).toBe('en');
+    expect(pickLanguage(null, ['zh-CN', 'en-US'])).toBe('zh');
   });
 });
 

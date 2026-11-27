@@ -20,8 +20,10 @@ describe('resolveDesktopLanguage', () => {
   });
 
   it('falls back to English when neither is shipped', () => {
-    expect(resolveDesktopLanguage(null, 'fr-FR')).toBe('en');
-    expect(resolveDesktopLanguage(null, '')).toBe('en');
+    expect(resolveDesktopLanguage(null, 'en-US')).toBe('ko');
+    expect(resolveDesktopLanguage(null, 'fr-FR')).toBe('ko');
+    expect(resolveDesktopLanguage(null, '')).toBe('ko');
+    expect(resolveDesktopLanguage('en', 'ko-KR')).toBe('en');
   });
 });
 

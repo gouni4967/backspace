@@ -23,7 +23,8 @@ export const supportedLanguages = [
 
 export type SupportedLanguage = (typeof supportedLanguages)[number]['code'];
 
-export const DEFAULT_LANGUAGE: SupportedLanguage = 'en';
+export const DEFAULT_LANGUAGE: SupportedLanguage = 'ko';
+export const FALLBACK_LANGUAGE: SupportedLanguage = 'en';
 
 /** Kept from the community translation in PR #45 so its testers keep their choice. */
 export const LANGUAGE_STORAGE_KEY = 'backspace-language';
@@ -51,8 +52,8 @@ export function resolveSupportedLanguage(tag: string): SupportedLanguage | null 
 
 /**
  * Detection order: the stored choice, then the browser's languages in the
- * order the user ranked them, then English. Only released languages are
- * eligible; `released` exists so tests can exercise the others.
+ * order the user ranked them. An English or unsupported browser locale uses
+ * the deployment default, Korean. A saved choice of English is respected.
  */
 export function pickLanguage(
   stored: string | null,
@@ -60,11 +61,12 @@ export function pickLanguage(
   released: ReadonlySet<string> = releasedLanguageCodes,
 ): SupportedLanguage {
   if (isSupportedLanguage(stored) && released.has(stored)) return stored;
+  const defaultLanguage = released.has(DEFAULT_LANGUAGE) ? DEFAULT_LANGUAGE : FALLBACK_LANGUAGE;
   for (const tag of browserLanguages) {
     const match = resolveSupportedLanguage(tag);
-    if (match && released.has(match)) return match;
+    if (match && released.has(match)) return match === FALLBACK_LANGUAGE ? defaultLanguage : match;
   }
-  return DEFAULT_LANGUAGE;
+  return defaultLanguage;
 }
 
 export function getLanguageDirection(language: SupportedLanguage): 'ltr' | 'rtl' {
