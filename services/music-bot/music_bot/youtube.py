@@ -245,7 +245,7 @@ class YouTubePcmStream:
             "-sn",
             "-dn",
             "-af",
-            "volume=0.125",
+            "volume=0.0625",
             "-ac",
             str(self._num_channels),
             "-ar",
